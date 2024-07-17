@@ -60,7 +60,11 @@ public class ProductController {
         return ResponseEntity.notFound().build();
     }
 
-    @PutMapping("/{productId}")
+    @PutMapping(
+            value = "/{productId}",
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
     public ResponseEntity<Product> updateProductById(@PathVariable("productId") Long productId,
                                                @RequestBody Product updatedProduct) {
         Optional<Product> existingProduct = productService.findProductById(productId);
