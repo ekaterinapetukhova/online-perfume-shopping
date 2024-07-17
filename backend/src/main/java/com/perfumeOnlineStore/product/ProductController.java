@@ -2,6 +2,7 @@ package com.perfumeOnlineStore.product;
 
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/v1/product")
+@RequestMapping("/api/v1/products")
 @RequiredArgsConstructor
 public class ProductController {
     private final ProductService productService;
@@ -29,7 +30,7 @@ public class ProductController {
     public ResponseEntity<Product> getProductById(@PathVariable("productId") Long productId) {
         Optional<Product> product = productService.findProductById(productId);
 
-        return product.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+        return product.map(value -> new ResponseEntity<>(value, HttpStatus.OK)).orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     @PostMapping(
@@ -50,7 +51,7 @@ public class ProductController {
     }
 
     @DeleteMapping("/{productId}")
-    public ResponseEntity<String> deleteProduct(@PathVariable("productId") Long productId) {
+    public ResponseEntity<HttpStatus> deleteProduct(@PathVariable("productId") Long productId) {
         Optional<Product> existingProduct = productService.findProductById(productId);
         if (existingProduct.isPresent()) {
             productService.deleteProduct(existingProduct.get());

@@ -2,6 +2,8 @@ package com.perfumeOnlineStore.database;
 
 import com.perfumeOnlineStore.product.Product;
 import com.perfumeOnlineStore.product.ProductRepository;
+import com.perfumeOnlineStore.user.User;
+import com.perfumeOnlineStore.user.UserRepository;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -17,6 +19,7 @@ import java.util.List;
 @AllArgsConstructor
 public class Database implements CommandLineRunner {
     private final ProductRepository productRepository;
+    private final UserRepository userRepository;
 
     @Override
     public void run(String[] args) {
@@ -44,9 +47,25 @@ public class Database implements CommandLineRunner {
                 75
         );
 
-        productRepository.saveAll(List.of(
-                calvinKleinEuphoria,
-                dolceGabbanaTheOne
-        ));
+        productRepository.saveAll(
+                List.of(
+                    calvinKleinEuphoria,
+                    dolceGabbanaTheOne
+                )
+        );
+
+        User user = new User(
+                "Kate",
+                "Petukhova",
+                "katepthv12@gmail.com",
+                "12345678",
+                "12345678",
+                "Street 1",
+                "Poland",
+                "Katowice",
+                "44-021"
+        );
+
+        userRepository.save(user);
     }
 }
