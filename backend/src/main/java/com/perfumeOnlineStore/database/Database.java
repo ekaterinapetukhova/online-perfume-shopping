@@ -1,15 +1,14 @@
 package com.perfumeOnlineStore.database;
 
+import com.perfumeOnlineStore.category.Category;
+import com.perfumeOnlineStore.category.CategoryRepository;
 import com.perfumeOnlineStore.product.Product;
 import com.perfumeOnlineStore.product.ProductRepository;
 import com.perfumeOnlineStore.user.User;
 import com.perfumeOnlineStore.user.UserRepository;
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -20,9 +19,29 @@ import java.util.List;
 public class Database implements CommandLineRunner {
     private final ProductRepository productRepository;
     private final UserRepository userRepository;
+    private final CategoryRepository categoryRepository;
 
     @Override
     public void run(String[] args) {
+        Category amber = new Category("Amber", "Amber fragrances with dominant amber are placed in a separate group thanks to their accentuated warmth and sensuality. Their opulent bouquet includes intoxicating and intensive substances such as musk, vanilla, exotic resins and wood, often accompanied with exotic flowers and spices.");
+        Category aromatic = new Category("Aromatic", "Aromatic notes are usually combined of sage, rosemary, cumin, lavender and other plants which possess a very intensive grass-spicy scent. They are often combined with citrusy and spicy notes. Aromatic compositions are typical of fragrances for men.");
+        Category chypre = new Category("Chypre", "This olfactive group was named after perfume Coty Chypre created in 1917. Chypre means Cyprus in French. This sharp scent is based on harmony of oak moss, labdanum, patchouli and bergamot.");
+        Category citrus = new Category("Citrus", "Citrus fragrances are old and abundant. Its compositions are based on lemon, orange, bergamot, grapefruit or mandarin, with other citrusy, aromatic and tart notes for men and floral notes for women.");
+        Category floral = new Category("Floral", "This largest fragrant group encompasses numerous versions of compositions with a floral heart: freshly picked flowers, flowers with aquatic, green or powdery nuances, as well as floral-aldehyde, floral-fruity and gourmand compositions.");
+        Category leather = new Category("Leather", "Leather scents in various nuances, from floral, velvety compositions to tart, smoky ones are placed in this group. Scenting leather products in order to mask unpleasant scent of leather itself, since urine and faeces of cattle, as well as blood and tar had been used in its traditional production, marked the beginning of perfumery.");
+        Category woody = new Category("Woody", "Opulent compositions of woody notes in a heart of perfume are accentuated with woody notes of a base. Warm, mysterious sandalwood, drier and sharper cedar and vetiver, resin-like and balmy exotic sorts are usually accompanied with aromatic and citrusy notes.");
+
+        categoryRepository.saveAll(
+                List.of(
+                        amber,
+                        aromatic,
+                        chypre,
+                        citrus,
+                        floral,
+                        leather,
+                        woody
+                ));
+
         Product calvinKleinEuphoria = new Product(
                 "Euphoria Calvin Klein",
                 "Euphoria by Calvin Klein is a Amber Floral fragrance for women. Euphoria was launched in 2005. Euphoria was created by Dominique Ropion, Carlos Benaim and Loc Dong. Top notes are Pomegranate, Persimmon and Green Accord; middle notes are Black Orchid, Lotus and Champaca; base notes are Mahogany, Amber, Black Violet and Whipped Cream. This perfume is the winner of award FiFi Award Fragrance Of The Year Women`s Luxe 2006.",
@@ -32,7 +51,8 @@ public class Database implements CommandLineRunner {
                 "Pomegranate, Lotus, Orchid, Violet, Amber, Mahogany, Musk",
                 50,
                 Product.Gender.FEMALE,
-                100
+                100,
+                amber
         );
 
         Product dolceGabbanaTheOne = new Product(
@@ -44,7 +64,8 @@ public class Database implements CommandLineRunner {
                 "Bergamot, Peach, lychee, Tangerine, Jasmine, Lily Of The Valley, Lily, Vanilla, Musk, Vetiver, Plum, Amber",
                 24,
                 Product.Gender.FEMALE,
-                75
+                75,
+                amber
         );
 
         productRepository.saveAll(

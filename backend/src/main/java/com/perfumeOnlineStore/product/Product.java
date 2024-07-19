@@ -1,8 +1,8 @@
 package com.perfumeOnlineStore.product;
 
+import com.perfumeOnlineStore.category.Category;
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Table
 @Entity
@@ -26,6 +26,9 @@ public class Product {
     @Enumerated(EnumType.STRING)
     private Gender gender;
     private Integer volume;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id")
+    Category category;
 
     public enum Gender {
         MALE, FEMALE
@@ -39,7 +42,8 @@ public class Product {
                    String scentGroups,
                    Integer quantity,
                    Gender gender,
-                   Integer volume) {
+                   Integer volume,
+                   Category category) {
         this.name = name;
         this.description = description;
         this.brand = brand;
@@ -49,5 +53,6 @@ public class Product {
         this.quantity = quantity;
         this.gender = gender;
         this.volume = volume;
+        this.category = category;
     }
 }

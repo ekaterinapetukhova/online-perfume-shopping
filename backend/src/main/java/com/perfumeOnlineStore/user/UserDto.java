@@ -2,8 +2,7 @@ package com.perfumeOnlineStore.user;
 
 import com.perfumeOnlineStore.customValidators.uniqueEmail.UniqueEmail;
 import jakarta.validation.constraints.*;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
 @NoArgsConstructor
