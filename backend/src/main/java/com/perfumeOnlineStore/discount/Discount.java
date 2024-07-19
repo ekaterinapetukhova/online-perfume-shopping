@@ -4,6 +4,7 @@ import com.perfumeOnlineStore.product.Product;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -22,10 +23,10 @@ public class Discount {
     private String name;
     @Column(nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
-    private Date startedDate;
+    private LocalDateTime startedDate;
     @Column(nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
-    private Date endedDate;
+    private LocalDateTime endedDate;
     @Column(nullable = false, columnDefinition = "text")
     private String description;
     @ManyToMany(mappedBy = "discounts")
@@ -34,8 +35,8 @@ public class Discount {
     public Discount(
             Double percent,
             String name,
-            Date startedDate,
-            Date endedDate,
+            LocalDateTime startedDate,
+            LocalDateTime endedDate,
             String description
     ) {
         this.percent = percent;

@@ -2,6 +2,8 @@ package com.perfumeOnlineStore.database;
 
 import com.perfumeOnlineStore.category.Category;
 import com.perfumeOnlineStore.category.CategoryRepository;
+import com.perfumeOnlineStore.discount.Discount;
+import com.perfumeOnlineStore.discount.DiscountRepository;
 import com.perfumeOnlineStore.product.Product;
 import com.perfumeOnlineStore.product.ProductRepository;
 import com.perfumeOnlineStore.user.User;
@@ -11,6 +13,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.Month;
 import java.util.List;
 
 @Component
@@ -20,6 +25,7 @@ public class Database implements CommandLineRunner {
     private final ProductRepository productRepository;
     private final UserRepository userRepository;
     private final CategoryRepository categoryRepository;
+    private final DiscountRepository discountRepository;
 
     @Override
     public void run(String[] args) {
@@ -41,6 +47,16 @@ public class Database implements CommandLineRunner {
                         leather,
                         woody
                 ));
+
+        Discount discount = new Discount(
+                0.5,
+                "Summer sale",
+                LocalDateTime.of(2024, Month.JULY, 19, 12, 0, 0),
+                LocalDateTime.of(2024, Month.JULY, 21, 12, 0, 0),
+                "summer discounts in honor of the store opening!"
+        );
+
+        discountRepository.save(discount);
 
         Product calvinKleinEuphoria = new Product(
                 "Euphoria Calvin Klein",
