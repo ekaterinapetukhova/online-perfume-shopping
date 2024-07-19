@@ -1,15 +1,9 @@
 package com.perfumeOnlineStore.product;
 
-import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import java.net.URI;
-import java.rmi.ServerException;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,17 +31,13 @@ public class ProductController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<Product> createProduct(@RequestBody Product newProduct,
-                                                 HttpServletRequest request) throws ServerException {
-        Product product = productService.saveProduct(newProduct);
-
-        if (product != null) {
-            URI location = ServletUriComponentsBuilder.fromRequestUri(request)
-                    .path("/{productId}")
-                    .buildAndExpand(product.getId())
-                    .toUri();
-            return ResponseEntity.created(location).body(product);
-        } else throw new ServerException("Error in creating the Product resource. Try Again.");
+    public ResponseEntity<Product> createProduct(@RequestBody Product newProduct) {
+        try {
+            productService.saveProduct(newProduct);
+            return new ResponseEntity<>(newProduct, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @DeleteMapping("/{productId}")

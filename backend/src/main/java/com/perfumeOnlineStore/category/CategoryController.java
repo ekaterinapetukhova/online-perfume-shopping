@@ -39,17 +39,13 @@ public class CategoryController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<Category> createProduct(@RequestBody Category newCategory,
-                                                 HttpServletRequest request) throws ServerException {
-        Category category = categoryService.saveCategory(newCategory);
-
-        if (category != null) {
-            URI location = ServletUriComponentsBuilder.fromRequestUri(request)
-                    .path("/{categoryId}")
-                    .buildAndExpand(category.getId())
-                    .toUri();
-            return ResponseEntity.created(location).body(category);
-        } else throw new ServerException("Error in creating the Category resource. Try Again.");
+    public ResponseEntity<Category> createProduct(@RequestBody Category newCategory) {
+        try {
+            categoryService.saveCategory(newCategory);
+            return new ResponseEntity<>(newCategory, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @DeleteMapping("/{categoryId}")
