@@ -1,6 +1,5 @@
 package com.perfumeOnlineStore.discount;
 
-import com.perfumeOnlineStore.product.Product;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

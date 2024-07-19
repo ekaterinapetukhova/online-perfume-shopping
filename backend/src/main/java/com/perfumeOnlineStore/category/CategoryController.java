@@ -1,17 +1,11 @@
 package com.perfumeOnlineStore.category;
 
-import com.perfumeOnlineStore.product.Product;
-import com.perfumeOnlineStore.product.ProductService;
-import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import java.net.URI;
-import java.rmi.ServerException;
 import java.util.List;
 import java.util.Optional;
 

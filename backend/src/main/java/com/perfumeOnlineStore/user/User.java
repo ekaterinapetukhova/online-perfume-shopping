@@ -1,8 +1,12 @@
 package com.perfumeOnlineStore.user;
 
+import com.perfumeOnlineStore.role.Role;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table
@@ -25,6 +29,14 @@ public class User {
     private String country;
     private String city;
     private String postcode;
+    @ManyToMany(
+            fetch = FetchType.EAGER,
+            cascade={ CascadeType.MERGE, CascadeType.REMOVE, CascadeType.REFRESH, CascadeType.DETACH })
+    @JoinTable(
+            name = "user_role",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private List<Role> roles = new ArrayList<>();
 
     public User(
             String name,
