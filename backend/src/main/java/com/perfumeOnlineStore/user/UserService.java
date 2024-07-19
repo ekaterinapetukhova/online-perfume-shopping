@@ -18,8 +18,8 @@ public class UserService {
         return userRepository.findById(id);
     }
 
-    public User saveUser(User user) {
-        return userRepository.save(user);
+    public void saveUser(User user) {
+        userRepository.save(user);
     }
 
     public void deleteUser(User user) {

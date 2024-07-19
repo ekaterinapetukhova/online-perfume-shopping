@@ -1,6 +1,5 @@
 package com.perfumeOnlineStore.category;
 
-import com.perfumeOnlineStore.product.Product;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -20,8 +19,8 @@ public class CategoryService {
         return categoryRepository.findById(id);
     }
 
-    public Category saveCategory(Category category) {
-        return categoryRepository.save(category);
+    public void saveCategory(Category category) {
+        categoryRepository.save(category);
     }
 
     public void deleteCategory(Category category) {

@@ -1,8 +1,12 @@
 package com.perfumeOnlineStore.product;
 
 import com.perfumeOnlineStore.category.Category;
+import com.perfumeOnlineStore.discount.Discount;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Table
 @Entity
@@ -29,6 +33,12 @@ public class Product {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
     Category category;
+    @ManyToMany
+    @JoinTable(
+            name = "product_discount",
+            joinColumns = @JoinColumn(name = "product_id"),
+            inverseJoinColumns = @JoinColumn(name = "discount_id"))
+    private List<Discount> discounts = new ArrayList<>();
 
     public enum Gender {
         MALE, FEMALE
