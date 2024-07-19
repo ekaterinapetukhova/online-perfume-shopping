@@ -25,7 +25,7 @@ public class CategoryController {
     public ResponseEntity<List<Category>> getAllCategories() {
         List<Category> categories = categoryService.findAllCategories();
 
-        return ResponseEntity.ok(categories);
+        return !categories.isEmpty() ? new ResponseEntity<>(categories, HttpStatus.OK) : new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     @GetMapping("/{categoryId}")
