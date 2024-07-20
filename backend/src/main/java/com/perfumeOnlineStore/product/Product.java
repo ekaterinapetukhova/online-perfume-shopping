@@ -2,6 +2,7 @@ package com.perfumeOnlineStore.product;
 
 import com.perfumeOnlineStore.category.Category;
 import com.perfumeOnlineStore.discount.Discount;
+import com.perfumeOnlineStore.orderItem.OrderItem;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -30,15 +31,21 @@ public class Product {
     @Enumerated(EnumType.STRING)
     private Gender gender;
     private Integer volume;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
-    Category category;
+    private Category category;
+
     @ManyToMany
     @JoinTable(
             name = "product_discount",
             joinColumns = @JoinColumn(name = "product_id"),
             inverseJoinColumns = @JoinColumn(name = "discount_id"))
     private List<Discount> discounts = new ArrayList<>();
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "orderItem_id")
+    private OrderItem orderItem;
 
     public enum Gender {
         MALE, FEMALE

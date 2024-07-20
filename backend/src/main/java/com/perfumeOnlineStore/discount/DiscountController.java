@@ -15,7 +15,6 @@ import java.util.Optional;
 public class DiscountController {
     private final DiscountService discountService;
 
-
     @GetMapping
     public ResponseEntity<List<Discount>> getAllProducts() {
         List<Discount> discounts = discountService.findAllDiscounts();
