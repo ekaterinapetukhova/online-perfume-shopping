@@ -1,5 +1,7 @@
 package com.perfumeOnlineStore.user;
 
+import com.perfumeOnlineStore.order.Order;
+import com.perfumeOnlineStore.product.Product;
 import com.perfumeOnlineStore.role.Role;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -37,6 +39,12 @@ public class User {
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private List<Role> roles = new ArrayList<>();
+    @OneToMany(
+            mappedBy = "user",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<Order> orders = new ArrayList<>();
 
     public User(
             String name,

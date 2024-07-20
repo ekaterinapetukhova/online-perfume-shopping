@@ -58,7 +58,7 @@ public class DiscountController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<Discount> updateProductById(@PathVariable("discountId") Long discountId,
+    public ResponseEntity<Discount> updateDiscountById(@PathVariable("discountId") Long discountId,
                                                         @RequestBody Discount updatedDiscount) {
         Optional<Discount> existingDiscount = discountService.findDiscountById(discountId);
 

@@ -1,5 +1,6 @@
 package com.perfumeOnlineStore.orderItem;
 
+import com.perfumeOnlineStore.order.Order;
 import com.perfumeOnlineStore.product.Product;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -25,6 +26,10 @@ public class OrderItem {
             cascade = CascadeType.ALL,
             orphanRemoval = true)
     private List<Product> products = new ArrayList<>();
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "order_id")
+    private Order order;
 
     public OrderItem(Integer quantity, Double price) {
         this.quantity = quantity;

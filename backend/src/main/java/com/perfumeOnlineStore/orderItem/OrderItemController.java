@@ -25,7 +25,7 @@ public class OrderItemController {
     }
 
     @GetMapping("/{orderItemId}")
-    public ResponseEntity<OrderItem> getDiscountById(@PathVariable("orderItemId") Long orderItemId) {
+    public ResponseEntity<OrderItem> getOrderItemById(@PathVariable("orderItemId") Long orderItemId) {
         Optional<OrderItem> orderItem = orderItemService.findOrderItemById(orderItemId);
 
         return orderItem.map(value -> new ResponseEntity<>(value, HttpStatus.OK)).orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
@@ -60,7 +60,7 @@ public class OrderItemController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<OrderItem> updateProductById(@PathVariable("orderItemId") Long orderItemId,
+    public ResponseEntity<OrderItem> updateOrderItemById(@PathVariable("orderItemId") Long orderItemId,
                                                    @RequestBody OrderItem updatedOrderItem) {
         Optional<OrderItem> existingOrderItem = orderItemService.findOrderItemById(orderItemId);
 
