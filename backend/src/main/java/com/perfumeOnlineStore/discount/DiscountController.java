@@ -16,7 +16,7 @@ public class DiscountController {
     private final DiscountService discountService;
 
     @GetMapping
-    public ResponseEntity<List<Discount>> getAllProducts() {
+    public ResponseEntity<List<Discount>> getAllDiscounts() {
         List<Discount> discounts = discountService.findAllDiscounts();
 
         return !discounts.isEmpty() ? new ResponseEntity<>(discounts, HttpStatus.OK) : new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -33,7 +33,7 @@ public class DiscountController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<Discount> createProduct(@RequestBody Discount newDiscount) {
+    public ResponseEntity<Discount> createDiscount(@RequestBody Discount newDiscount) {
         try {
             discountService.saveDiscount(newDiscount);
             return new ResponseEntity<>(newDiscount, HttpStatus.OK);

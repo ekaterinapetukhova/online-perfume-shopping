@@ -33,7 +33,7 @@ public class CategoryController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<Category> createProduct(@RequestBody Category newCategory) {
+    public ResponseEntity<Category> createCategory(@RequestBody Category newCategory) {
         try {
             categoryService.saveCategory(newCategory);
             return new ResponseEntity<>(newCategory, HttpStatus.OK);
