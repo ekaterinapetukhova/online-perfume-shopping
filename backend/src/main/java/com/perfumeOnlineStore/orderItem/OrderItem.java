@@ -3,6 +3,7 @@ package com.perfumeOnlineStore.orderItem;
 import com.perfumeOnlineStore.order.Order;
 import com.perfumeOnlineStore.product.Product;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,6 +14,7 @@ import java.util.List;
 @Table
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class OrderItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

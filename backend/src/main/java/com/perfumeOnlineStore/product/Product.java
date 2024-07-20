@@ -13,23 +13,29 @@ import java.util.List;
 @Entity
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(nullable = false)
     private String name;
-    @Column(columnDefinition = "text")
+    @Column(columnDefinition = "text", nullable = false)
     private String description;
+    @Column(nullable = false)
     private String brand;
-    @Column(columnDefinition = "numeric")
+    @Column(columnDefinition = "numeric", nullable = false)
     private Double price;
-    @Column(columnDefinition = "text")
+    @Column(columnDefinition = "text", nullable = false)
     private String components;
-    @Column(columnDefinition = "text")
+    @Column(columnDefinition = "text", nullable = false)
     private String scentGroups;
+    @Column(nullable = false)
     private Integer quantity;
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private Gender gender;
+    @Column(nullable = false)
     private Integer volume;
 
     @ManyToOne(fetch = FetchType.LAZY)

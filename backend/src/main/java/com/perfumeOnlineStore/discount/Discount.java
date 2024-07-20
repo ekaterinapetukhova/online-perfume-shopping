@@ -12,6 +12,7 @@ import java.util.List;
 @Table
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class Discount {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
