@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+  postgres:
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=perfume_online_shopping
+      - POSTGRES_PASSWORD=Pea12122000
+      - POSTGRES_USER=ekaterinapetukhova
+    image: postgres:12.19-alpine

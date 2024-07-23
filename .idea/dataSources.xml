@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="perfume_online_shopping@localhost" uuid="6ab17612-b7c4-40cd-9eef-a5b2582c1157">
+    <data-source source="LOCAL" name="perfume_online_shopping@localhost" uuid="e7977b44-1095-4007-a002-30e8079a36aa">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/backend/src/main/resources/application.yml</remarks>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/perfume_online_shopping</jdbc-url>
       <jdbc-additional-properties>
