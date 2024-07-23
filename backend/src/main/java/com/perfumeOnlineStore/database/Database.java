@@ -1,19 +1,18 @@
 package com.perfumeOnlineStore.database;
 
-import com.perfumeOnlineStore.category.Category;
-import com.perfumeOnlineStore.category.CategoryRepository;
-import com.perfumeOnlineStore.discount.Discount;
-import com.perfumeOnlineStore.discount.DiscountRepository;
-import com.perfumeOnlineStore.product.Product;
-import com.perfumeOnlineStore.product.ProductRepository;
-import com.perfumeOnlineStore.user.User;
-import com.perfumeOnlineStore.user.UserRepository;
+import com.perfumeOnlineStore.entity.Category;
+import com.perfumeOnlineStore.repository.CategoryRepository;
+import com.perfumeOnlineStore.entity.Discount;
+import com.perfumeOnlineStore.repository.DiscountRepository;
+import com.perfumeOnlineStore.entity.Product;
+import com.perfumeOnlineStore.repository.ProductRepository;
+import com.perfumeOnlineStore.entity.User;
+import com.perfumeOnlineStore.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.Month;
 import java.util.List;

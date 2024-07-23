@@ -1,6 +1,6 @@
 package com.perfumeOnlineStore.customValidators.uniqueEmail;
 
-import com.perfumeOnlineStore.user.UserRepository;
+import com.perfumeOnlineStore.repository.UserRepository;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import lombok.AllArgsConstructor;
