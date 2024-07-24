@@ -1,7 +1,6 @@
-package com.perfumeOnlineStore.controller.product.createProductCommand;
+package com.perfumeOnlineStore.controller.product.command.createProductCommand;
 
 import com.perfumeOnlineStore.entity.Product;
-import com.perfumeOnlineStore.repository.ProductRepository;
 import com.perfumeOnlineStore.service.ProductService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -12,7 +11,7 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class CreateProductCommandHandler {
-    private final ProductRepository productRepository;
+    private final ProductService productService;
     private final CreateProductCommandValidator createProductCommandValidator;
 
     @Transactional
@@ -22,11 +21,11 @@ public class CreateProductCommandHandler {
 
             Product product = getProduct(command);
 
-            productRepository.save(product);
+            productService.saveProduct(product);
 
-            return new CreateProductCommandResponse(product.getId(), new ResponseEntity<>(product, HttpStatus.CREATED));
+            return new CreateProductCommandResponse(product.getId(), HttpStatus.CREATED);
         } catch (Exception e) {
-            return new CreateProductCommandResponse(null, new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR));
+            return new CreateProductCommandResponse(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 

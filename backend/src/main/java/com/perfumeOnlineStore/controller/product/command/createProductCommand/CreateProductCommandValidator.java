@@ -1,4 +1,4 @@
-package com.perfumeOnlineStore.controller.product.createProductCommand;
+package com.perfumeOnlineStore.controller.product.command.createProductCommand;
 
 import org.springframework.stereotype.Component;
 

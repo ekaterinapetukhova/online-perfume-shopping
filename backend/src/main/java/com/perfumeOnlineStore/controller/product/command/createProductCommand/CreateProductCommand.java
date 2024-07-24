@@ -1,9 +1,7 @@
-package com.perfumeOnlineStore.controller.product.createProductCommand;
+package com.perfumeOnlineStore.controller.product.command.createProductCommand;
 
 import com.perfumeOnlineStore.entity.Product;
 import lombok.Data;
-
-import java.math.BigDecimal;
 
 @Data
 public class CreateProductCommand {

@@ -1,16 +1,18 @@
 package com.perfumeOnlineStore.controller.product;
 
-import com.perfumeOnlineStore.controller.product.createProductCommand.CreateProductCommand;
-import com.perfumeOnlineStore.controller.product.createProductCommand.CreateProductCommandHandler;
-import com.perfumeOnlineStore.controller.product.createProductCommand.CreateProductCommandResponse;
-import com.perfumeOnlineStore.controller.product.createProductCommand.CreateProductCommandValidator;
+import com.perfumeOnlineStore.controller.product.command.createProductCommand.CreateProductCommand;
+import com.perfumeOnlineStore.controller.product.command.createProductCommand.CreateProductCommandHandler;
+import com.perfumeOnlineStore.controller.product.command.createProductCommand.CreateProductCommandResponse;
+import com.perfumeOnlineStore.controller.product.query.allProductsQuery.AllProductsQueryHandler;
+import com.perfumeOnlineStore.controller.product.query.allProductsQuery.AllProductsQueryResponse;
+import com.perfumeOnlineStore.controller.product.query.productByIdQuery.ProductByIdQueryHandler;
+import com.perfumeOnlineStore.controller.product.query.productByIdQuery.ProductByIdQueryResponse;
 import com.perfumeOnlineStore.entity.Product;
 import com.perfumeOnlineStore.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -18,20 +20,18 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class ProductController {
     private final ProductService productService;
+    private final AllProductsQueryHandler allProductsQueryHandler;
+    private final ProductByIdQueryHandler productByIdQueryHandler;
     private final CreateProductCommandHandler createProductCommandHandler;
 
     @GetMapping
-    public ResponseEntity<List<Product>> getAllProducts() {
-        List<Product> products = productService.findAllProducts();
-
-        return !products.isEmpty() ? new ResponseEntity<>(products, HttpStatus.OK) : new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    public AllProductsQueryResponse getAllProducts() {
+        return allProductsQueryHandler.getAllProducts();
     }
 
     @GetMapping("/{productId}")
-    public ResponseEntity<Product> getProductById(@PathVariable("productId") Long productId) {
-        Optional<Product> product = productService.findProductById(productId);
-
-        return product.map(value -> new ResponseEntity<>(value, HttpStatus.OK)).orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    public ProductByIdQueryResponse getProductById(@PathVariable("productId") Long productId) {
+        return productByIdQueryHandler.getProductById(productId);
     }
 
     @PostMapping(
