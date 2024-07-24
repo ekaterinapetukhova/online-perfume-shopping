@@ -1,5 +1,9 @@
-package com.perfumeOnlineStore.controller;
+package com.perfumeOnlineStore.controller.product;
 
+import com.perfumeOnlineStore.controller.product.createProductCommand.CreateProductCommand;
+import com.perfumeOnlineStore.controller.product.createProductCommand.CreateProductCommandHandler;
+import com.perfumeOnlineStore.controller.product.createProductCommand.CreateProductCommandResponse;
+import com.perfumeOnlineStore.controller.product.createProductCommand.CreateProductCommandValidator;
 import com.perfumeOnlineStore.entity.Product;
 import com.perfumeOnlineStore.service.ProductService;
 import lombok.RequiredArgsConstructor;
@@ -14,6 +18,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class ProductController {
     private final ProductService productService;
+    private final CreateProductCommandHandler createProductCommandHandler;
 
     @GetMapping
     public ResponseEntity<List<Product>> getAllProducts() {
@@ -33,13 +38,8 @@ public class ProductController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<Product> createProduct(@RequestBody Product newProduct) {
-        try {
-            productService.saveProduct(newProduct);
-            return new ResponseEntity<>(newProduct, HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+    public CreateProductCommandResponse createProduct(@RequestBody CreateProductCommand command) {
+        return createProductCommandHandler.handle(command);
     }
 
     @DeleteMapping("/{productId}")

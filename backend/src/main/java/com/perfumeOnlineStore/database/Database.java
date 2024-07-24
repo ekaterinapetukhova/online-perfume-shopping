@@ -13,6 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.time.Month;
 import java.util.List;
@@ -61,7 +62,7 @@ public class Database implements CommandLineRunner {
                 "Euphoria Calvin Klein",
                 "Euphoria by Calvin Klein is a Amber Floral fragrance for women. Euphoria was launched in 2005. Euphoria was created by Dominique Ropion, Carlos Benaim and Loc Dong. Top notes are Pomegranate, Persimmon and Green Accord; middle notes are Black Orchid, Lotus and Champaca; base notes are Mahogany, Amber, Black Violet and Whipped Cream. This perfume is the winner of award FiFi Award Fragrance Of The Year Women`s Luxe 2006.",
                 "Calvin Klein",
-                200.00,
+                100.50,
                 "ALCOHOL DENAT., FRAGRANCE, WATER, ACRYLATES/OCTYLACRYLAMIDE COPOLYMER, ALPHA-ISOMETHYL IONONE, BENZYL ALCOHOL, BENZYL BENZOATE, BENZYL SALICYLATE, BUTYL METHOXYDIBENZOYLMETHANE, CITRAL, CITRONELLOL, COUMARIN, ETHYLHEXYL METHOXYCINNAMATE, ETHYLHEXYL SALICYLATE, GERANIOL, HEXYL CINNAMAL, HYDROLYZED JOJOBA ESTERS, HYDROXYCITRONELLAL, ISOEUGENOL, LIMONENE, LINALOOL, PROPYLENE GLYCOL, TETRASODIUM EDTA, EXT. VIOLET 2 (CI 60730), GREEN 5 (CI 61570), RED 33 (CI 17200), YELLOW 5 (CI 19140)",
                 "Pomegranate, Lotus, Orchid, Violet, Amber, Mahogany, Musk",
                 50,
