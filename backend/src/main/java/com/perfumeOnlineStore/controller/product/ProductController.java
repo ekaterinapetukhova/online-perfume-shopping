@@ -6,6 +6,9 @@ import com.perfumeOnlineStore.controller.product.command.createProductCommand.Cr
 import com.perfumeOnlineStore.controller.product.command.deleteProductCommand.DeleteProductCommand;
 import com.perfumeOnlineStore.controller.product.command.deleteProductCommand.DeleteProductCommandHandler;
 import com.perfumeOnlineStore.controller.product.command.deleteProductCommand.DeleteProductCommandResponse;
+import com.perfumeOnlineStore.controller.product.command.updateProductCommand.UpdateProductCommand;
+import com.perfumeOnlineStore.controller.product.command.updateProductCommand.UpdateProductCommandHandler;
+import com.perfumeOnlineStore.controller.product.command.updateProductCommand.UpdateProductCommandResponse;
 import com.perfumeOnlineStore.controller.product.query.allProductsQuery.AllProductsQueryHandler;
 import com.perfumeOnlineStore.controller.product.query.allProductsQuery.AllProductsQueryResponse;
 import com.perfumeOnlineStore.controller.product.query.productByIdQuery.ProductByIdQueryHandler;
@@ -27,6 +30,7 @@ public class ProductController {
     private final ProductByIdQueryHandler productByIdQueryHandler;
     private final CreateProductCommandHandler createProductCommandHandler;
     private final DeleteProductCommandHandler deleteProductCommandHandler;
+    private final UpdateProductCommandHandler updateProductCommandHandler;
 
     @GetMapping
     public AllProductsQueryResponse getAllProducts() {
@@ -42,8 +46,8 @@ public class ProductController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public CreateProductCommandResponse createProduct(@RequestBody CreateProductCommand command) {
-        return createProductCommandHandler.handle(command);
+    public CreateProductCommandResponse createProduct(@RequestBody CreateProductCommand createCommand) {
+        return createProductCommandHandler.handle(createCommand);
     }
 
     @DeleteMapping("/{productId}")
@@ -56,26 +60,9 @@ public class ProductController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<Product> updateProductById(@PathVariable("productId") Long productId,
-                                               @RequestBody Product updatedProduct) {
-        Optional<Product> existingProduct = productService.findProductById(productId);
-
-        if (existingProduct.isPresent()) {
-            Product product = existingProduct.get();
-
-            product.setName(updatedProduct.getName());
-            product.setDescription(updatedProduct.getDescription());
-            product.setPrice(updatedProduct.getPrice());
-            product.setBrand(updatedProduct.getBrand());
-            product.setComponents(updatedProduct.getComponents());
-            product.setQuantity(updatedProduct.getQuantity());
-            product.setVolume(updatedProduct.getVolume());
-            product.setScentGroups(updatedProduct.getScentGroups());
-            product.setGender(updatedProduct.getGender());
-
-            productService.saveProduct(product);
-
-            return ResponseEntity.ok(product);
-        } else return ResponseEntity.notFound().build();
+    public UpdateProductCommandResponse updateProductById(@PathVariable("productId") Long productId,
+                                                          @RequestBody UpdateProductCommand updateCommand) {
+        updateCommand.setId(productId);
+        return updateProductCommandHandler.handle(updateCommand);
     }
 }
