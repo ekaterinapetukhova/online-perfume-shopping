@@ -47,8 +47,8 @@ public class ProductController {
     }
 
     @DeleteMapping("/{productId}")
-    public DeleteProductCommandResponse deleteProduct(@PathVariable("productId") DeleteProductCommand command) {
-        return deleteProductCommandHandler.handle(command);
+    public DeleteProductCommandResponse deleteProduct(@PathVariable("productId") Long productId) {
+        return deleteProductCommandHandler.handle(new DeleteProductCommand(productId));
     }
 
     @PutMapping(

@@ -2,6 +2,7 @@ package com.perfumeOnlineStore.controller.product.command.deleteProductCommand;
 
 import com.perfumeOnlineStore.entity.Product;
 import com.perfumeOnlineStore.service.ProductService;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,7 @@ public class DeleteProductCommandHandler {
     private final ProductService productService;
     private final DeleteProductCommandValidator validator;
 
+    @Transactional
     public DeleteProductCommandResponse handle(DeleteProductCommand command) {
         try {
             validator.validate(command);
