@@ -12,12 +12,12 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class CreateProductCommandHandler {
     private final ProductService productService;
-    private final CreateProductCommandValidator createProductCommandValidator;
+    private final CreateProductCommandValidator validator;
 
     @Transactional
     public CreateProductCommandResponse handle(CreateProductCommand command) {
         try {
-            createProductCommandValidator.validate(command);
+            validator.validate(command);
 
             Product product = getProduct(command);
 

@@ -3,6 +3,9 @@ package com.perfumeOnlineStore.controller.product;
 import com.perfumeOnlineStore.controller.product.command.createProductCommand.CreateProductCommand;
 import com.perfumeOnlineStore.controller.product.command.createProductCommand.CreateProductCommandHandler;
 import com.perfumeOnlineStore.controller.product.command.createProductCommand.CreateProductCommandResponse;
+import com.perfumeOnlineStore.controller.product.command.deleteProductCommand.DeleteProductCommand;
+import com.perfumeOnlineStore.controller.product.command.deleteProductCommand.DeleteProductCommandHandler;
+import com.perfumeOnlineStore.controller.product.command.deleteProductCommand.DeleteProductCommandResponse;
 import com.perfumeOnlineStore.controller.product.query.allProductsQuery.AllProductsQueryHandler;
 import com.perfumeOnlineStore.controller.product.query.allProductsQuery.AllProductsQueryResponse;
 import com.perfumeOnlineStore.controller.product.query.productByIdQuery.ProductByIdQueryHandler;
@@ -23,6 +26,7 @@ public class ProductController {
     private final AllProductsQueryHandler allProductsQueryHandler;
     private final ProductByIdQueryHandler productByIdQueryHandler;
     private final CreateProductCommandHandler createProductCommandHandler;
+    private final DeleteProductCommandHandler deleteProductCommandHandler;
 
     @GetMapping
     public AllProductsQueryResponse getAllProducts() {
@@ -43,14 +47,8 @@ public class ProductController {
     }
 
     @DeleteMapping("/{productId}")
-    public ResponseEntity<HttpStatus> deleteProduct(@PathVariable("productId") Long productId) {
-        Optional<Product> existingProduct = productService.findProductById(productId);
-        if (existingProduct.isPresent()) {
-            productService.deleteProduct(existingProduct.get());
-            return ResponseEntity.noContent().build();
-        }
-
-        return ResponseEntity.notFound().build();
+    public DeleteProductCommandResponse deleteProduct(@PathVariable("productId") DeleteProductCommand command) {
+        return deleteProductCommandHandler.handle(command);
     }
 
     @PutMapping(
