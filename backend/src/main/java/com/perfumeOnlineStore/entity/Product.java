@@ -1,5 +1,6 @@
 package com.perfumeOnlineStore.entity;
 
+import com.perfumeOnlineStore.mapper.Default;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -55,6 +56,7 @@ public class Product {
         MALE, FEMALE
     }
 
+    @Default
     public Product(String name,
                    String description,
                    String brand,
@@ -63,8 +65,7 @@ public class Product {
                    String scentGroups,
                    Integer quantity,
                    Gender gender,
-                   Integer volume,
-                   Category category) {
+                   Integer volume) {
         this.name = name;
         this.description = description;
         this.brand = brand;
@@ -74,6 +75,5 @@ public class Product {
         this.quantity = quantity;
         this.gender = gender;
         this.volume = volume;
-        this.category = category;
     }
 }

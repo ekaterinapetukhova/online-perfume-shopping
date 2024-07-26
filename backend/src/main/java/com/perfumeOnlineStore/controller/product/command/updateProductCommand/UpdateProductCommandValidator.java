@@ -16,6 +16,5 @@ public class UpdateProductCommandValidator {
         if (command.getGender() == null) throw new IllegalArgumentException("Gender must not be empty");
         if (command.getQuantity() == null || command.getQuantity() < 0) throw new IllegalArgumentException("Quantity must not be empty or be equal or less than zero");
         if (command.getVolume() == null || command.getVolume() <= 0) throw new IllegalArgumentException("Volume must not be empty or be equal or less than zero");
-        if (command.getCategory() == null) throw new IllegalArgumentException("Category must not be empty");
     }
 }

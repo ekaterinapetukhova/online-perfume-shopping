@@ -1,6 +1,6 @@
-<mxfile host="drawio-plugin" modified="2024-07-20T11:52:52.933Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="UEBqK8fZ5jCeWI4NAGZZ" version="22.1.22" type="embed">
+<mxfile host="drawio-plugin" modified="2024-07-25T16:59:24.519Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="XczLhVWX-qIp-DR7EfOT" version="22.1.22" type="embed">
   <diagram name="Страница — 1" id="wMb5JtGoc4GTotsweWVl">
-    <mxGraphModel dx="1597" dy="366" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1431" dy="85" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -88,7 +88,7 @@
         </mxCell>
         <mxCell id="4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;endFill=0;" parent="1" source="jkUJTz2cRrIhwqvdBRO4-85" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="80" y="410" as="targetPoint" />
+            <mxPoint x="80" y="400" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="jkUJTz2cRrIhwqvdBRO4-85" value="category_id (int)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -247,18 +247,18 @@
           <mxGeometry x="-490" y="120" width="205" height="40" as="geometry" />
         </mxCell>
         <mxCell id="OZip0dzk1UKFT6d5UYts-1" value="gender (f/m)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="120" y="355" width="200" height="35" as="geometry" />
+          <mxGeometry x="120" y="355" width="200" height="25" as="geometry" />
         </mxCell>
         <mxCell id="2" value="password (varchar)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-610" y="840" width="200" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="5" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;endFill=0;startArrow=classic;startFill=1;" parent="1" source="3" edge="1">
+        <mxCell id="5" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=-0.01;exitY=0.669;exitDx=0;exitDy=0;endArrow=none;endFill=0;startArrow=classic;startFill=1;exitPerimeter=0;" parent="1" source="3" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="80" y="410" as="targetPoint" />
+            <mxPoint x="80" y="400" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="3" value="category_id (int)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="120" y="390" width="200" height="40" as="geometry" />
+          <mxGeometry x="120" y="380" width="200" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

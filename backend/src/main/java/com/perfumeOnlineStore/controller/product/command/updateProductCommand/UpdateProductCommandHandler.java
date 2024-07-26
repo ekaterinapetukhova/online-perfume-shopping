@@ -32,7 +32,6 @@ public class UpdateProductCommandHandler {
                 product.setVolume(command.getVolume());
                 product.setScentGroups(command.getScentGroups());
                 product.setGender(command.getGender());
-                product.setCategory(command.getCategory());
 
                 productService.saveProduct(product);
 

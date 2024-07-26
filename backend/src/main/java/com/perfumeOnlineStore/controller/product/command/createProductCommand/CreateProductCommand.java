@@ -15,5 +15,4 @@ public class CreateProductCommand {
     private Integer quantity;
     private Product.Gender gender;
     private Integer volume;
-    private Category category;
 }

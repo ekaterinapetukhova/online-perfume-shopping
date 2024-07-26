@@ -67,8 +67,7 @@ public class Database implements CommandLineRunner {
                 "Pomegranate, Lotus, Orchid, Violet, Amber, Mahogany, Musk",
                 50,
                 Product.Gender.FEMALE,
-                100,
-                amber
+                100
         );
 
         Product dolceGabbanaTheOne = new Product(
@@ -80,9 +79,9 @@ public class Database implements CommandLineRunner {
                 "Bergamot, Peach, lychee, Tangerine, Jasmine, Lily Of The Valley, Lily, Vanilla, Musk, Vetiver, Plum, Amber",
                 24,
                 Product.Gender.FEMALE,
-                75,
-                amber
+                75
         );
+
 
         productRepository.saveAll(
                 List.of(
