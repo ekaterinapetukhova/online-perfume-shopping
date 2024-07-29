@@ -13,6 +13,7 @@ import com.perfumeOnlineStore.controller.product.query.allProductsQuery.AllProdu
 import com.perfumeOnlineStore.controller.product.query.allProductsQuery.AllProductsQueryResponse;
 import com.perfumeOnlineStore.controller.product.query.productByIdQuery.ProductByIdQueryHandler;
 import com.perfumeOnlineStore.controller.product.query.productByIdQuery.ProductByIdQueryResponse;
+import com.perfumeOnlineStore.controller.response.ResponseBase;
 import com.perfumeOnlineStore.entity.Product;
 import com.perfumeOnlineStore.service.ProductService;
 import lombok.RequiredArgsConstructor;
@@ -38,7 +39,7 @@ public class ProductController {
     }
 
     @GetMapping("/{productId}")
-    public ProductByIdQueryResponse getProductById(@PathVariable("productId") Long productId) {
+    public ResponseBase<?> getProductById(@PathVariable("productId") Long productId) {
         return productByIdQueryHandler.getProductById(productId);
     }
 

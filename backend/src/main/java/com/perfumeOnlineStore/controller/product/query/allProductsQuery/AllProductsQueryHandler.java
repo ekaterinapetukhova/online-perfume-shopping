@@ -23,6 +23,6 @@ public class AllProductsQueryHandler {
                 .map(ProductToDtoMapper.INSTANCE::toDto)
                 .collect(Collectors.toList());
 
-        return new AllProductsQueryResponse(productsDto, HttpStatus.OK.value());
+        return new AllProductsQueryResponse(productsDto);
     }
 }

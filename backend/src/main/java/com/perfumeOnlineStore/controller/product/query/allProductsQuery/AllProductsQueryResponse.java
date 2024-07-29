@@ -1,10 +1,17 @@
 package com.perfumeOnlineStore.controller.product.query.allProductsQuery;
 
+import com.perfumeOnlineStore.controller.response.ResponseBase;
 import com.perfumeOnlineStore.dto.ProductDto;
 
-import org.springframework.http.HttpStatus;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-public record AllProductsQueryResponse(List<ProductDto> products, int statusCode) {
+@Getter
+@Setter
+public class AllProductsQueryResponse extends ResponseBase<List<ProductDto>> {
+    public AllProductsQueryResponse(List<ProductDto> payload) {
+        super(payload);
+    }
 }
