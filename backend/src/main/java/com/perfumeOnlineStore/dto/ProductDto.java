@@ -22,7 +22,8 @@ public class ProductDto {
     private Integer volume;
 
     @Default
-    public ProductDto(String name,
+    public ProductDto(
+                      String name,
                       String description,
                       String brand,
                       Double price,

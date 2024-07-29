@@ -2,7 +2,7 @@ package com.perfumeOnlineStore.controller.product.query.allProductsQuery;
 
 import com.perfumeOnlineStore.dto.ProductDto;
 import com.perfumeOnlineStore.entity.Product;
-import com.perfumeOnlineStore.mapper.ProductToDtoMapper;
+import com.perfumeOnlineStore.mapper.product.ProductToDtoMapper;
 import com.perfumeOnlineStore.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -23,6 +23,6 @@ public class AllProductsQueryHandler {
                 .map(ProductToDtoMapper.INSTANCE::toDto)
                 .collect(Collectors.toList());
 
-        return new AllProductsQueryResponse(productsDto, HttpStatus.OK);
+        return new AllProductsQueryResponse(productsDto, HttpStatus.OK.value());
     }
 }

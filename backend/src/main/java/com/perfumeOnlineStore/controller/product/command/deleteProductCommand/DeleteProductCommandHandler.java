@@ -25,12 +25,12 @@ public class DeleteProductCommandHandler {
             if (existingProduct.isPresent()) {
                 productService.deleteProduct(existingProduct.get());
 
-                return new DeleteProductCommandResponse(existingProduct.get().getId(), HttpStatus.NO_CONTENT);
+                return new DeleteProductCommandResponse(existingProduct.get().getId(), HttpStatus.NO_CONTENT.value());
             } else {
-                return new DeleteProductCommandResponse(null, HttpStatus.NOT_FOUND);
+                return new DeleteProductCommandResponse(null, HttpStatus.NOT_FOUND.value());
             }
         } catch (Exception e) {
-            return new DeleteProductCommandResponse(null, HttpStatus.INTERNAL_SERVER_ERROR);
+            return new DeleteProductCommandResponse(null, HttpStatus.INTERNAL_SERVER_ERROR.value());
         }
     }
 }

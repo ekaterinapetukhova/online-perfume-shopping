@@ -6,5 +6,5 @@ import org.springframework.http.HttpStatus;
 
 import java.util.List;
 
-public record AllProductsQueryResponse(List<ProductDto> products, HttpStatus responseStatus) {
+public record AllProductsQueryResponse(List<ProductDto> products, int statusCode) {
 }

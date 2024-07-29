@@ -1,4 +1,4 @@
-package com.perfumeOnlineStore.mapper;
+package com.perfumeOnlineStore.mapper.product;
 
 import com.perfumeOnlineStore.dto.ProductDto;
 import com.perfumeOnlineStore.entity.Product;
