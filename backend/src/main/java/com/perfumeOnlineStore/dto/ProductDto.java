@@ -23,15 +23,15 @@ public class ProductDto {
 
     @Default
     public ProductDto(
-                      String name,
-                      String description,
-                      String brand,
-                      Double price,
-                      String components,
-                      String scentGroups,
-                      Integer quantity,
-                      Product.Gender gender,
-                      Integer volume
+            String name,
+            String description,
+            String brand,
+            Double price,
+            String components,
+            String scentGroups,
+            Integer quantity,
+            Product.Gender gender,
+            Integer volume
     ) {
         this.name = name;
         this.description = description;

@@ -82,6 +82,8 @@ public class Database implements CommandLineRunner {
                 75
         );
 
+        calvinKleinEuphoria.setCategory(amber);
+
 
         productRepository.saveAll(
                 List.of(

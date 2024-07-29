@@ -1,5 +1,12 @@
-package com.perfumeOnlineStore.controller;
+package com.perfumeOnlineStore.controller.user;
 
+import com.perfumeOnlineStore.controller.user.command.createUserCommand.CreateUserCommand;
+import com.perfumeOnlineStore.controller.user.command.createUserCommand.CreateUserCommandHandler;
+import com.perfumeOnlineStore.controller.user.command.createUserCommand.CreateUserCommandResponse;
+import com.perfumeOnlineStore.controller.user.query.getAllUsersQuery.GetAllUsersQueryHandler;
+import com.perfumeOnlineStore.controller.user.query.getAllUsersQuery.GetAllUsersQueryResponse;
+import com.perfumeOnlineStore.controller.user.query.getUserByIdQuery.GetUserByIdQueryHandler;
+import com.perfumeOnlineStore.controller.user.query.getUserByIdQuery.GetUserByIdQueryResponse;
 import com.perfumeOnlineStore.entity.User;
 import com.perfumeOnlineStore.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -8,7 +15,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -16,32 +22,26 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class UserController {
     private final UserService userService;
+    private final GetAllUsersQueryHandler getAllUsersQueryHandler;
+    private final GetUserByIdQueryHandler getUserByIdQueryHandler;
+    private final CreateUserCommandHandler createUserCommandHandler;
 
     @GetMapping
-    public ResponseEntity<List<User>> getAllUsers() {
-        List<User> users = userService.findAllUsers();
-
-        return !users.isEmpty() ? new ResponseEntity<>(users, HttpStatus.OK) : new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    public GetAllUsersQueryResponse getAllUsers() {
+        return getAllUsersQueryHandler.handle();
     }
 
     @GetMapping("/{userId}")
-    public ResponseEntity<User> getUserById(@PathVariable("userId") Long userId) {
-        Optional<User> user = userService.findUserById(userId);
-
-        return user.map(value -> new ResponseEntity<>(value, HttpStatus.OK)).orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    public GetUserByIdQueryResponse getUserById(@PathVariable("userId") Long userId) {
+        return getUserByIdQueryHandler.handle(userId);
     }
 
     @PostMapping(
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<User> createUser(@RequestBody User newUser) {
-        try {
-            userService.saveUser(newUser);
-            return new ResponseEntity<>(newUser, HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+    public CreateUserCommandResponse createUser(@RequestBody CreateUserCommand createUserCommand) {
+        return createUserCommandHandler.handle(createUserCommand);
     }
 
     @DeleteMapping("/{userId}")
