@@ -1,7 +1,8 @@
 package com.perfumeOnlineStore.controller.product.query.productByIdQuery;
 
 import com.perfumeOnlineStore.controller.response.ResponseBase;
-import com.perfumeOnlineStore.controller.response.error.notFound.NotFoundErrorResponse;
+import com.perfumeOnlineStore.controller.response.error.notFoundError.NotFoundErrorResponse;
+import com.perfumeOnlineStore.controller.response.error.serverError.ServerErrorResponse;
 import com.perfumeOnlineStore.dto.ProductDto;
 import com.perfumeOnlineStore.entity.Product;
 import com.perfumeOnlineStore.mapper.product.ProductToDtoMapper;
@@ -17,14 +18,18 @@ public class ProductByIdQueryHandler {
     private final ProductService productService;
 
     public ResponseBase<?> getProductById(Long productId) {
-        Optional<Product> product = productService.findProductById(productId);
+        try {
+            Optional<Product> product = productService.findProductById(productId);
 
-        if (product.isPresent()) {
-            ProductDto productDto = product.map(ProductToDtoMapper.INSTANCE::toDto).get();
+            if (product.isPresent()) {
+                ProductDto productDto = product.map(ProductToDtoMapper.INSTANCE::toDto).get();
 
-            return new ProductByIdQueryResponse(productDto);
-        } else {
-            return new NotFoundErrorResponse();
+                return new ProductByIdQueryResponse(productDto);
+            } else {
+                return new NotFoundErrorResponse();
+            }
+        } catch (Exception e) {
+            return new ServerErrorResponse();
         }
     }
 }

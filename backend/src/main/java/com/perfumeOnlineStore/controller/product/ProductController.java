@@ -34,7 +34,7 @@ public class ProductController {
     private final UpdateProductCommandHandler updateProductCommandHandler;
 
     @GetMapping
-    public AllProductsQueryResponse getAllProducts() {
+    public ResponseBase<?> getAllProducts() {
         return allProductsQueryHandler.getAllProducts();
     }
 

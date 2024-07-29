@@ -1,4 +1,4 @@
-package com.perfumeOnlineStore.controller.response.error.notFound;
+package com.perfumeOnlineStore.controller.response.error.notFoundError;
 
 import com.perfumeOnlineStore.controller.response.error.ErrorPayload;
 import com.perfumeOnlineStore.controller.response.error.ErrorResponseBase;
