@@ -1,4 +1,4 @@
-package com.perfumeOnlineStore.controller.response.error;
+package com.perfumeOnlineStore.controller.response.errorResponse;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

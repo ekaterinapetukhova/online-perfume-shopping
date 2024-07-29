@@ -1,7 +1,7 @@
 package com.perfumeOnlineStore.controller.product.query.allProductsQuery;
 
 import com.perfumeOnlineStore.controller.response.ResponseBase;
-import com.perfumeOnlineStore.controller.response.error.serverError.ServerErrorResponse;
+import com.perfumeOnlineStore.controller.response.errorResponse.serverError.ServerErrorResponse;
 import com.perfumeOnlineStore.dto.ProductDto;
 import com.perfumeOnlineStore.entity.Product;
 import com.perfumeOnlineStore.mapper.product.ProductToDtoMapper;

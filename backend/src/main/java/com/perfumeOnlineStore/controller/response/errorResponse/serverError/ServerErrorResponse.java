@@ -1,7 +1,7 @@
-package com.perfumeOnlineStore.controller.response.error.serverError;
+package com.perfumeOnlineStore.controller.response.errorResponse.serverError;
 
-import com.perfumeOnlineStore.controller.response.error.ErrorPayload;
-import com.perfumeOnlineStore.controller.response.error.ErrorResponseBase;
+import com.perfumeOnlineStore.controller.response.errorResponse.ErrorPayload;
+import com.perfumeOnlineStore.controller.response.errorResponse.ErrorResponseBase;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.http.HttpStatus;
