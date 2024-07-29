@@ -1,7 +1,7 @@
 package com.perfumeOnlineStore.controller.product.command.updateProductCommand;
 
 import com.perfumeOnlineStore.entity.Product;
-import com.perfumeOnlineStore.mapper.product.Mapper;
+import com.perfumeOnlineStore.mapper.product.UpdateProductCommandToProduct;
 import com.perfumeOnlineStore.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -22,7 +22,7 @@ public class UpdateProductCommandHandler {
             Optional<Product> existingProduct = productService.findProductById(command.getId());
 
             if (existingProduct.isPresent()) {
-                Product product = Mapper.INSTANCE.toProduct(command);
+                Product product = UpdateProductCommandToProduct.INSTANCE.toProduct(command);
 
                 productService.saveProduct(product);
 
