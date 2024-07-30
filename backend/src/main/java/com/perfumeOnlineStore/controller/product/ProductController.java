@@ -1,5 +1,6 @@
 package com.perfumeOnlineStore.controller.product;
 
+import an.awesome.pipelinr.Pipeline;
 import com.perfumeOnlineStore.controller.product.command.createProductCommand.CreateProductCommand;
 import com.perfumeOnlineStore.controller.product.command.createProductCommand.CreateProductCommandHandler;
 import com.perfumeOnlineStore.controller.product.command.createProductCommand.CreateProductCommandResponse;
@@ -32,6 +33,7 @@ public class ProductController {
     private final CreateProductCommandHandler createProductCommandHandler;
     private final DeleteProductCommandHandler deleteProductCommandHandler;
     private final UpdateProductCommandHandler updateProductCommandHandler;
+    private final Pipeline pipeline;
 
     @GetMapping
     public ResponseBase<?> getAllProducts() {
@@ -48,7 +50,7 @@ public class ProductController {
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public CreateProductCommandResponse createProduct(@RequestBody CreateProductCommand createCommand) {
-        return createProductCommandHandler.handle(createCommand);
+        return createCommand.execute(pipeline);
     }
 
     @DeleteMapping("/{productId}")

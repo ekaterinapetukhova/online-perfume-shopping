@@ -1,6 +1,7 @@
 package com.perfumeOnlineStore.controller.product.command.createProductCommand;
 
-import org.springframework.http.HttpStatus;
+import com.perfumeOnlineStore.controller.response.ResponseBase;
+import com.perfumeOnlineStore.entity.Product;
 
-public record CreateProductCommandResponse(Long productId, int statusCode) {
+public class CreateProductCommandResponse extends ResponseBase<Product> {
 }
