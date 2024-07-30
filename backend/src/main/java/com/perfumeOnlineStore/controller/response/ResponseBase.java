@@ -13,8 +13,4 @@ public class ResponseBase<T> {
     private String status = HttpStatus.INTERNAL_SERVER_ERROR.name();
     private int statusCode = HttpStatus.INTERNAL_SERVER_ERROR.value();
     private T payload;
-
-    public ResponseBase(T payload) {
-        this.payload = payload;
-    }
 }

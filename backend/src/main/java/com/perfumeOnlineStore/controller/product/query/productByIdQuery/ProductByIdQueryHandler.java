@@ -33,6 +33,7 @@ public class ProductByIdQueryHandler {
                 resp.setStatus(HttpStatus.NOT_FOUND.name());
                 resp.setPayload(null);
             }
+
             return resp;
         } catch (Exception e) {
             return resp;

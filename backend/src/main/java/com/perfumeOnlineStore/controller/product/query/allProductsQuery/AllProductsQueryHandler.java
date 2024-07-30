@@ -1,12 +1,11 @@
 package com.perfumeOnlineStore.controller.product.query.allProductsQuery;
 
-import com.perfumeOnlineStore.controller.response.ResponseBase;
-import com.perfumeOnlineStore.controller.response.errorResponse.serverError.ServerErrorResponse;
 import com.perfumeOnlineStore.dto.ProductDto;
 import com.perfumeOnlineStore.entity.Product;
 import com.perfumeOnlineStore.mapper.product.ProductToDtoMapper;
 import com.perfumeOnlineStore.service.ProductService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,7 +16,9 @@ import java.util.stream.Collectors;
 public class AllProductsQueryHandler {
     private final ProductService productService;
 
-    public ResponseBase<?> getAllProducts() {
+    public AllProductsQueryResponse getAllProducts() {
+        AllProductsQueryResponse resp = new AllProductsQueryResponse();
+
         try {
             List<Product> products = productService.findAllProducts();
 
@@ -25,9 +26,14 @@ public class AllProductsQueryHandler {
                     .map(ProductToDtoMapper.INSTANCE::toDto)
                     .collect(Collectors.toList());
 
-            return new AllProductsQueryResponse(productsDto);
+            resp.setSuccess(true);
+            resp.setStatusCode(HttpStatus.OK.value());
+            resp.setStatus(HttpStatus.OK.name());
+            resp.setPayload(productsDto);
+
+            return resp;
         } catch (Exception e) {
-            return new ServerErrorResponse();
+            return resp;
         }
     }
 }

@@ -79,6 +79,11 @@
 			<artifactId>mapstruct</artifactId>
 			<version>1.5.5.Final</version>
 		</dependency>
+		<dependency>
+			<groupId>net.sizovs</groupId>
+			<artifactId>pipelinr</artifactId>
+			<version>0.8</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
