@@ -1,9 +1,7 @@
 package com.perfumeOnlineStore.controller.product;
 
 import an.awesome.pipelinr.Pipeline;
-import com.perfumeOnlineStore.controller.product.command.createProductCommand.CreateProductCommand;
-import com.perfumeOnlineStore.controller.product.command.createProductCommand.CreateProductCommandHandler;
-import com.perfumeOnlineStore.controller.product.command.createProductCommand.CreateProductCommandResponse;
+import com.perfumeOnlineStore.controller.product.command.createProductCommand.*;
 import com.perfumeOnlineStore.controller.product.command.deleteProductCommand.DeleteProductCommand;
 import com.perfumeOnlineStore.controller.product.command.deleteProductCommand.DeleteProductCommandHandler;
 import com.perfumeOnlineStore.controller.product.command.deleteProductCommand.DeleteProductCommandResponse;
@@ -11,12 +9,8 @@ import com.perfumeOnlineStore.controller.product.command.updateProductCommand.Up
 import com.perfumeOnlineStore.controller.product.command.updateProductCommand.UpdateProductCommandHandler;
 import com.perfumeOnlineStore.controller.product.command.updateProductCommand.UpdateProductCommandResponse;
 import com.perfumeOnlineStore.controller.product.query.allProductsQuery.AllProductsQueryHandler;
-import com.perfumeOnlineStore.controller.product.query.allProductsQuery.AllProductsQueryResponse;
 import com.perfumeOnlineStore.controller.product.query.productByIdQuery.ProductByIdQueryHandler;
-import com.perfumeOnlineStore.controller.product.query.productByIdQuery.ProductByIdQueryResponse;
 import com.perfumeOnlineStore.controller.response.ResponseBase;
-import com.perfumeOnlineStore.entity.Product;
-import com.perfumeOnlineStore.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
@@ -52,8 +46,10 @@ public class ProductController {
     }
 
     @DeleteMapping("/{productId}")
-    public DeleteProductCommandResponse deleteProduct(@PathVariable("productId") Long productId) {
-        return deleteProductCommandHandler.handle(new DeleteProductCommand(productId));
+    public DeleteProductCommandResponse deleteProduct(@PathVariable("productId") Long id) {
+        DeleteProductCommand deleteCommand = new DeleteProductCommand(id);
+
+        return deleteCommand.execute(pipeline);
     }
 
     @PutMapping(

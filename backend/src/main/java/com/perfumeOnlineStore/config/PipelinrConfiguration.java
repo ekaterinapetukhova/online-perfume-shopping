@@ -1,7 +1,6 @@
 package com.perfumeOnlineStore.config;
 
 import an.awesome.pipelinr.Command;
-import an.awesome.pipelinr.Notification;
 import an.awesome.pipelinr.Pipeline;
 import an.awesome.pipelinr.Pipelinr;
 import org.springframework.beans.factory.ObjectProvider;

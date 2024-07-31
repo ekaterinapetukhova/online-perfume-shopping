@@ -1,6 +1,6 @@
 package com.perfumeOnlineStore.controller.product.command.deleteProductCommand;
 
-import org.springframework.http.HttpStatus;
+import com.perfumeOnlineStore.controller.response.ResponseBase;
 
-public record DeleteProductCommandResponse(Long productId, int statusCode) {
+public class DeleteProductCommandResponse extends ResponseBase<Long> {
 }

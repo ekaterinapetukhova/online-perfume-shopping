@@ -2,14 +2,12 @@ package com.perfumeOnlineStore.controller.product.command.createProductCommand;
 
 import an.awesome.pipelinr.Command;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Component
 @Order(1)
-@Slf4j
 @RequiredArgsConstructor
 public class CreateProductCommandValidationMiddleware implements Command.Middleware {
     private final ObjectProvider<CreateProductCommandValidator> validators;
