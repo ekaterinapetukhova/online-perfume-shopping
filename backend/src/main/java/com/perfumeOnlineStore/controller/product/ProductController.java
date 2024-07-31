@@ -27,10 +27,8 @@ import java.util.Optional;
 @RequestMapping("/api/v1/products")
 @RequiredArgsConstructor
 public class ProductController {
-    private final ProductService productService;
     private final AllProductsQueryHandler allProductsQueryHandler;
     private final ProductByIdQueryHandler productByIdQueryHandler;
-    private final CreateProductCommandHandler createProductCommandHandler;
     private final DeleteProductCommandHandler deleteProductCommandHandler;
     private final UpdateProductCommandHandler updateProductCommandHandler;
     private final Pipeline pipeline;

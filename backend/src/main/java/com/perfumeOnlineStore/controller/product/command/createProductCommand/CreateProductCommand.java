@@ -5,8 +5,10 @@ import com.perfumeOnlineStore.entity.Product;
 import com.perfumeOnlineStore.mapper.Default;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
+import org.springframework.stereotype.Component;
 
 @Getter
 @Setter
@@ -17,19 +19,19 @@ public class CreateProductCommand implements Command<CreateProductCommandRespons
     private String description;
     @NotBlank(message = "Brand must be set")
     private String brand;
-    @NotNull
+    @NotNull(message = "Price must be set")
     @Min(value = 1, message = "Price must be greater tan zero")
     private Double price;
     @NotBlank(message = "Components must be set")
     private String components;
     @NotBlank(message = "Scent groups must be set")
     private String scentGroups;
-    @NotNull
+    @NotNull(message = "Quantity must be set")
     @Min(value = 0, message = "Quantity can't be less than zero")
     private Integer quantity;
-    @NotBlank(message = "Gender groups must be set")
+    @NotNull(message = "Gender must be set")
     private Product.Gender gender;
-    @NotNull
+    @NotNull(message = "Volume must be set")
     @Min(value = 1, message = "Volume must be greater tan zero")
     private Integer volume;
 
