@@ -28,12 +28,12 @@ public class UserController {
 
     @GetMapping
     public GetAllUsersQueryResponse getAllUsers() {
-        return getAllUsersQueryHandler.handle();
+        return getAllUsersQueryHandler.handler();
     }
 
     @GetMapping("/{userId}")
-    public GetUserByIdQueryResponse getUserById(@PathVariable("userId") Long userId) {
-        return getUserByIdQueryHandler.handle(userId);
+    public GetUserByIdQueryResponse getUserById(@PathVariable("userId") Long id) {
+        return getUserByIdQueryHandler.handler(id);
     }
 
     @PostMapping(

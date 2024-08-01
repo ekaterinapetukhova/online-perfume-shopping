@@ -15,7 +15,9 @@ import java.util.List;
 public class GetAllUsersQueryHandler {
     private final UserService userService;
 
-    public GetAllUsersQueryResponse handle() {
+    public GetAllUsersQueryResponse handler() {
+        GetAllUsersQueryResponse resp = new GetAllUsersQueryResponse();
+
         try {
             List<User> users = userService.findAllUsers();
 
@@ -23,9 +25,14 @@ public class GetAllUsersQueryHandler {
                     .map(UserToUserDtoMapper.INSTANCE::toDto)
                     .toList();
 
-            return new GetAllUsersQueryResponse(usersDto, HttpStatus.OK.value());
+            resp.setSuccess(true);
+            resp.setStatusCode(HttpStatus.OK.value());
+            resp.setStatus(HttpStatus.OK.name());
+            resp.setPayload(usersDto);
+
+            return resp;
         } catch (Exception e) {
-            return new GetAllUsersQueryResponse(null, HttpStatus.INTERNAL_SERVER_ERROR.value());
+            return resp;
         }
     }
 }

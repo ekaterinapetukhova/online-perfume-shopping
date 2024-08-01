@@ -4,16 +4,11 @@ import an.awesome.pipelinr.Pipeline;
 import com.perfumeOnlineStore.controller.product.command.createProductCommand.*;
 import com.perfumeOnlineStore.controller.product.command.deleteProductCommand.*;
 import com.perfumeOnlineStore.controller.product.command.updateProductCommand.*;
-import com.perfumeOnlineStore.controller.product.query.allProductsQuery.AllProductsQueryHandler;
-import com.perfumeOnlineStore.controller.product.query.allProductsQuery.AllProductsQueryResponse;
-import com.perfumeOnlineStore.controller.product.query.productByIdQuery.ProductByIdQueryHandler;
-import com.perfumeOnlineStore.controller.product.query.productByIdQuery.ProductByIdQueryResponse;
-import com.perfumeOnlineStore.controller.response.ResponseBase;
+import com.perfumeOnlineStore.controller.product.query.allProductsQuery.*;
+import com.perfumeOnlineStore.controller.product.query.productByIdQuery.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/products")

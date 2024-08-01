@@ -15,17 +15,28 @@ import java.util.Optional;
 public class GetUserByIdQueryHandler {
     private final UserService userService;
 
-    public GetUserByIdQueryResponse handle(Long id) {
+    public GetUserByIdQueryResponse handler(Long id) {
+        GetUserByIdQueryResponse resp = new GetUserByIdQueryResponse();
+
         try {
             Optional<User> existingUser = userService.findUserById(id);
 
             if (existingUser.isPresent()) {
                 UserDto userDto = existingUser.map(UserToUserDtoMapper.INSTANCE::toDto).get();
 
-                return new GetUserByIdQueryResponse(userDto, HttpStatus.OK.value());
-            } else return new GetUserByIdQueryResponse(null, HttpStatus.NOT_FOUND.value());
+                resp.setSuccess(true);
+                resp.setStatusCode(HttpStatus.OK.value());
+                resp.setStatus(HttpStatus.OK.name());
+                resp.setPayload(userDto);
+            } else {
+                resp.setStatusCode(HttpStatus.NOT_FOUND.value());
+                resp.setStatus(HttpStatus.NOT_FOUND.name());
+                resp.setPayload(null);
+            }
+
+            return resp;
         } catch (Exception e) {
-            return new GetUserByIdQueryResponse(null, HttpStatus.INTERNAL_SERVER_ERROR.value());
+            return resp;
         }
     }
 }
