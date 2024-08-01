@@ -11,10 +11,7 @@ import org.springframework.context.annotation.Configuration;
 public class PipelinrConfiguration {
 
     @Bean
-    Pipeline pipeline(ObjectProvider<Command.Handler> commandHandlers,
-                      ObjectProvider<Command.Middleware> middlewares) {
-        return new Pipelinr()
-                .with(commandHandlers::stream)
-                .with(middlewares::orderedStream);
+    Pipeline pipeline(ObjectProvider<Command.Handler> commandHandlers) {
+        return new Pipelinr().with(commandHandlers::stream);
     }
 }

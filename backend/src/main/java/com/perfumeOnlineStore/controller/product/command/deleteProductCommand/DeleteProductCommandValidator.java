@@ -1,7 +1,5 @@
 package com.perfumeOnlineStore.controller.product.command.deleteProductCommand;
 
-import com.perfumeOnlineStore.controller.product.command.createProductCommand.CreateProductCommand;
-import com.perfumeOnlineStore.customValidators.commandValidator.CommandValidator;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
 import jakarta.validation.Validator;
@@ -12,10 +10,9 @@ import java.util.Set;
 
 @Component
 @RequiredArgsConstructor
-public class DeleteProductCommandValidator implements CommandValidator<DeleteProductCommand, DeleteProductCommandResponse> {
+public class DeleteProductCommandValidator {
     private final Validator validator;
 
-    @Override
     public void validate(DeleteProductCommand command) {
         Set<ConstraintViolation<DeleteProductCommand>> violations = validator.validate(command);
 

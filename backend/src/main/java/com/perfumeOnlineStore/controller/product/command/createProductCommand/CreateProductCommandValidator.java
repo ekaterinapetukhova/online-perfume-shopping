@@ -12,10 +12,9 @@ import java.util.Set;
 
 @RequiredArgsConstructor
 @Component
-public class CreateProductCommandValidator implements CommandValidator<CreateProductCommand, CreateProductCommandResponse> {
+public class CreateProductCommandValidator {
     private final Validator validator;
 
-    @Override
     public void validate(CreateProductCommand command) {
         Set<ConstraintViolation<CreateProductCommand>> violations = validator.validate(command);
 
