@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class CreateProductCommandHandler implements Command.Handler<CreateProductCommand, CreateProductCommandResponse> {
     private final ProductService productService;
+    private final CreateProductCommandValidator validator;
 
     @Override
     @Transactional
@@ -20,6 +21,8 @@ public class CreateProductCommandHandler implements Command.Handler<CreateProduc
         CreateProductCommandResponse resp = new CreateProductCommandResponse();
 
         try {
+            validator.validate(command);
+
             Product product = CreateProductCommandToProductMapper.INSTANCE.toProduct(command);
 
             productService.saveProduct(product);

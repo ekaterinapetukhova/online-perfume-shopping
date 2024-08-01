@@ -1,9 +1,7 @@
 package com.perfumeOnlineStore.controller.product.command.createProductCommand;
 
-import com.perfumeOnlineStore.customValidators.commandValidator.CommandValidator;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
-import jakarta.validation.Valid;
 import jakarta.validation.Validator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
