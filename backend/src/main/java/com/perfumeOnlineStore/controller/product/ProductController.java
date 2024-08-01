@@ -5,7 +5,9 @@ import com.perfumeOnlineStore.controller.product.command.createProductCommand.*;
 import com.perfumeOnlineStore.controller.product.command.deleteProductCommand.*;
 import com.perfumeOnlineStore.controller.product.command.updateProductCommand.*;
 import com.perfumeOnlineStore.controller.product.query.allProductsQuery.AllProductsQueryHandler;
+import com.perfumeOnlineStore.controller.product.query.allProductsQuery.AllProductsQueryResponse;
 import com.perfumeOnlineStore.controller.product.query.productByIdQuery.ProductByIdQueryHandler;
+import com.perfumeOnlineStore.controller.product.query.productByIdQuery.ProductByIdQueryResponse;
 import com.perfumeOnlineStore.controller.response.ResponseBase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.*;
@@ -22,13 +24,13 @@ public class ProductController {
     private final Pipeline pipeline;
 
     @GetMapping
-    public ResponseBase<?> getAllProducts() {
-        return allProductsQueryHandler.getAllProducts();
+    public AllProductsQueryResponse getAllProducts() {
+        return allProductsQueryHandler.handler();
     }
 
     @GetMapping("/{productId}")
-    public ResponseBase<?> getProductById(@PathVariable("productId") Long productId) {
-        return productByIdQueryHandler.getProductById(productId);
+    public ProductByIdQueryResponse getProductById(@PathVariable("productId") Long id) {
+        return productByIdQueryHandler.handler(id);
     }
 
     @PostMapping(
@@ -51,9 +53,9 @@ public class ProductController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public UpdateProductCommandResponse updateProductById(@PathVariable("productId") Long productId,
+    public UpdateProductCommandResponse updateProductById(@PathVariable("productId") Long id,
                                                           @RequestBody UpdateProductCommand updateCommand) {
-        updateCommand.setId(productId);
+        updateCommand.setId(id);
         return updateCommand.execute(pipeline);
     }
 }
