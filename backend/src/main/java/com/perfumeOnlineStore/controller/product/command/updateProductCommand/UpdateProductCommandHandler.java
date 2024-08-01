@@ -1,5 +1,6 @@
 package com.perfumeOnlineStore.controller.product.command.updateProductCommand;
 
+import an.awesome.pipelinr.Command;
 import com.perfumeOnlineStore.entity.Product;
 import com.perfumeOnlineStore.mapper.product.UpdateProductCommandToProduct;
 import com.perfumeOnlineStore.service.ProductService;
@@ -11,7 +12,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class UpdateProductCommandHandler {
+public class UpdateProductCommandHandler implements Command.Handler<UpdateProductCommand, UpdateProductCommandResponse> {
     private final ProductService productService;
     private final UpdateProductCommandValidator validator;
 
