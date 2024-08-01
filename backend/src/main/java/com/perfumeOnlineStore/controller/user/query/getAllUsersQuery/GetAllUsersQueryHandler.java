@@ -15,7 +15,7 @@ import java.util.List;
 public class GetAllUsersQueryHandler {
     private final UserService userService;
 
-    public GetAllUsersQueryResponse handler() {
+    public GetAllUsersQueryResponse handle() {
         GetAllUsersQueryResponse resp = new GetAllUsersQueryResponse();
 
         try {

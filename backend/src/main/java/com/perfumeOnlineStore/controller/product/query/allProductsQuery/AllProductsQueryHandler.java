@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 public class AllProductsQueryHandler {
     private final ProductService productService;
 
-    public AllProductsQueryResponse handler() {
+    public AllProductsQueryResponse handle() {
         AllProductsQueryResponse resp = new AllProductsQueryResponse();
 
         try {

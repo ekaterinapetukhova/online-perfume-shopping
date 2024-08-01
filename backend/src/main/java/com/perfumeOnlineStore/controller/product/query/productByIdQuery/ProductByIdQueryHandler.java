@@ -15,7 +15,7 @@ import java.util.Optional;
 public class ProductByIdQueryHandler {
     private final ProductService productService;
 
-    public ProductByIdQueryResponse handler(Long productId) {
+    public ProductByIdQueryResponse handle(Long productId) {
         ProductByIdQueryResponse resp = new ProductByIdQueryResponse();
 
         try {

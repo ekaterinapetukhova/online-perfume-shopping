@@ -1,5 +1,6 @@
 package com.perfumeOnlineStore.controller.user.command.createUserCommand;
 
+import an.awesome.pipelinr.Command;
 import com.perfumeOnlineStore.dto.UserDto;
 import com.perfumeOnlineStore.entity.User;
 import com.perfumeOnlineStore.mapper.user.CreateUserCommandToUserMapper;
@@ -10,11 +11,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class CreateUserCommandHandler {
+public class CreateUserCommandHandler implements Command.Handler<CreateUserCommand, CreateUserCommandResponse>{
     private final UserService userService;
     private final CreateUserCommandValidator validator;
 
     public CreateUserCommandResponse handle(CreateUserCommand command) {
+        CreateUserCommandResponse resp = new CreateUserCommandResponse();
+
         try {
             validator.validate(command);
 
@@ -22,9 +25,14 @@ public class CreateUserCommandHandler {
 
             userService.saveUser(user);
 
-            return new CreateUserCommandResponse(user.getId(), HttpStatus.CREATED.value());
+            resp.setSuccess(true);
+            resp.setStatusCode(HttpStatus.CREATED.value());
+            resp.setStatus(HttpStatus.CREATED.name());
+            resp.setPayload(user);
+
+            return resp;
         } catch (Exception e) {
-            return new CreateUserCommandResponse(null, HttpStatus.INTERNAL_SERVER_ERROR.value());
+            return resp;
         }
     }
 }

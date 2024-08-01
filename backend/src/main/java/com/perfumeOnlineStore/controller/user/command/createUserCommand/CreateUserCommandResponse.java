@@ -1,4 +1,7 @@
 package com.perfumeOnlineStore.controller.user.command.createUserCommand;
 
-public record CreateUserCommandResponse(Long id, int statusCode) {
+import com.perfumeOnlineStore.controller.response.ResponseBase;
+import com.perfumeOnlineStore.entity.User;
+
+public class CreateUserCommandResponse extends ResponseBase<User> {
 }

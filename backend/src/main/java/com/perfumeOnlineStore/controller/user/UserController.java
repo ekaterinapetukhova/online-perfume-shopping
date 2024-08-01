@@ -1,5 +1,6 @@
 package com.perfumeOnlineStore.controller.user;
 
+import an.awesome.pipelinr.Pipeline;
 import com.perfumeOnlineStore.controller.user.command.createUserCommand.CreateUserCommand;
 import com.perfumeOnlineStore.controller.user.command.createUserCommand.CreateUserCommandHandler;
 import com.perfumeOnlineStore.controller.user.command.createUserCommand.CreateUserCommandResponse;
@@ -24,24 +25,24 @@ public class UserController {
     private final UserService userService;
     private final GetAllUsersQueryHandler getAllUsersQueryHandler;
     private final GetUserByIdQueryHandler getUserByIdQueryHandler;
-    private final CreateUserCommandHandler createUserCommandHandler;
+    private final Pipeline pipeline;
 
     @GetMapping
     public GetAllUsersQueryResponse getAllUsers() {
-        return getAllUsersQueryHandler.handler();
+        return getAllUsersQueryHandler.handle();
     }
 
     @GetMapping("/{userId}")
     public GetUserByIdQueryResponse getUserById(@PathVariable("userId") Long id) {
-        return getUserByIdQueryHandler.handler(id);
+        return getUserByIdQueryHandler.handle(id);
     }
 
     @PostMapping(
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public CreateUserCommandResponse createUser(@RequestBody CreateUserCommand createUserCommand) {
-        return createUserCommandHandler.handle(createUserCommand);
+    public CreateUserCommandResponse createUser(@RequestBody CreateUserCommand createCommand) {
+        return createCommand.execute(pipeline);
     }
 
     @DeleteMapping("/{userId}")

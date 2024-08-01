@@ -20,12 +20,12 @@ public class ProductController {
 
     @GetMapping
     public AllProductsQueryResponse getAllProducts() {
-        return allProductsQueryHandler.handler();
+        return allProductsQueryHandler.handle();
     }
 
     @GetMapping("/{productId}")
     public ProductByIdQueryResponse getProductById(@PathVariable("productId") Long id) {
-        return productByIdQueryHandler.handler(id);
+        return productByIdQueryHandler.handle(id);
     }
 
     @PostMapping(

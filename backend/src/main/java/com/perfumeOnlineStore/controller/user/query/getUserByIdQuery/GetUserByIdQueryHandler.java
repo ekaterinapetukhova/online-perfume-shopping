@@ -15,7 +15,7 @@ import java.util.Optional;
 public class GetUserByIdQueryHandler {
     private final UserService userService;
 
-    public GetUserByIdQueryResponse handler(Long id) {
+    public GetUserByIdQueryResponse handle(Long id) {
         GetUserByIdQueryResponse resp = new GetUserByIdQueryResponse();
 
         try {
