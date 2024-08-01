@@ -3,6 +3,8 @@ package com.perfumeOnlineStore.controller.user;
 import an.awesome.pipelinr.Pipeline;
 import com.perfumeOnlineStore.controller.user.command.createUserCommand.*;
 import com.perfumeOnlineStore.controller.user.command.deleteUserCommand.*;
+import com.perfumeOnlineStore.controller.user.command.updateUserCommand.UpdateUserCommand;
+import com.perfumeOnlineStore.controller.user.command.updateUserCommand.UpdateUserCommandResponse;
 import com.perfumeOnlineStore.controller.user.query.getAllUsersQuery.*;
 import com.perfumeOnlineStore.controller.user.query.getUserByIdQuery.*;
 import com.perfumeOnlineStore.entity.User;
@@ -43,31 +45,16 @@ public class UserController {
 
     @DeleteMapping("/{userId}")
     public DeleteUserCommandResponse deleteUserById(@PathVariable("userId") Long id) {
-        DeleteUserCommand command = new DeleteUserCommand(id);
+        DeleteUserCommand deleteCommand = new DeleteUserCommand(id);
 
-        return command.execute(pipeline);
+        return deleteCommand.execute(pipeline);
     }
 
     @PutMapping("/{userId}")
-    public ResponseEntity<User> updateUserById(@PathVariable("userId") Long userId,
-                                               @RequestBody User updatedUser) {
-        Optional<User> existingUser = userService.findUserById(userId);
+    public UpdateUserCommandResponse updateUserById(@PathVariable("userId") Long id,
+                                                    @RequestBody UpdateUserCommand updateCommand) {
+        updateCommand.setId(id);
 
-        if (existingUser.isPresent()) {
-            User user = existingUser.get();
-
-            user.setName(updatedUser.getName());
-            user.setCity(updatedUser.getCity());
-            user.setAddress(updatedUser.getAddress());
-            user.setCountry(updatedUser.getCountry());
-            user.setPhoneNumber(updatedUser.getPhoneNumber());
-            user.setPostcode(updatedUser.getPostcode());
-            user.setPassword(updatedUser.getPassword());
-            user.setSurname(updatedUser.getSurname());
-            user.setEmail(updatedUser.getEmail());
-
-            userService.saveUser(user);
-            return ResponseEntity.ok(user);
-        } else return ResponseEntity.notFound().build();
+        return updateCommand.execute(pipeline);
     }
 }

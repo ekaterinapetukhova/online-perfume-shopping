@@ -1,5 +1,6 @@
-package com.perfumeOnlineStore.controller.product.command.updateProductCommand;
+package com.perfumeOnlineStore.controller.user.command.updateUserCommand;
 
+import com.perfumeOnlineStore.controller.user.command.createUserCommand.CreateUserCommand;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
 import jakarta.validation.Validator;
@@ -8,16 +9,16 @@ import org.springframework.stereotype.Component;
 
 import java.util.Set;
 
-@Component
 @RequiredArgsConstructor
-public class UpdateProductCommandValidator {
+@Component
+public class UpdateUserCommandValidator {
     private final Validator validator;
 
-    public void validate(UpdateProductCommand command) {
-        Set<ConstraintViolation<UpdateProductCommand>> violations = validator.validate(command);
+    public void validate(UpdateUserCommand command) {
+        Set<ConstraintViolation<UpdateUserCommand>> violations = validator.validate(command);
 
         if (!violations.isEmpty()) {
-            for (ConstraintViolation<UpdateProductCommand> violation : violations) {
+            for (ConstraintViolation<UpdateUserCommand> violation : violations) {
                 throw new ConstraintViolationException("Error: " + violation.getMessage(), violations);
             }
         }
