@@ -2,6 +2,7 @@ package com.perfumeOnlineStore.controller.product.command.deleteProductCommand;
 
 import an.awesome.pipelinr.Command;
 import com.perfumeOnlineStore.entity.Product;
+import com.perfumeOnlineStore.repository.ProductRepository;
 import com.perfumeOnlineStore.service.ProductService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -14,6 +15,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class DeleteProductCommandHandler implements Command.Handler<DeleteProductCommand, DeleteProductCommandResponse> {
     private final ProductService productService;
+    private final DeleteProductCommandValidator validator;
 
     @Transactional
     @Override
@@ -21,6 +23,8 @@ public class DeleteProductCommandHandler implements Command.Handler<DeleteProduc
         DeleteProductCommandResponse resp = new DeleteProductCommandResponse();
 
         try {
+            validator.validate(command);
+
             Optional<Product> existingProduct = productService.findProductById(command.getProductId());
 
             if (existingProduct.isPresent()) {
