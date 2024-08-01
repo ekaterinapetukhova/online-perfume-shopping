@@ -1,8 +1,7 @@
 package com.perfumeOnlineStore.controller.product.command.updateProductCommand;
 
 import com.perfumeOnlineStore.entity.Product;
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 
 @Data
 @AllArgsConstructor

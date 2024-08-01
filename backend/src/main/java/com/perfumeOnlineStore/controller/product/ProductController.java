@@ -2,9 +2,7 @@ package com.perfumeOnlineStore.controller.product;
 
 import an.awesome.pipelinr.Pipeline;
 import com.perfumeOnlineStore.controller.product.command.createProductCommand.*;
-import com.perfumeOnlineStore.controller.product.command.deleteProductCommand.DeleteProductCommand;
-import com.perfumeOnlineStore.controller.product.command.deleteProductCommand.DeleteProductCommandHandler;
-import com.perfumeOnlineStore.controller.product.command.deleteProductCommand.DeleteProductCommandResponse;
+import com.perfumeOnlineStore.controller.product.command.deleteProductCommand.*;
 import com.perfumeOnlineStore.controller.product.command.updateProductCommand.UpdateProductCommand;
 import com.perfumeOnlineStore.controller.product.command.updateProductCommand.UpdateProductCommandHandler;
 import com.perfumeOnlineStore.controller.product.command.updateProductCommand.UpdateProductCommandResponse;
@@ -23,7 +21,6 @@ import java.util.Optional;
 public class ProductController {
     private final AllProductsQueryHandler allProductsQueryHandler;
     private final ProductByIdQueryHandler productByIdQueryHandler;
-    private final DeleteProductCommandHandler deleteProductCommandHandler;
     private final UpdateProductCommandHandler updateProductCommandHandler;
     private final Pipeline pipeline;
 

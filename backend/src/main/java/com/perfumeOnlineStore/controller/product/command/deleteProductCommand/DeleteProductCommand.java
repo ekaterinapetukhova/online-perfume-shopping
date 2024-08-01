@@ -2,9 +2,7 @@ package com.perfumeOnlineStore.controller.product.command.deleteProductCommand;
 
 import an.awesome.pipelinr.Command;
 import jakarta.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter

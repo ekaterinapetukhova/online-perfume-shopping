@@ -3,9 +3,7 @@ package com.perfumeOnlineStore.controller.product.command.createProductCommand;
 import an.awesome.pipelinr.Command;
 import com.perfumeOnlineStore.entity.Product;
 import com.perfumeOnlineStore.mapper.Default;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.*;
 import lombok.*;
 
 @Getter

@@ -2,7 +2,6 @@ package com.perfumeOnlineStore.controller.product.command.deleteProductCommand;
 
 import an.awesome.pipelinr.Command;
 import com.perfumeOnlineStore.entity.Product;
-import com.perfumeOnlineStore.repository.ProductRepository;
 import com.perfumeOnlineStore.service.ProductService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
