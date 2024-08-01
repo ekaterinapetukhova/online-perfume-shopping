@@ -16,6 +16,8 @@ public class UpdateProductCommandHandler {
     private final UpdateProductCommandValidator validator;
 
     public UpdateProductCommandResponse handle(UpdateProductCommand command) {
+        UpdateProductCommandResponse resp = new UpdateProductCommandResponse();
+
         try {
             validator.validate(command);
 
@@ -26,10 +28,19 @@ public class UpdateProductCommandHandler {
 
                 productService.saveProduct(product);
 
-                return new UpdateProductCommandResponse(product.getId(), HttpStatus.OK.value());
-            } else return new UpdateProductCommandResponse(null, HttpStatus.NOT_FOUND.value());
+                resp.setSuccess(true);
+                resp.setStatus(HttpStatus.OK.name());
+                resp.setStatusCode(HttpStatus.OK.value());
+                resp.setPayload(product);
+            } else {
+                resp.setStatus(HttpStatus.NOT_FOUND.name());
+                resp.setStatusCode(HttpStatus.NOT_FOUND.value());
+                resp.setPayload(null);
+            }
+
+            return resp;
         } catch (Exception e) {
-            return new UpdateProductCommandResponse(null, HttpStatus.INTERNAL_SERVER_ERROR.value());
+            return resp;
         }
     }
 }

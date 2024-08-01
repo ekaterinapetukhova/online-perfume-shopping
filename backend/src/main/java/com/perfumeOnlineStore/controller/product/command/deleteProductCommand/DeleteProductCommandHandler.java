@@ -24,7 +24,7 @@ public class DeleteProductCommandHandler implements Command.Handler<DeleteProduc
         try {
             validator.validate(command);
 
-            Optional<Product> existingProduct = productService.findProductById(command.getProductId());
+            Optional<Product> existingProduct = productService.findProductById(command.getId());
 
             if (existingProduct.isPresent()) {
                 productService.deleteProduct(existingProduct.get());

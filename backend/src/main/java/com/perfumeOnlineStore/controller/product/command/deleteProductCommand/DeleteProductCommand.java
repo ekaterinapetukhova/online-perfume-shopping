@@ -9,5 +9,5 @@ import lombok.*;
 @AllArgsConstructor
 public class DeleteProductCommand implements Command<DeleteProductCommandResponse> {
     @NotNull(message = "Product ID must be set")
-    private Long productId;
+    private Long id;
 }

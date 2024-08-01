@@ -3,9 +3,7 @@ package com.perfumeOnlineStore.controller.product;
 import an.awesome.pipelinr.Pipeline;
 import com.perfumeOnlineStore.controller.product.command.createProductCommand.*;
 import com.perfumeOnlineStore.controller.product.command.deleteProductCommand.*;
-import com.perfumeOnlineStore.controller.product.command.updateProductCommand.UpdateProductCommand;
-import com.perfumeOnlineStore.controller.product.command.updateProductCommand.UpdateProductCommandHandler;
-import com.perfumeOnlineStore.controller.product.command.updateProductCommand.UpdateProductCommandResponse;
+import com.perfumeOnlineStore.controller.product.command.updateProductCommand.*;
 import com.perfumeOnlineStore.controller.product.query.allProductsQuery.AllProductsQueryHandler;
 import com.perfumeOnlineStore.controller.product.query.productByIdQuery.ProductByIdQueryHandler;
 import com.perfumeOnlineStore.controller.response.ResponseBase;
@@ -21,7 +19,6 @@ import java.util.Optional;
 public class ProductController {
     private final AllProductsQueryHandler allProductsQueryHandler;
     private final ProductByIdQueryHandler productByIdQueryHandler;
-    private final UpdateProductCommandHandler updateProductCommandHandler;
     private final Pipeline pipeline;
 
     @GetMapping
@@ -57,6 +54,6 @@ public class ProductController {
     public UpdateProductCommandResponse updateProductById(@PathVariable("productId") Long productId,
                                                           @RequestBody UpdateProductCommand updateCommand) {
         updateCommand.setId(productId);
-        return updateProductCommandHandler.handle(updateCommand);
+        return updateCommand.execute(pipeline);
     }
 }
