@@ -1,17 +1,13 @@
 package com.perfumeOnlineStore.controller.user;
 
 import an.awesome.pipelinr.Pipeline;
-import com.perfumeOnlineStore.controller.user.command.createUserCommand.CreateUserCommand;
-import com.perfumeOnlineStore.controller.user.command.createUserCommand.CreateUserCommandHandler;
-import com.perfumeOnlineStore.controller.user.command.createUserCommand.CreateUserCommandResponse;
-import com.perfumeOnlineStore.controller.user.query.getAllUsersQuery.GetAllUsersQueryHandler;
-import com.perfumeOnlineStore.controller.user.query.getAllUsersQuery.GetAllUsersQueryResponse;
-import com.perfumeOnlineStore.controller.user.query.getUserByIdQuery.GetUserByIdQueryHandler;
-import com.perfumeOnlineStore.controller.user.query.getUserByIdQuery.GetUserByIdQueryResponse;
+import com.perfumeOnlineStore.controller.user.command.createUserCommand.*;
+import com.perfumeOnlineStore.controller.user.command.deleteUserCommand.*;
+import com.perfumeOnlineStore.controller.user.query.getAllUsersQuery.*;
+import com.perfumeOnlineStore.controller.user.query.getUserByIdQuery.*;
 import com.perfumeOnlineStore.entity.User;
 import com.perfumeOnlineStore.service.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -46,14 +42,10 @@ public class UserController {
     }
 
     @DeleteMapping("/{userId}")
-    public ResponseEntity<HttpStatus> deleteUserById(@PathVariable("userId") Long userId) {
-        Optional<User> existingUser = userService.findUserById(userId);
-        if (existingUser.isPresent()) {
-            userService.deleteUser(existingUser.get());
-            return ResponseEntity.noContent().build();
-        }
+    public DeleteUserCommandResponse deleteUserById(@PathVariable("userId") Long id) {
+        DeleteUserCommand command = new DeleteUserCommand(id);
 
-        return ResponseEntity.notFound().build();
+        return command.execute(pipeline);
     }
 
     @PutMapping("/{userId}")
