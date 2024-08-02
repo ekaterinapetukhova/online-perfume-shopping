@@ -1,4 +1,4 @@
-package com.perfumeOnlineStore.controller;
+package com.perfumeOnlineStore.controller.orderItem;
 
 import com.perfumeOnlineStore.entity.OrderItem;
 import com.perfumeOnlineStore.service.OrderItemService;
