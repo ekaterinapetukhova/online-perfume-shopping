@@ -13,7 +13,7 @@ import java.util.List;
 
 @Component
 @RequiredArgsConstructor
-public class GetAllOrdersQueryHandler extends ResponseBase<List<OrderDto>> {
+public class GetAllOrdersQueryHandler {
     private final OrderService orderService;
 
     public GetAllOrdersQueryResponse handle() {
