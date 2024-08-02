@@ -17,5 +17,9 @@ spring:
         format_sql: true
         globally_quoted_identifiers: true
 
+springdoc:
+  api-docs:
+    path: /api-docs
+
 server:
   port: 8088

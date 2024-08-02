@@ -6,6 +6,7 @@ import com.perfumeOnlineStore.controller.category.command.deleteCategoryCommand.
 import com.perfumeOnlineStore.controller.category.command.updateCategoryCommand.*;
 import com.perfumeOnlineStore.controller.category.query.getAllCategoriesQuery.*;
 import com.perfumeOnlineStore.controller.category.query.getCategoryByIdQuery.*;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
