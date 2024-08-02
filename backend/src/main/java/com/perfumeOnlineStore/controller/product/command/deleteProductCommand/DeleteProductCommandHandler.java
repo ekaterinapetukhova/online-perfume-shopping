@@ -21,9 +21,9 @@ public class DeleteProductCommandHandler implements Command.Handler<DeleteProduc
     public DeleteProductCommandResponse handle(DeleteProductCommand command) {
         DeleteProductCommandResponse resp = new DeleteProductCommandResponse();
 
-        try {
-            validator.validate(command);
+        validator.validate(command);
 
+        try {
             Optional<Product> existingProduct = productService.findProductById(command.getId());
 
             if (existingProduct.isPresent()) {

@@ -25,9 +25,9 @@ public class UpdateUserCommandHandler implements Command.Handler<UpdateUserComma
     public UpdateUserCommandResponse handle(UpdateUserCommand command) {
         UpdateUserCommandResponse resp = new UpdateUserCommandResponse();
 
-        try {
-            validator.validate(command);
+        validator.validate(command);
 
+        try {
             Optional<User> existingUser = userService.findUserById(command.getId());
 
             if (existingUser.isPresent()) {

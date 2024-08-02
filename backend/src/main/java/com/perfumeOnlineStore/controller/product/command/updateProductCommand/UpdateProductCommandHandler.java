@@ -19,9 +19,9 @@ public class UpdateProductCommandHandler implements Command.Handler<UpdateProduc
     public UpdateProductCommandResponse handle(UpdateProductCommand command) {
         UpdateProductCommandResponse resp = new UpdateProductCommandResponse();
 
-        try {
-            validator.validate(command);
+        validator.validate(command);
 
+        try {
             Optional<Product> existingProduct = productService.findProductById(command.getId());
 
             if (existingProduct.isPresent()) {

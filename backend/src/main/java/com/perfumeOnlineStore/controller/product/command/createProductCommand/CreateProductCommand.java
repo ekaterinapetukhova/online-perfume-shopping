@@ -30,27 +30,4 @@ public class CreateProductCommand implements Command<CreateProductCommandRespons
     @NotNull(message = "Volume must be set")
     @Min(value = 1, message = "Volume must be greater tan zero")
     private Integer volume;
-
-    @Default
-    public CreateProductCommand(
-            String name,
-            String description,
-            String brand,
-            Double price,
-            String components,
-            String scentGroups,
-            Integer quantity,
-            Product.Gender gender,
-            Integer volume
-    ) {
-        this.name = name;
-        this.description = description;
-        this.brand = brand;
-        this.price = price;
-        this.components = components;
-        this.scentGroups = scentGroups;
-        this.quantity = quantity;
-        this.gender = gender;
-        this.volume = volume;
-    }
 }

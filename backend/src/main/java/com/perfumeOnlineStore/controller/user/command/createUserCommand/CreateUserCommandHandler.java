@@ -18,9 +18,9 @@ public class CreateUserCommandHandler implements Command.Handler<CreateUserComma
     public CreateUserCommandResponse handle(CreateUserCommand command) {
         CreateUserCommandResponse resp = new CreateUserCommandResponse();
 
-        try {
-            validator.validate(command);
+        validator.validate(command);
 
+        try {
             User user = CreateUserCommandToUserMapper.INSTANCE.toUser(command);
 
             userService.saveUser(user);

@@ -13,13 +13,16 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class DeleteUserCommandHandler implements Command.Handler<DeleteUserCommand, DeleteUserCommandResponse>{
     private final UserService userService;
+    private final DeleteUserCommandValidator validator;
 
     @Override
-    public DeleteUserCommandResponse handle(DeleteUserCommand deleteUserCommand) {
+    public DeleteUserCommandResponse handle(DeleteUserCommand command) {
         DeleteUserCommandResponse resp = new DeleteUserCommandResponse();
 
+        validator.validate(command);
+
         try {
-            Optional<User> existingUser = userService.findUserById(deleteUserCommand.getId());
+            Optional<User> existingUser = userService.findUserById(command.getId());
 
             if (existingUser.isPresent()) {
                 userService.deleteUser(existingUser.get());

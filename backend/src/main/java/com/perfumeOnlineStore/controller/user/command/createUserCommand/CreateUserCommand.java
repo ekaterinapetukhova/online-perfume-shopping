@@ -2,13 +2,11 @@ package com.perfumeOnlineStore.controller.user.command.createUserCommand;
 
 import an.awesome.pipelinr.Command;
 import com.perfumeOnlineStore.customValidators.uniqueEmail.UniqueEmail;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
-import lombok.Data;
+import jakarta.validation.constraints.*;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
 public class CreateUserCommand implements Command<CreateUserCommandResponse> {
     @NotEmpty(message = "Name must be set")
     private String name;

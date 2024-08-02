@@ -1,6 +1,5 @@
 package com.perfumeOnlineStore.controller.user.command.updateUserCommand;
 
-import com.perfumeOnlineStore.controller.user.command.createUserCommand.CreateUserCommand;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
 import jakarta.validation.Validator;

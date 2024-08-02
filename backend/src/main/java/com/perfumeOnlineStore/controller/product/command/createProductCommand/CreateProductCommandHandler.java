@@ -20,9 +20,9 @@ public class CreateProductCommandHandler implements Command.Handler<CreateProduc
     public CreateProductCommandResponse handle(CreateProductCommand command) {
         CreateProductCommandResponse resp = new CreateProductCommandResponse();
 
-        try {
-            validator.validate(command);
+        validator.validate(command);
 
+        try {
             Product product = CreateProductCommandToProductMapper.INSTANCE.toProduct(command);
 
             productService.saveProduct(product);

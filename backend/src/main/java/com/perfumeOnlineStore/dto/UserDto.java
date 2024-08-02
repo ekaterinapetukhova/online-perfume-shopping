@@ -16,27 +16,4 @@ public class UserDto {
     private String country;
     private String city;
     private String postcode;
-
-    @Default
-    public UserDto(
-            String name,
-            String surname,
-            String email,
-            String password,
-            String phoneNumber,
-            String address,
-            String country,
-            String city,
-            String postcode
-    ) {
-        this.name = name;
-        this.surname = surname;
-        this.email = email;
-        this.password = password;
-        this.phoneNumber = phoneNumber;
-        this.address = address;
-        this.country = country;
-        this.city = city;
-        this.postcode = postcode;
-    }
 }
