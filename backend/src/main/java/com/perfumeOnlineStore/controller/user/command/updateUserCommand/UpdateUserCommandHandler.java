@@ -1,14 +1,8 @@
 package com.perfumeOnlineStore.controller.user.command.updateUserCommand;
 
 import an.awesome.pipelinr.Command;
-import com.perfumeOnlineStore.controller.product.command.updateProductCommand.UpdateProductCommand;
-import com.perfumeOnlineStore.controller.product.command.updateProductCommand.UpdateProductCommandResponse;
-import com.perfumeOnlineStore.controller.product.command.updateProductCommand.UpdateProductCommandValidator;
-import com.perfumeOnlineStore.entity.Product;
 import com.perfumeOnlineStore.entity.User;
-import com.perfumeOnlineStore.mapper.product.UpdateProductCommandToProduct;
 import com.perfumeOnlineStore.mapper.user.UpdateUserCommandToUserMapper;
-import com.perfumeOnlineStore.service.ProductService;
 import com.perfumeOnlineStore.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

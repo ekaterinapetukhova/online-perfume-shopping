@@ -1,5 +1,6 @@
-package com.perfumeOnlineStore.controller.user.command.deleteUserCommand;
+package com.perfumeOnlineStore.controller.discount.command.deleteDiscountCommand;
 
+import com.perfumeOnlineStore.controller.user.command.deleteUserCommand.DeleteUserCommand;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
 import jakarta.validation.Validator;
@@ -10,14 +11,14 @@ import java.util.Set;
 
 @RequiredArgsConstructor
 @Component
-public class DeleteUserCommandValidator {
+public class DeleteDiscountCommandValidator {
     private final Validator validator;
 
-    public void validate(DeleteUserCommand command) {
-        Set<ConstraintViolation<DeleteUserCommand>> violations = validator.validate(command);
+    public void validate(DeleteDiscountCommand command) {
+        Set<ConstraintViolation<DeleteDiscountCommand>> violations = validator.validate(command);
 
         if (!violations.isEmpty()) {
-            for (ConstraintViolation<DeleteUserCommand> violation : violations) {
+            for (ConstraintViolation<DeleteDiscountCommand> violation : violations) {
                 throw new ConstraintViolationException("Error: " + violation.getMessage(), violations);
             }
         }

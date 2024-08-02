@@ -15,11 +15,11 @@ import java.util.Optional;
 public class ProductByIdQueryHandler {
     private final ProductService productService;
 
-    public ProductByIdQueryResponse handle(Long productId) {
+    public ProductByIdQueryResponse handle(Long id) {
         ProductByIdQueryResponse resp = new ProductByIdQueryResponse();
 
         try {
-            Optional<Product> product = productService.findProductById(productId);
+            Optional<Product> product = productService.findProductById(id);
 
             if (product.isPresent()) {
                 ProductDto productDto = product.map(ProductToDtoMapper.INSTANCE::toDto).get();
