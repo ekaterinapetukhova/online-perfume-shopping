@@ -1,10 +1,8 @@
 package com.perfumeOnlineStore.entity;
 
-import com.perfumeOnlineStore.mapper.Default;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,7 +54,6 @@ public class Product {
         MALE, FEMALE
     }
 
-    @Default
     public Product(String name,
                    String description,
                    String brand,

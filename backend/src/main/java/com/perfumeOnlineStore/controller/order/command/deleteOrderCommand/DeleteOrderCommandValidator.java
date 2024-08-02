@@ -1,4 +1,4 @@
-package com.perfumeOnlineStore.controller.category.command.createCategoryCommand;
+package com.perfumeOnlineStore.controller.order.command.deleteOrderCommand;
 
 import jakarta.validation.*;
 import lombok.RequiredArgsConstructor;
@@ -8,14 +8,14 @@ import java.util.Set;
 
 @RequiredArgsConstructor
 @Component
-public class CreateCategoryCommandValidator {
+public class DeleteOrderCommandValidator {
     private final Validator validator;
 
-    public void validate(CreateCategoryCommand command) {
-        Set<ConstraintViolation<CreateCategoryCommand>> violations = validator.validate(command);
+    public void validate(DeleteOrderCommand command) {
+        Set<ConstraintViolation<DeleteOrderCommand>> violations = validator.validate(command);
 
         if (!violations.isEmpty()) {
-            for (ConstraintViolation<CreateCategoryCommand> violation : violations) {
+            for (ConstraintViolation<DeleteOrderCommand> violation : violations) {
                 throw new ConstraintViolationException("Error: " + violation.getMessage(), violations);
             }
         }

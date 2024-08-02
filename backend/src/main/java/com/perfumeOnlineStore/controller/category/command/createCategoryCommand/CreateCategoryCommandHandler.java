@@ -23,7 +23,7 @@ public class CreateCategoryCommandHandler implements Command.Handler<CreateCateg
         validator.validate(command);
 
         try {
-            Category category = CreateCategoryCommandToCategoryMapper.INSTANSE.toCategory(command);
+            Category category = CreateCategoryCommandToCategoryMapper.INSTANCE.toCategory(command);
 
             categoryService.saveCategory(category);
 

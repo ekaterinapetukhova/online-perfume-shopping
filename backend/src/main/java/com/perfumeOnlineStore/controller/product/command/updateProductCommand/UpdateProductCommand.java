@@ -2,7 +2,6 @@ package com.perfumeOnlineStore.controller.product.command.updateProductCommand;
 
 import an.awesome.pipelinr.Command;
 import com.perfumeOnlineStore.entity.Product;
-import com.perfumeOnlineStore.mapper.Default;
 import jakarta.validation.constraints.*;
 import lombok.*;
 

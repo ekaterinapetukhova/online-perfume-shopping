@@ -7,7 +7,7 @@ import org.mapstruct.factory.Mappers;
 
 @Mapper
 public interface CreateCategoryCommandToCategoryMapper {
-    CreateCategoryCommandToCategoryMapper INSTANSE = Mappers.getMapper(CreateCategoryCommandToCategoryMapper.class);
+    CreateCategoryCommandToCategoryMapper INSTANCE = Mappers.getMapper(CreateCategoryCommandToCategoryMapper.class);
 
     Category toCategory(CreateCategoryCommand command);
 }
