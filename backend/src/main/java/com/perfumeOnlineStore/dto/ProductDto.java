@@ -1,14 +1,9 @@
 package com.perfumeOnlineStore.dto;
 
-import com.perfumeOnlineStore.entity.Category;
 import com.perfumeOnlineStore.entity.Product;
-import com.perfumeOnlineStore.mapper.Default;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
-@AllArgsConstructor
 public class ProductDto {
     private Long id;
     private String name;

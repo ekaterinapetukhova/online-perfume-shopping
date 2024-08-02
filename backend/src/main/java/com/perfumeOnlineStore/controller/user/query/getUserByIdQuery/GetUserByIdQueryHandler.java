@@ -6,11 +6,12 @@ import com.perfumeOnlineStore.mapper.user.UserToUserDtoMapper;
 import com.perfumeOnlineStore.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
-@Service
+@Component
 @RequiredArgsConstructor
 public class GetUserByIdQueryHandler {
     private final UserService userService;
