@@ -1,13 +1,7 @@
 package com.perfumeOnlineStore.database;
 
-import com.perfumeOnlineStore.entity.Category;
-import com.perfumeOnlineStore.entity.Product;
-import com.perfumeOnlineStore.repository.CategoryRepository;
-import com.perfumeOnlineStore.entity.Discount;
-import com.perfumeOnlineStore.repository.DiscountRepository;
-import com.perfumeOnlineStore.repository.ProductRepository;
-import com.perfumeOnlineStore.entity.User;
-import com.perfumeOnlineStore.repository.UserRepository;
+import com.perfumeOnlineStore.entity.*;
+import com.perfumeOnlineStore.repository.*;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
@@ -26,6 +20,7 @@ public class Database implements CommandLineRunner {
     private final UserRepository userRepository;
     private final CategoryRepository categoryRepository;
     private final DiscountRepository discountRepository;
+    private final OrderItemRepository orderItemRepository;
 
     @Override
     public void run(String[] args) {
@@ -84,7 +79,6 @@ public class Database implements CommandLineRunner {
                 amber
         );
 
-
         dolceGabbanaTheOne.setDiscounts(
                 List.of(discount)
         );
@@ -109,5 +103,13 @@ public class Database implements CommandLineRunner {
         );
 
         userRepository.save(user);
+
+        OrderItem orderItem = new OrderItem(
+                dolceGabbanaTheOne,
+                1,
+                dolceGabbanaTheOne.getPrice()
+        );
+
+        orderItemRepository.save(orderItem);
     }
 }

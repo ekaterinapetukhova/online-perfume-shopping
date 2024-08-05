@@ -1,6 +1,7 @@
 package com.perfumeOnlineStore.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
@@ -36,6 +37,7 @@ public class Discount {
     @Column(nullable = false, columnDefinition = "text")
     private String description;
     @ManyToMany(mappedBy = "discounts")
+    @JsonIgnoreProperties(value = { "discounts" })
     private List<Product> products = new ArrayList<>();
 
     public Discount(

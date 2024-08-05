@@ -1,5 +1,6 @@
 package com.perfumeOnlineStore.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
@@ -12,6 +13,7 @@ import java.util.List;
 @Entity
 @Data
 @NoArgsConstructor
+@JsonIgnoreProperties(value = { "hibernateLazyInitializer" })
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,7 +40,7 @@ public class Product {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
-    @JsonManagedReference
+    @JsonBackReference
     private Category category;
 
     @ManyToMany
@@ -48,9 +50,13 @@ public class Product {
             inverseJoinColumns = @JoinColumn(name = "discount_id"))
     private List<Discount> discounts = new ArrayList<>();
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "orderItem_id")
-    private OrderItem orderItem;
+    @OneToMany(
+            mappedBy = "product",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    @JsonManagedReference
+    private List<OrderItem> orderItems;
 
     public enum Gender {
         MALE, FEMALE

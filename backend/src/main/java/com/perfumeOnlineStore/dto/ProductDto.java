@@ -19,4 +19,5 @@ public class ProductDto {
     private Integer volume;
     private Category category;
     private List<Discount> discounts;
+    private List<OrderItem> orderItems;
 }

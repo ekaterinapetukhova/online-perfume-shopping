@@ -1,5 +1,7 @@
 package com.perfumeOnlineStore.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,6 +14,7 @@ import java.util.List;
 @Table
 @Data
 @NoArgsConstructor
+@JsonIgnoreProperties(value = { "hibernateLazyInitializer" })
 public class OrderItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,17 +23,21 @@ public class OrderItem {
     private Integer quantity;
     @Column(nullable = false, columnDefinition = "numeric")
     private Double price;
-    @OneToMany(
-            mappedBy = "orderItem",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true)
-    private List<Product> products = new ArrayList<>();
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "product_id")
+    @JsonBackReference
+    private Product product;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "order_id")
     private Order order;
 
-    public OrderItem(Integer quantity, Double price) {
+    public OrderItem(
+            Product product,
+            Integer quantity,
+            Double price) {
+        this.product = product;
         this.quantity = quantity;
         this.price = price;
     }

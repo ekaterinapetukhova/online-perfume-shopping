@@ -2,6 +2,7 @@ package com.perfumeOnlineStore.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -20,7 +21,7 @@ public class Category {
     private String name;
     @Column(columnDefinition = "text", nullable = false)
     private String description;
-    @JsonBackReference
+    @JsonManagedReference
     @OneToMany(
             mappedBy = "category",
             cascade = CascadeType.ALL,
