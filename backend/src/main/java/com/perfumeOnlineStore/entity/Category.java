@@ -11,7 +11,7 @@ import java.util.*;
 @Entity
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
+@JsonIgnoreProperties(value = { "hibernateLazyInitializer" })
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,7 +21,6 @@ public class Category {
     @Column(columnDefinition = "text", nullable = false)
     private String description;
     @JsonIgnore
-    @JsonIgnoreProperties({ "hibernateLazyInitializer" })
     @OneToMany(
             mappedBy = "category",
             cascade = CascadeType.MERGE,
