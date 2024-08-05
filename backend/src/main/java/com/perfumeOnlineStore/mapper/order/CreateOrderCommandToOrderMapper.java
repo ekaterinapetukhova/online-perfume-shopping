@@ -5,7 +5,7 @@ import com.perfumeOnlineStore.entity.Order;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface CreateOrderCommandToOrderMapper {
     CreateOrderCommandToOrderMapper INSTANCE = Mappers.getMapper(CreateOrderCommandToOrderMapper.class);
 

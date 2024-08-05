@@ -5,7 +5,7 @@ import com.perfumeOnlineStore.entity.Category;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface CategoryToDtoMapper {
     CategoryToDtoMapper INSTANCE = Mappers.getMapper(CategoryToDtoMapper.class);
 

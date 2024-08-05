@@ -5,7 +5,7 @@ import com.perfumeOnlineStore.entity.Discount;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface UpdateDiscountCommandToDiscountMapper {
     UpdateDiscountCommandToDiscountMapper INSTANCE = Mappers.getMapper(UpdateDiscountCommandToDiscountMapper.class);
 

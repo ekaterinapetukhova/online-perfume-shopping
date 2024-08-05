@@ -84,6 +84,11 @@ public class Database implements CommandLineRunner {
                 amber
         );
 
+
+        dolceGabbanaTheOne.setDiscounts(
+                List.of(discount)
+        );
+
         productRepository.saveAll(
                 List.of(
                     calvinKleinEuphoria,

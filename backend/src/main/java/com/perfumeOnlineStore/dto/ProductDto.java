@@ -3,6 +3,8 @@ package com.perfumeOnlineStore.dto;
 import com.perfumeOnlineStore.entity.*;
 import lombok.*;
 
+import java.util.List;
+
 @Data
 public class ProductDto {
     private Long id;
@@ -16,4 +18,5 @@ public class ProductDto {
     private Product.Gender gender;
     private Integer volume;
     private Category category;
+    private List<Discount> discounts;
 }
