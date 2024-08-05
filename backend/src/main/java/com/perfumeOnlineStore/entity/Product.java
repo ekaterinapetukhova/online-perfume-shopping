@@ -10,7 +10,6 @@ import java.util.List;
 @Entity
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,7 +34,8 @@ public class Product {
     @Column(nullable = false)
     private Integer volume;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.MERGE,
+            fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
     private Category category;
 
@@ -62,7 +62,8 @@ public class Product {
                    String scentGroups,
                    Integer quantity,
                    Gender gender,
-                   Integer volume) {
+                   Integer volume,
+                   Category category) {
         this.name = name;
         this.description = description;
         this.brand = brand;
@@ -72,5 +73,6 @@ public class Product {
         this.quantity = quantity;
         this.gender = gender;
         this.volume = volume;
+        this.category = category;
     }
 }

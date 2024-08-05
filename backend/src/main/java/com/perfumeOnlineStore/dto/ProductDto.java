@@ -1,6 +1,6 @@
 package com.perfumeOnlineStore.dto;
 
-import com.perfumeOnlineStore.entity.Product;
+import com.perfumeOnlineStore.entity.*;
 import lombok.*;
 
 @Data
@@ -15,4 +15,5 @@ public class ProductDto {
     private Integer quantity;
     private Product.Gender gender;
     private Integer volume;
+    private Category category;
 }

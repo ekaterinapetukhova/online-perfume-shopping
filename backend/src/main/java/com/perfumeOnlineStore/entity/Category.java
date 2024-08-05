@@ -1,10 +1,11 @@
 package com.perfumeOnlineStore.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @Table
 @Entity
@@ -19,12 +20,14 @@ public class Category {
     private String name;
     @Column(columnDefinition = "text", nullable = false)
     private String description;
+    @JsonIgnore
+    @JsonIgnoreProperties({ "hibernateLazyInitializer" })
     @OneToMany(
             mappedBy = "category",
-            cascade = CascadeType.ALL,
+            cascade = CascadeType.MERGE,
             orphanRemoval = true
     )
-    private List<Product> products = new ArrayList<>();
+    private List<Product> products;
 
     public Category(
             String name,
