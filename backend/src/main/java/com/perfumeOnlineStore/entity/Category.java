@@ -1,6 +1,7 @@
 package com.perfumeOnlineStore.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -10,6 +11,7 @@ import java.util.*;
 @Entity
 @Data
 @NoArgsConstructor
+@JsonIgnoreProperties(value = { "hibernateLazyInitializer" })
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
