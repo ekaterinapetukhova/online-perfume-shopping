@@ -1,7 +1,6 @@
 package com.perfumeOnlineStore.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -11,7 +10,6 @@ import java.util.*;
 @Entity
 @Data
 @NoArgsConstructor
-@JsonIgnoreProperties(value = { "hibernateLazyInitializer" })
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,10 +18,10 @@ public class Category {
     private String name;
     @Column(columnDefinition = "text", nullable = false)
     private String description;
-    @JsonIgnore
+    @JsonBackReference
     @OneToMany(
             mappedBy = "category",
-            cascade = CascadeType.MERGE,
+            cascade = CascadeType.ALL,
             orphanRemoval = true
     )
     private List<Product> products;

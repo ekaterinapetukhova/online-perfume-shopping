@@ -1,6 +1,7 @@
 package com.perfumeOnlineStore.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -35,9 +36,9 @@ public class Product {
     @Column(nullable = false)
     private Integer volume;
 
-    @ManyToOne(cascade = CascadeType.MERGE,
-            fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
+    @JsonManagedReference
     private Category category;
 
     @ManyToMany
