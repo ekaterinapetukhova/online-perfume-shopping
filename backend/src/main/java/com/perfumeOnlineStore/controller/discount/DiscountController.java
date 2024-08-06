@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.*;
 public class DiscountController {
     private final Pipeline pipeline;
     private final GetAllDiscountsQueryHandler getAllDiscountsQueryHandler;
-    private final GetDiscountByIdQueryHandler getDiscountByIdQueryHandler;
 
     @GetMapping
     public GetAllDiscountsQueryResponse getAllDiscounts() {
@@ -25,7 +24,9 @@ public class DiscountController {
 
     @GetMapping("/{discountId}")
     public GetDiscountByIdResponse getDiscountById(@PathVariable("discountId") Long id) {
-       return getDiscountByIdQueryHandler.handle(id);
+        GetDiscountByIdQuery query = new GetDiscountByIdQuery(id);
+
+       return query.execute(pipeline);
     }
 
     @PostMapping(

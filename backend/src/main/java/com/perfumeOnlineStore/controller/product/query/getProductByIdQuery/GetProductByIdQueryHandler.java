@@ -1,5 +1,6 @@
-package com.perfumeOnlineStore.controller.product.query.productByIdQuery;
+package com.perfumeOnlineStore.controller.product.query.getProductByIdQuery;
 
+import an.awesome.pipelinr.Command;
 import com.perfumeOnlineStore.dto.ProductDto;
 import com.perfumeOnlineStore.entity.Product;
 import com.perfumeOnlineStore.mapper.product.ProductToDtoMapper;
@@ -12,14 +13,14 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class ProductByIdQueryHandler {
+public class GetProductByIdQueryHandler implements Command.Handler<GetProductByIdQuery, GetProductByIdQueryResponse>{
     private final ProductService productService;
 
-    public ProductByIdQueryResponse handle(Long id) {
-        ProductByIdQueryResponse resp = new ProductByIdQueryResponse();
+    public GetProductByIdQueryResponse handle(GetProductByIdQuery query) {
+        GetProductByIdQueryResponse resp = new GetProductByIdQueryResponse();
 
         try {
-            Optional<Product> product = productService.findProductById(id);
+            Optional<Product> product = productService.findProductById(query.getId());
 
             if (product.isPresent()) {
                 ProductDto productDto = product.map(ProductToDtoMapper.INSTANCE::toDto).get();

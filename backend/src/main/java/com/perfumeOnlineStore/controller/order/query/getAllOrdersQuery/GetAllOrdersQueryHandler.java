@@ -1,6 +1,5 @@
 package com.perfumeOnlineStore.controller.order.query.getAllOrdersQuery;
 
-import com.perfumeOnlineStore.controller.response.ResponseBase;
 import com.perfumeOnlineStore.dto.OrderDto;
 import com.perfumeOnlineStore.entity.Order;
 import com.perfumeOnlineStore.mapper.order.OrderToDtoMapper;

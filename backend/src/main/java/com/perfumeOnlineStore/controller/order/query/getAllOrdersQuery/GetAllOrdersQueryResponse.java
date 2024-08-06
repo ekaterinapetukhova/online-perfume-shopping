@@ -1,6 +1,6 @@
 package com.perfumeOnlineStore.controller.order.query.getAllOrdersQuery;
 
-import com.perfumeOnlineStore.controller.response.ResponseBase;
+import com.perfumeOnlineStore.controller.responseBase.ResponseBase;
 import com.perfumeOnlineStore.dto.OrderDto;
 
 import java.util.List;

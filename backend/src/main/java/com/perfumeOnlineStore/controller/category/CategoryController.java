@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.*;
 public class CategoryController {
     private final Pipeline pipeline;
     private final GetAllCategoriesQueryHandler getAllCategoriesQueryHandler;
-    private final GetCategoryByIdQueryHandler getCategoryByIdQueryHandler;
 
     @GetMapping
     public GetAllCategoriesQueryResponse getAllCategories() {
@@ -27,7 +26,9 @@ public class CategoryController {
 
     @GetMapping("/{categoryId}")
     public GetCategoryByIdQueryResponse getCategoryById(@PathVariable("categoryId") Long id) {
-        return getCategoryByIdQueryHandler.handle(id);
+        GetCategoryByIdQuery query = new GetCategoryByIdQuery(id);
+
+        return query.execute(pipeline);
     }
 
     @PostMapping(

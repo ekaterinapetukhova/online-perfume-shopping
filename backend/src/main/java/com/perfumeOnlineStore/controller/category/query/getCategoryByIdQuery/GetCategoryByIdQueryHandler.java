@@ -1,5 +1,6 @@
 package com.perfumeOnlineStore.controller.category.query.getCategoryByIdQuery;
 
+import an.awesome.pipelinr.Command;
 import com.perfumeOnlineStore.dto.CategoryDto;
 import com.perfumeOnlineStore.entity.Category;
 import com.perfumeOnlineStore.mapper.category.CategoryToDtoMapper;
@@ -12,14 +13,14 @@ import java.util.Optional;
 
 @Component
 @RequiredArgsConstructor
-public class GetCategoryByIdQueryHandler {
+public class GetCategoryByIdQueryHandler implements Command.Handler<GetCategoryByIdQuery, GetCategoryByIdQueryResponse> {
     private final CategoryService categoryService;
 
-    public GetCategoryByIdQueryResponse handle(Long id) {
+    public GetCategoryByIdQueryResponse handle(GetCategoryByIdQuery query) {
         GetCategoryByIdQueryResponse resp = new GetCategoryByIdQueryResponse();
 
         try {
-            Optional<Category> existingCategory = categoryService.findCategoryById(id);
+            Optional<Category> existingCategory = categoryService.findCategoryById(query.getId());
 
             if (existingCategory.isPresent()) {
                 CategoryDto categoryDto = existingCategory.map(CategoryToDtoMapper.INSTANCE::toDto).get();

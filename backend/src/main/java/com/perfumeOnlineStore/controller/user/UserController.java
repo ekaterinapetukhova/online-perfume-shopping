@@ -22,7 +22,6 @@ import java.util.Optional;
 public class UserController {
     private final UserService userService;
     private final GetAllUsersQueryHandler getAllUsersQueryHandler;
-    private final GetUserByIdQueryHandler getUserByIdQueryHandler;
     private final Pipeline pipeline;
 
     @GetMapping
@@ -32,7 +31,9 @@ public class UserController {
 
     @GetMapping("/{userId}")
     public GetUserByIdQueryResponse getUserById(@PathVariable("userId") Long id) {
-        return getUserByIdQueryHandler.handle(id);
+        GetUserByIdQuery query = new GetUserByIdQuery(id);
+
+        return query.execute(pipeline);
     }
 
     @PostMapping(

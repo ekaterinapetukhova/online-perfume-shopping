@@ -4,8 +4,8 @@ import an.awesome.pipelinr.Pipeline;
 import com.perfumeOnlineStore.controller.product.command.createProductCommand.*;
 import com.perfumeOnlineStore.controller.product.command.deleteProductCommand.*;
 import com.perfumeOnlineStore.controller.product.command.updateProductCommand.*;
-import com.perfumeOnlineStore.controller.product.query.allProductsQuery.*;
-import com.perfumeOnlineStore.controller.product.query.productByIdQuery.*;
+import com.perfumeOnlineStore.controller.product.query.getAllProductsQuery.*;
+import com.perfumeOnlineStore.controller.product.query.getProductByIdQuery.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
@@ -14,18 +14,19 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/v1/products")
 @RequiredArgsConstructor
 public class ProductController {
-    private final AllProductsQueryHandler allProductsQueryHandler;
-    private final ProductByIdQueryHandler productByIdQueryHandler;
+    private final GetAllProductsQueryHandler getAllProductsQueryHandler;
     private final Pipeline pipeline;
 
     @GetMapping
-    public AllProductsQueryResponse getAllProducts() {
-        return allProductsQueryHandler.handle();
+    public GetAllProductsQueryResponse getAllProducts() {
+        return getAllProductsQueryHandler.handle();
     }
 
     @GetMapping("/{productId}")
-    public ProductByIdQueryResponse getProductById(@PathVariable("productId") Long id) {
-        return productByIdQueryHandler.handle(id);
+    public GetProductByIdQueryResponse getProductById(@PathVariable("productId") Long id) {
+        GetProductByIdQuery query = new GetProductByIdQuery(id);
+
+        return query.execute(pipeline);
     }
 
     @PostMapping(

@@ -1,5 +1,6 @@
 package com.perfumeOnlineStore.controller.order.query.getOrderByIdQuery;
 
+import an.awesome.pipelinr.Command;
 import com.perfumeOnlineStore.dto.OrderDto;
 import com.perfumeOnlineStore.entity.Order;
 import com.perfumeOnlineStore.mapper.order.OrderToDtoMapper;
@@ -12,14 +13,14 @@ import java.util.Optional;
 
 @RequiredArgsConstructor
 @Component
-public class GetOrderByIdQueryHandler {
+public class GetOrderByIdQueryHandler implements Command.Handler<GetOrderByIdQuery, GetOrderByIdQueryResponse>{
     private final OrderService orderService;
 
-    public GetOrderByIdQueryResponse handle(Long id) {
+    public GetOrderByIdQueryResponse handle(GetOrderByIdQuery query) {
         GetOrderByIdQueryResponse resp = new GetOrderByIdQueryResponse();
 
         try {
-            Optional<Order> existingOrder = orderService.findOrderById(id);
+            Optional<Order> existingOrder = orderService.findOrderById(query.getId());
 
             if (existingOrder.isPresent()) {
                 OrderDto orderDto = existingOrder.map(OrderToDtoMapper.INSTANCE::toDto).get();

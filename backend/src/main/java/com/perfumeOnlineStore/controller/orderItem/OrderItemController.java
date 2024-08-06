@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.*;
 public class OrderItemController {
     private final Pipeline pipeline;
     private final GetAllOrderItemsQueryHandler getAllOrderItemsQueryHandler;
-    private final GetOrderItemByIdQueryHandler getOrderItemByIdQueryHandler;
 
     @GetMapping
     public GetAllOrderItemsQueryResponse getAllProducts() {
@@ -26,7 +25,9 @@ public class OrderItemController {
 
     @GetMapping("/{orderItemId}")
     public GetOrderItemByIdQueryResponse getOrderItemById(@PathVariable("orderItemId") Long id) {
-        return getOrderItemByIdQueryHandler.handle(id);
+        GetOrderItemByIdQuery query = new GetOrderItemByIdQuery(id);
+
+        return query.execute(pipeline);
     }
 
     @PostMapping(

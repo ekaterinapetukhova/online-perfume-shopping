@@ -1,5 +1,6 @@
 package com.perfumeOnlineStore.controller.category.query.getAllCategoriesQuery;
 
+import an.awesome.pipelinr.Command;
 import com.perfumeOnlineStore.dto.CategoryDto;
 import com.perfumeOnlineStore.entity.Category;
 import com.perfumeOnlineStore.mapper.category.CategoryToDtoMapper;

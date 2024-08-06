@@ -1,4 +1,4 @@
-package com.perfumeOnlineStore.controller.product.query.allProductsQuery;
+package com.perfumeOnlineStore.controller.product.query.getAllProductsQuery;
 
 import com.perfumeOnlineStore.dto.ProductDto;
 import com.perfumeOnlineStore.entity.Product;
@@ -13,11 +13,11 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class AllProductsQueryHandler {
+public class GetAllProductsQueryHandler {
     private final ProductService productService;
 
-    public AllProductsQueryResponse handle() {
-        AllProductsQueryResponse resp = new AllProductsQueryResponse();
+    public GetAllProductsQueryResponse handle() {
+        GetAllProductsQueryResponse resp = new GetAllProductsQueryResponse();
 
         try {
             List<Product> products = productService.findAllProducts();

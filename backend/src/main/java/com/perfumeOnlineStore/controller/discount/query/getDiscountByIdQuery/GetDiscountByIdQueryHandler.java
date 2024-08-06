@@ -1,5 +1,6 @@
 package com.perfumeOnlineStore.controller.discount.query.getDiscountByIdQuery;
 
+import an.awesome.pipelinr.Command;
 import com.perfumeOnlineStore.dto.DiscountDto;
 import com.perfumeOnlineStore.entity.Discount;
 import com.perfumeOnlineStore.mapper.discount.DiscountToDtoMapper;
@@ -12,14 +13,14 @@ import java.util.Optional;
 
 @Component
 @RequiredArgsConstructor
-public class GetDiscountByIdQueryHandler {
+public class GetDiscountByIdQueryHandler implements Command.Handler<GetDiscountByIdQuery, GetDiscountByIdResponse> {
     private final DiscountService discountService;
 
-    public GetDiscountByIdResponse handle(Long id) {
+    public GetDiscountByIdResponse handle(GetDiscountByIdQuery query) {
         GetDiscountByIdResponse resp = new GetDiscountByIdResponse();
 
         try {
-            Optional<Discount> discount = discountService.findDiscountById(id);
+            Optional<Discount> discount = discountService.findDiscountById(query.getId());
 
             if (discount.isPresent()) {
                 DiscountDto discountDto = discount.map(DiscountToDtoMapper.INSTANCE::toDto).get();

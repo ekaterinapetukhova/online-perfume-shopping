@@ -1,4 +1,4 @@
-package com.perfumeOnlineStore.controller.response;
+package com.perfumeOnlineStore.controller.responseBase;
 
 import lombok.*;
 import org.springframework.http.HttpStatus;
