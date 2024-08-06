@@ -21,6 +21,7 @@ public class Database implements CommandLineRunner {
     private final CategoryRepository categoryRepository;
     private final DiscountRepository discountRepository;
     private final OrderItemRepository orderItemRepository;
+    private final OrderRepository orderRepository;
 
     @Override
     public void run(String[] args) {
@@ -104,12 +105,26 @@ public class Database implements CommandLineRunner {
 
         userRepository.save(user);
 
+        Order order = new Order(
+                Order.Status.ORDER_PLACED,
+                LocalDateTime.of(2024, Month.AUGUST, 5, 13, 30, 1),
+                user
+        );
+
         OrderItem orderItem = new OrderItem(
                 dolceGabbanaTheOne,
                 1,
-                dolceGabbanaTheOne.getPrice()
+                dolceGabbanaTheOne.getPrice(),
+                order
         );
 
+        double totalPrice = orderItem.getPrice() * orderItem.getQuantity();
+
+        order.setTotalPrice(totalPrice);
+
+        orderRepository.save(order);
+
         orderItemRepository.save(orderItem);
+
     }
 }

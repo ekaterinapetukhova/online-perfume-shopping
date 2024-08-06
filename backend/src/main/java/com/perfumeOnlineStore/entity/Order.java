@@ -1,9 +1,13 @@
 package com.perfumeOnlineStore.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import jakarta.persistence.*;
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,7 +24,7 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable = false, columnDefinition = "numeric")
+    @Column(columnDefinition = "numeric")
     private Double totalPrice;
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
@@ -31,14 +35,16 @@ public class Order {
     private LocalDateTime date;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", nullable = false)
+    @JsonBackReference
     private User user;
 
     @OneToMany(
             mappedBy = "order",
             cascade = CascadeType.ALL,
             orphanRemoval = true)
-    private List<OrderItem> orderItems = new ArrayList<>();
+    @JsonManagedReference
+    private List<OrderItem> orderItems;
 
     public enum Status {
         ORDER_PLACED,
@@ -50,13 +56,13 @@ public class Order {
     }
 
     public Order(
-            Double totalPrice,
             Status status,
-            LocalDateTime date
+            LocalDateTime date,
+            User user
     ) {
-        this.totalPrice = totalPrice;
         this.status = status;
         this.date = date;
+        this.user = user;
     }
 
 }

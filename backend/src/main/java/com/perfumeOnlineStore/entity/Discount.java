@@ -38,7 +38,7 @@ public class Discount {
     private String description;
     @ManyToMany(mappedBy = "discounts")
     @JsonIgnoreProperties(value = { "discounts" })
-    private List<Product> products = new ArrayList<>();
+    private List<Product> products;
 
     public Discount(
             Double percent,

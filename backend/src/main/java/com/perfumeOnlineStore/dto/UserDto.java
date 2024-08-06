@@ -1,6 +1,9 @@
 package com.perfumeOnlineStore.dto;
 
+import com.perfumeOnlineStore.entity.Order;
 import lombok.*;
+
+import java.util.List;
 
 @Data
 public class UserDto {
@@ -14,4 +17,5 @@ public class UserDto {
     private String country;
     private String city;
     private String postcode;
+    private List<Order> orders;
 }

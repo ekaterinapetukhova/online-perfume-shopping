@@ -1,5 +1,7 @@
 package com.perfumeOnlineStore.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,6 +14,7 @@ import java.util.List;
 @Table
 @Data
 @NoArgsConstructor
+@JsonIgnoreProperties(value = { "hibernateLazyInitializer" })
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,6 +32,7 @@ public class User {
     private String country;
     private String city;
     private String postcode;
+
     @ManyToMany(
             fetch = FetchType.EAGER,
             cascade={ CascadeType.MERGE, CascadeType.REMOVE, CascadeType.REFRESH, CascadeType.DETACH })
@@ -36,13 +40,15 @@ public class User {
             name = "user_role",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
-    private List<Role> roles = new ArrayList<>();
+    private List<Role> roles;
+
     @OneToMany(
             mappedBy = "user",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<Order> orders = new ArrayList<>();
+    @JsonManagedReference
+    private List<Order> orders;
 
     public User(
             String name,

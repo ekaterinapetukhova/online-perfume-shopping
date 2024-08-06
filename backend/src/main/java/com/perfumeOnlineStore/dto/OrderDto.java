@@ -1,10 +1,10 @@
 package com.perfumeOnlineStore.dto;
 
-import com.perfumeOnlineStore.entity.Order;
-import jakarta.persistence.*;
+import com.perfumeOnlineStore.entity.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 public class OrderDto {
@@ -12,4 +12,6 @@ public class OrderDto {
     private Double totalPrice;
     private Order.Status status;
     private LocalDateTime date;
+    private User user;
+    private List<OrderItem> orderItems;
 }

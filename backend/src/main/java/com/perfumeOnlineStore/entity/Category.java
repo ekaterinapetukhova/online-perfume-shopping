@@ -21,6 +21,7 @@ public class Category {
     private String name;
     @Column(columnDefinition = "text", nullable = false)
     private String description;
+
     @JsonManagedReference
     @OneToMany(
             mappedBy = "category",
