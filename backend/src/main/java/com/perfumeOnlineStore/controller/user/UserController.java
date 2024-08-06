@@ -11,6 +11,8 @@ import com.perfumeOnlineStore.controller.user.query.getAllUsersWithOrders.GetAll
 import com.perfumeOnlineStore.controller.user.query.getUserByIdQuery.*;
 import com.perfumeOnlineStore.controller.user.query.getUserWithProductsByIdQuery.GetUserWithProductsByIdQuery;
 import com.perfumeOnlineStore.controller.user.query.getUserWithProductsByIdQuery.GetUserWithProductsByIdQueryResponse;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -30,6 +32,7 @@ public class UserController {
         return query.execute(pipeline);
     }
 
+    @Parameter(name = "withOrders=true", description = "Get all users with orders")
     @GetMapping(params = "withOrders=true")
     public GetAllUsersWithOrdersQueryResponse getAllUsersWithOrders() {
         GetAllUsersWithOrdersQuery query = new GetAllUsersWithOrdersQuery();
@@ -45,6 +48,7 @@ public class UserController {
     }
 
     @GetMapping(value = "/{userId}", params = "withOrders=true")
+    @Parameter(name = "withOrders=true", description = "Get user by ID with orders")
     public GetUserWithProductsByIdQueryResponse getUserWithProductsById(@PathVariable("userId") UUID id) {
         GetUserWithProductsByIdQuery query = new GetUserWithProductsByIdQuery(id);
 
