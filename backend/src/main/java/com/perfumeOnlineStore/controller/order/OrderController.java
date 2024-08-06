@@ -17,11 +17,12 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class OrderController {
     private final Pipeline pipeline;
-    private final GetAllOrdersQueryHandler getAllOrdersQueryHandler;
 
     @GetMapping
     public GetAllOrdersQueryResponse getAllOrders() {
-       return getAllOrdersQueryHandler.handle();
+       GetAllOrdersQuery query = new GetAllOrdersQuery();
+
+        return query.execute(pipeline);
     }
 
     @GetMapping("/{orderId}")

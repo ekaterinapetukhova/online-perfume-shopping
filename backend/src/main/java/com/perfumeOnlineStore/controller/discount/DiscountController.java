@@ -17,11 +17,12 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class DiscountController {
     private final Pipeline pipeline;
-    private final GetAllDiscountsQueryHandler getAllDiscountsQueryHandler;
 
     @GetMapping
     public GetAllDiscountsQueryResponse getAllDiscounts() {
-        return getAllDiscountsQueryHandler.handle();
+        GetAllDiscountsQuery query = new GetAllDiscountsQuery();
+
+        return query.execute(pipeline);
     }
 
     @GetMapping("/{discountId}")

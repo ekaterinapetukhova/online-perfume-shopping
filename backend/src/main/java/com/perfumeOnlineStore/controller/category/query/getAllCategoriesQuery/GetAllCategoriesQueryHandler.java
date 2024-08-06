@@ -13,10 +13,10 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @Component
-public class GetAllCategoriesQueryHandler {
+public class GetAllCategoriesQueryHandler implements Command.Handler<GetAllCategoriesQuery, GetAllCategoriesQueryResponse>{
     private final CategoryService categoryService;
 
-    public GetAllCategoriesQueryResponse handle() {
+    public GetAllCategoriesQueryResponse handle(GetAllCategoriesQuery query) {
         GetAllCategoriesQueryResponse resp = new GetAllCategoriesQueryResponse();
 
         try {

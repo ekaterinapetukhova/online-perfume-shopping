@@ -11,19 +11,19 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Optional;
 import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/v1/users")
 @RequiredArgsConstructor
 public class UserController {
-    private final GetAllUsersQueryHandler getAllUsersQueryHandler;
     private final Pipeline pipeline;
 
     @GetMapping
     public GetAllUsersQueryResponse getAllUsers() {
-        return getAllUsersQueryHandler.handle();
+        GetAllUsersQuery query = new GetAllUsersQuery();
+
+        return query.execute(pipeline);
     }
 
     @GetMapping("/{userId}")

@@ -1,5 +1,6 @@
 package com.perfumeOnlineStore.controller.discount.query.getAllDiscountsQuery;
 
+import an.awesome.pipelinr.Command;
 import com.perfumeOnlineStore.dto.DiscountDto;
 import com.perfumeOnlineStore.entity.Discount;
 import com.perfumeOnlineStore.mapper.discount.DiscountToDtoMapper;
@@ -12,10 +13,10 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @Component
-public class GetAllDiscountsQueryHandler {
+public class GetAllDiscountsQueryHandler implements Command.Handler<GetAllDiscountsQuery, GetAllDiscountsQueryResponse> {
     private final DiscountService discountService;
 
-    public GetAllDiscountsQueryResponse handle() {
+    public GetAllDiscountsQueryResponse handle(GetAllDiscountsQuery query) {
         GetAllDiscountsQueryResponse resp = new GetAllDiscountsQueryResponse();
 
         try {

@@ -18,11 +18,12 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class OrderItemController {
     private final Pipeline pipeline;
-    private final GetAllOrderItemsQueryHandler getAllOrderItemsQueryHandler;
 
     @GetMapping
     public GetAllOrderItemsQueryResponse getAllProducts() {
-        return getAllOrderItemsQueryHandler.handle();
+        GetAllOrderItemsQuery query = new GetAllOrderItemsQuery();
+
+        return query.execute(pipeline);
     }
 
     @GetMapping("/{orderItemId}")

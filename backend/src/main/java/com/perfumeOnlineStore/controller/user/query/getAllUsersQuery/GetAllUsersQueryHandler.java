@@ -1,5 +1,6 @@
 package com.perfumeOnlineStore.controller.user.query.getAllUsersQuery;
 
+import an.awesome.pipelinr.Command;
 import com.perfumeOnlineStore.dto.UserDto;
 import com.perfumeOnlineStore.entity.User;
 import com.perfumeOnlineStore.mapper.user.UserToUserDtoMapper;
@@ -13,10 +14,10 @@ import java.util.List;
 
 @Component
 @RequiredArgsConstructor
-public class GetAllUsersQueryHandler {
+public class GetAllUsersQueryHandler implements Command.Handler<GetAllUsersQuery, GetAllUsersQueryResponse> {
     private final UserService userService;
 
-    public GetAllUsersQueryResponse handle() {
+    public GetAllUsersQueryResponse handle(GetAllUsersQuery query) {
         GetAllUsersQueryResponse resp = new GetAllUsersQueryResponse();
 
         try {

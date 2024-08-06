@@ -16,12 +16,13 @@ import java.util.UUID;
 @RequestMapping("/api/v1/products")
 @RequiredArgsConstructor
 public class ProductController {
-    private final GetAllProductsQueryHandler getAllProductsQueryHandler;
     private final Pipeline pipeline;
 
     @GetMapping
     public GetAllProductsQueryResponse getAllProducts() {
-        return getAllProductsQueryHandler.handle();
+        GetAllProductsQuery query = new GetAllProductsQuery();
+
+        return query.execute(pipeline);
     }
 
     @GetMapping("/{productId}")

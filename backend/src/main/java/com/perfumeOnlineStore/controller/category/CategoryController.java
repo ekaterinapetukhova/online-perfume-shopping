@@ -6,22 +6,21 @@ import com.perfumeOnlineStore.controller.category.command.deleteCategoryCommand.
 import com.perfumeOnlineStore.controller.category.command.updateCategoryCommand.*;
 import com.perfumeOnlineStore.controller.category.query.getAllCategoriesQuery.*;
 import com.perfumeOnlineStore.controller.category.query.getCategoryByIdQuery.*;
-import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-
 
 @RestController
 @RequestMapping("api/v1/categories")
 @RequiredArgsConstructor
 public class CategoryController {
     private final Pipeline pipeline;
-    private final GetAllCategoriesQueryHandler getAllCategoriesQueryHandler;
 
     @GetMapping
     public GetAllCategoriesQueryResponse getAllCategories() {
-        return getAllCategoriesQueryHandler.handle();
+        GetAllCategoriesQuery query = new GetAllCategoriesQuery();
+
+        return query.execute(pipeline);
     }
 
     @GetMapping("/{categoryId}")

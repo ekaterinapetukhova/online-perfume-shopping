@@ -1,5 +1,6 @@
 package com.perfumeOnlineStore.controller.product.query.getAllProductsQuery;
 
+import an.awesome.pipelinr.Command;
 import com.perfumeOnlineStore.dto.ProductDto;
 import com.perfumeOnlineStore.entity.Product;
 import com.perfumeOnlineStore.mapper.product.ProductToDtoMapper;
@@ -13,10 +14,10 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class GetAllProductsQueryHandler {
+public class GetAllProductsQueryHandler implements Command.Handler<GetAllProductsQuery, GetAllProductsQueryResponse>{
     private final ProductService productService;
 
-    public GetAllProductsQueryResponse handle() {
+    public GetAllProductsQueryResponse handle(GetAllProductsQuery query) {
         GetAllProductsQueryResponse resp = new GetAllProductsQueryResponse();
 
         try {

@@ -1,5 +1,6 @@
 package com.perfumeOnlineStore.controller.orderItem.query.getAllOrderItemsQuery;
 
+import an.awesome.pipelinr.Command;
 import com.perfumeOnlineStore.dto.OrderItemDto;
 import com.perfumeOnlineStore.entity.OrderItem;
 import com.perfumeOnlineStore.mapper.orderItem.OrderItemToDtoMapper;
@@ -12,10 +13,10 @@ import java.util.List;
 
 @Component
 @RequiredArgsConstructor
-public class GetAllOrderItemsQueryHandler {
+public class GetAllOrderItemsQueryHandler implements Command.Handler<GetAllOrderItemsQuery, GetAllOrderItemsQueryResponse>{
     private final OrderItemService orderItemService;
 
-    public GetAllOrderItemsQueryResponse handle() {
+    public GetAllOrderItemsQueryResponse handle(GetAllOrderItemsQuery query) {
         GetAllOrderItemsQueryResponse resp = new GetAllOrderItemsQueryResponse();
 
         try {
