@@ -7,12 +7,13 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Getter
 @Setter
 public class UpdateDiscountCommand implements Command<UpdateDiscountCommandResponse> {
     @NotNull(message = "Discount's ID must be set")
-    private Long id;
+    private UUID id;
     @NotNull(message = "Discount's percent must be set")
     private Double percent;
     @NotEmpty(message = "Discount's name must be set")

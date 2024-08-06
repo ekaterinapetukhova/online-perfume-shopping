@@ -2,5 +2,7 @@ package com.perfumeOnlineStore.controller.orderItem.command.deleteOrderItemComma
 
 import com.perfumeOnlineStore.controller.responseBase.ResponseBase;
 
-public class DeleteOrderItemCommandResponse extends ResponseBase<Long> {
+import java.util.UUID;
+
+public class DeleteOrderItemCommandResponse extends ResponseBase<UUID> {
 }

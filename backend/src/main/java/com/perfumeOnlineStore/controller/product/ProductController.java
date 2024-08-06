@@ -10,6 +10,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.UUID;
+
 @RestController
 @RequestMapping("/api/v1/products")
 @RequiredArgsConstructor
@@ -23,7 +25,7 @@ public class ProductController {
     }
 
     @GetMapping("/{productId}")
-    public GetProductByIdQueryResponse getProductById(@PathVariable("productId") Long id) {
+    public GetProductByIdQueryResponse getProductById(@PathVariable("productId") UUID id) {
         GetProductByIdQuery query = new GetProductByIdQuery(id);
 
         return query.execute(pipeline);
@@ -38,7 +40,7 @@ public class ProductController {
     }
 
     @DeleteMapping("/{productId}")
-    public DeleteProductCommandResponse deleteProduct(@PathVariable("productId") Long id) {
+    public DeleteProductCommandResponse deleteProduct(@PathVariable("productId") UUID id) {
         DeleteProductCommand deleteCommand = new DeleteProductCommand(id);
 
         return deleteCommand.execute(pipeline);
@@ -49,7 +51,7 @@ public class ProductController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public UpdateProductCommandResponse updateProductById(@PathVariable("productId") Long id,
+    public UpdateProductCommandResponse updateProductById(@PathVariable("productId") UUID id,
                                                           @RequestBody UpdateProductCommand updateCommand) {
         updateCommand.setId(id);
         return updateCommand.execute(pipeline);

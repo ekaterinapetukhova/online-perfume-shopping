@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Entity
 @Table
@@ -20,8 +21,8 @@ import java.util.List;
 @NoArgsConstructor
 public class Discount {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
     @Column(columnDefinition = "numeric", nullable = false)
     private Double percent;
     @Column(nullable = false)

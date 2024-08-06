@@ -4,11 +4,13 @@ import an.awesome.pipelinr.Command;
 import jakarta.validation.constraints.*;
 import lombok.*;
 
+import java.util.UUID;
+
 @Getter
 @Setter
 public class UpdateUserCommand implements Command<UpdateUserCommandResponse> {
     @NotNull(message = "ID must be set")
-    private Long id;
+    private UUID id;
     @NotEmpty(message = "Name must be set")
     private String name;
     @NotEmpty(message = "Surname must be set")

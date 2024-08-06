@@ -5,10 +5,11 @@ import lombok.Data;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.UUID;
 
 @Data
 public class OrderDto {
-    private Long id;
+    private UUID id;
     private Double totalPrice;
     private Order.Status status;
     private LocalDateTime date;

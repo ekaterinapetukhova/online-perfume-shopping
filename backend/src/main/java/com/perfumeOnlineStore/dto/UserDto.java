@@ -3,11 +3,11 @@ package com.perfumeOnlineStore.dto;
 import com.perfumeOnlineStore.entity.Order;
 import lombok.*;
 
-import java.util.List;
+import java.util.*;
 
 @Data
 public class UserDto {
-    private Long id;
+    private UUID id;
     private String name;
     private String surname;
     private String email;

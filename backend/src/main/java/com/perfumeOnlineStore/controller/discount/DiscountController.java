@@ -10,6 +10,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.UUID;
+
 @RestController
 @RequestMapping("api/v1/discounts")
 @RequiredArgsConstructor
@@ -23,7 +25,7 @@ public class DiscountController {
     }
 
     @GetMapping("/{discountId}")
-    public GetDiscountByIdResponse getDiscountById(@PathVariable("discountId") Long id) {
+    public GetDiscountByIdResponse getDiscountById(@PathVariable("discountId") UUID id) {
         GetDiscountByIdQuery query = new GetDiscountByIdQuery(id);
 
        return query.execute(pipeline);
@@ -38,7 +40,7 @@ public class DiscountController {
     }
 
     @DeleteMapping("/{discountId}")
-    public DeleteDiscountCommandResponse deleteDiscount(@PathVariable("discountId") Long id) {
+    public DeleteDiscountCommandResponse deleteDiscount(@PathVariable("discountId") UUID id) {
         DeleteDiscountCommand deleteCommand = new DeleteDiscountCommand(id);
 
         return deleteCommand.execute(pipeline);
@@ -49,7 +51,7 @@ public class DiscountController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public UpdateDiscountCommandResponse updateDiscountById(@PathVariable("discountId") Long id,
+    public UpdateDiscountCommandResponse updateDiscountById(@PathVariable("discountId") UUID id,
                                                             @RequestBody UpdateDiscountCommand updateCommand) {
         updateCommand.setId(id);
 

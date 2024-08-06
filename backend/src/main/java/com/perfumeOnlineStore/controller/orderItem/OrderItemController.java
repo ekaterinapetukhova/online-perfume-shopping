@@ -11,6 +11,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.UUID;
+
 @RestController
 @RequestMapping("api/v1/order_items")
 @RequiredArgsConstructor
@@ -24,7 +26,7 @@ public class OrderItemController {
     }
 
     @GetMapping("/{orderItemId}")
-    public GetOrderItemByIdQueryResponse getOrderItemById(@PathVariable("orderItemId") Long id) {
+    public GetOrderItemByIdQueryResponse getOrderItemById(@PathVariable("orderItemId") UUID id) {
         GetOrderItemByIdQuery query = new GetOrderItemByIdQuery(id);
 
         return query.execute(pipeline);
@@ -39,7 +41,7 @@ public class OrderItemController {
     }
 
     @DeleteMapping("/{orderItemId}")
-    public DeleteOrderItemCommandResponse deleteOrderItem(@PathVariable("orderItemId") Long id) {
+    public DeleteOrderItemCommandResponse deleteOrderItem(@PathVariable("orderItemId") UUID id) {
         DeleteOrderItemCommand deleteCommand = new DeleteOrderItemCommand(id);
 
         return deleteCommand.execute(pipeline);
@@ -50,7 +52,7 @@ public class OrderItemController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public UpdateOrderItemCommandResponse updateOrderItemById(@PathVariable("orderItemId") Long id,
+    public UpdateOrderItemCommandResponse updateOrderItemById(@PathVariable("orderItemId") UUID id,
                                                               @RequestBody UpdateOrderItemCommand updateCommand) {
         updateCommand.setId(id);
 

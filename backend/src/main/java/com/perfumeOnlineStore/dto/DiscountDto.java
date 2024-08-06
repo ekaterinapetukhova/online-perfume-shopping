@@ -5,10 +5,11 @@ import lombok.Data;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.UUID;
 
 @Data
 public class DiscountDto {
-    private Long id;
+    private UUID id;
     private Double percent;
     private String name;
     private LocalDateTime startedDate;

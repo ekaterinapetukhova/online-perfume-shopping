@@ -5,11 +5,13 @@ import com.perfumeOnlineStore.entity.Product;
 import jakarta.validation.constraints.*;
 import lombok.*;
 
+import java.util.UUID;
+
 @Getter
 @Setter
 public class UpdateProductCommand implements Command<UpdateProductCommandResponse> {
     @NotNull(message = "Product ID must be set")
-    private Long id;
+    private UUID id;
     @NotBlank(message = "Name must be set")
     private String name;
     @NotBlank(message = "Description must be set")

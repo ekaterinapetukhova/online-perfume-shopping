@@ -7,20 +7,17 @@ import com.perfumeOnlineStore.controller.user.command.updateUserCommand.UpdateUs
 import com.perfumeOnlineStore.controller.user.command.updateUserCommand.UpdateUserCommandResponse;
 import com.perfumeOnlineStore.controller.user.query.getAllUsersQuery.*;
 import com.perfumeOnlineStore.controller.user.query.getUserByIdQuery.*;
-import com.perfumeOnlineStore.entity.User;
-import com.perfumeOnlineStore.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/v1/users")
 @RequiredArgsConstructor
 public class UserController {
-    private final UserService userService;
     private final GetAllUsersQueryHandler getAllUsersQueryHandler;
     private final Pipeline pipeline;
 
@@ -30,7 +27,7 @@ public class UserController {
     }
 
     @GetMapping("/{userId}")
-    public GetUserByIdQueryResponse getUserById(@PathVariable("userId") Long id) {
+    public GetUserByIdQueryResponse getUserById(@PathVariable("userId") UUID id) {
         GetUserByIdQuery query = new GetUserByIdQuery(id);
 
         return query.execute(pipeline);
@@ -45,14 +42,14 @@ public class UserController {
     }
 
     @DeleteMapping("/{userId}")
-    public DeleteUserCommandResponse deleteUserById(@PathVariable("userId") Long id) {
+    public DeleteUserCommandResponse deleteUserById(@PathVariable("userId") UUID id) {
         DeleteUserCommand deleteCommand = new DeleteUserCommand(id);
 
         return deleteCommand.execute(pipeline);
     }
 
     @PutMapping("/{userId}")
-    public UpdateUserCommandResponse updateUserById(@PathVariable("userId") Long id,
+    public UpdateUserCommandResponse updateUserById(@PathVariable("userId") UUID id,
                                                     @RequestBody UpdateUserCommand updateCommand) {
         updateCommand.setId(id);
 

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -17,7 +18,7 @@ public class DiscountService {
         return discountRepository.findAll();
     }
 
-    public Optional<Discount> findDiscountById(Long id) {
+    public Optional<Discount> findDiscountById(UUID id) {
         return discountRepository.findById(id);
     }
 

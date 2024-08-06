@@ -10,6 +10,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.UUID;
+
 @RestController
 @RequestMapping("api/v1/orders")
 @RequiredArgsConstructor
@@ -23,7 +25,7 @@ public class OrderController {
     }
 
     @GetMapping("/{orderId}")
-    public GetOrderByIdQueryResponse getOrderById(@PathVariable("orderId") Long id) {
+    public GetOrderByIdQueryResponse getOrderById(@PathVariable("orderId") UUID id) {
         GetOrderByIdQuery query = new GetOrderByIdQuery(id);
 
         return query.execute(pipeline);
@@ -38,7 +40,7 @@ public class OrderController {
     }
 
     @DeleteMapping("/{orderId}")
-    public DeleteOrderCommandResponse deleteOrder(@PathVariable("orderId") Long id) {
+    public DeleteOrderCommandResponse deleteOrder(@PathVariable("orderId") UUID id) {
         DeleteOrderCommand deleteCommand = new DeleteOrderCommand(id);
 
         return deleteCommand.execute(pipeline);
@@ -49,7 +51,7 @@ public class OrderController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public UpdateOrderCommandResponse updateOrderById(@PathVariable("orderId") Long id,
+    public UpdateOrderCommandResponse updateOrderById(@PathVariable("orderId") UUID id,
                                                       @RequestBody UpdateOrderCommand updateCommand) {
         updateCommand.setId(id);
 
