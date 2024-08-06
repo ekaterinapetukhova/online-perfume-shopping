@@ -9,6 +9,8 @@ import com.perfumeOnlineStore.controller.user.query.getAllUsersQuery.*;
 import com.perfumeOnlineStore.controller.user.query.getAllUsersWithOrders.GetAllUsersWithOrdersQuery;
 import com.perfumeOnlineStore.controller.user.query.getAllUsersWithOrders.GetAllUsersWithOrdersQueryResponse;
 import com.perfumeOnlineStore.controller.user.query.getUserByIdQuery.*;
+import com.perfumeOnlineStore.controller.user.query.getUserWithProductsByIdQuery.GetUserWithProductsByIdQuery;
+import com.perfumeOnlineStore.controller.user.query.getUserWithProductsByIdQuery.GetUserWithProductsByIdQueryResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -38,6 +40,13 @@ public class UserController {
     @GetMapping("/{userId}")
     public GetUserByIdQueryResponse getUserById(@PathVariable("userId") UUID id) {
         GetUserByIdQuery query = new GetUserByIdQuery(id);
+
+        return query.execute(pipeline);
+    }
+
+    @GetMapping(value = "/{userId}", params = "withOrders=true")
+    public GetUserWithProductsByIdQueryResponse getUserWithProductsById(@PathVariable("userId") UUID id) {
+        GetUserWithProductsByIdQuery query = new GetUserWithProductsByIdQuery(id);
 
         return query.execute(pipeline);
     }

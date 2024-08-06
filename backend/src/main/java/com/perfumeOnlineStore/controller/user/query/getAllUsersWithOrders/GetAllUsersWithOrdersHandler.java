@@ -23,14 +23,14 @@ public class GetAllUsersWithOrdersHandler implements Command.Handler<GetAllUsers
         try {
             List<User> users = userService.findAllUsers();
 
-            List<UserWithProductsDto> usersDto = users.stream()
+            List<UserWithProductsDto> usersWithProductsDto = users.stream()
                     .map(UserWithProductsToDtoMapper.INSTANCE::toDto)
                     .toList();
 
             resp.setSuccess(true);
             resp.setStatusCode(HttpStatus.OK.value());
             resp.setStatus(HttpStatus.OK.name());
-            resp.setPayload(usersDto);
+            resp.setPayload(usersWithProductsDto);
 
             return resp;
         } catch (Exception e) {
