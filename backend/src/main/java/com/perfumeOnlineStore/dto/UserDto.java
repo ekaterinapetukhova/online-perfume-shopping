@@ -17,5 +17,5 @@ public class UserDto {
     private String country;
     private String city;
     private String postcode;
-    private List<Order> orders;
+//    private List<Order> orders;
 }

@@ -6,6 +6,8 @@ import com.perfumeOnlineStore.controller.user.command.deleteUserCommand.*;
 import com.perfumeOnlineStore.controller.user.command.updateUserCommand.UpdateUserCommand;
 import com.perfumeOnlineStore.controller.user.command.updateUserCommand.UpdateUserCommandResponse;
 import com.perfumeOnlineStore.controller.user.query.getAllUsersQuery.*;
+import com.perfumeOnlineStore.controller.user.query.getAllUsersWithOrders.GetAllUsersWithOrdersQuery;
+import com.perfumeOnlineStore.controller.user.query.getAllUsersWithOrders.GetAllUsersWithOrdersQueryResponse;
 import com.perfumeOnlineStore.controller.user.query.getUserByIdQuery.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
@@ -22,6 +24,13 @@ public class UserController {
     @GetMapping
     public GetAllUsersQueryResponse getAllUsers() {
         GetAllUsersQuery query = new GetAllUsersQuery();
+
+        return query.execute(pipeline);
+    }
+
+    @GetMapping(params = "withOrders=true")
+    public GetAllUsersWithOrdersQueryResponse getAllUsersWithOrders() {
+        GetAllUsersWithOrdersQuery query = new GetAllUsersWithOrdersQuery();
 
         return query.execute(pipeline);
     }

@@ -12,8 +12,8 @@ public interface UserToUserDtoMapper {
 
     UserDto toDto(User user);
 
-    @AfterMapping
-    default void addOrdersToDto(User user, UserDto userDto) {
-        userDto.setOrders(user.getOrders());
-    }
+//    @AfterMapping
+//    default void addOrdersToDto(User user, UserDto userDto) {
+//        userDto.setOrders(user.getOrders());
+//    }
 }
