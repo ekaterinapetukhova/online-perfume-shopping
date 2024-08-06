@@ -1,14 +1,10 @@
 package com.perfumeOnlineStore.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.*;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @Table
 @Entity
@@ -49,7 +45,7 @@ public class Product {
             name = "product_discount",
             joinColumns = @JoinColumn(name = "product_id"),
             inverseJoinColumns = @JoinColumn(name = "discount_id"))
-    private List<Discount> discounts = new ArrayList<>();
+    private Set<Discount> discounts = new HashSet<>();
 
     @OneToMany(
             mappedBy = "product",
@@ -57,7 +53,7 @@ public class Product {
             orphanRemoval = true
     )
     @JsonManagedReference
-    private List<OrderItem> orderItems;
+    private Set<OrderItem> orderItems = new HashSet<>();
 
     public enum Gender {
         MALE, FEMALE

@@ -1,8 +1,7 @@
 package com.perfumeOnlineStore.config;
 
 import jakarta.validation.Validator;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.*;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
 @Configuration

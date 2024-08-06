@@ -1,11 +1,8 @@
 package com.perfumeOnlineStore.controller.category.command.updateCategoryCommand;
 
 import an.awesome.pipelinr.Command;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.validation.constraints.*;
+import lombok.*;
 
 @Getter
 @Setter

@@ -1,19 +1,13 @@
 package com.perfumeOnlineStore.entity;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @Entity
 @Table
@@ -37,9 +31,10 @@ public class Discount {
     private LocalDateTime endedDate;
     @Column(nullable = false, columnDefinition = "text")
     private String description;
+
     @ManyToMany(mappedBy = "discounts")
     @JsonIgnoreProperties(value = { "discounts" })
-    private List<Product> products;
+    private Set<Product> products = new HashSet<>();
 
     public Discount(
             Double percent,

@@ -1,15 +1,10 @@
 package com.perfumeOnlineStore.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.*;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @Entity
 @Table
@@ -36,12 +31,13 @@ public class User {
 
     @ManyToMany(
             fetch = FetchType.EAGER,
-            cascade={ CascadeType.MERGE, CascadeType.REMOVE, CascadeType.REFRESH, CascadeType.DETACH })
+            cascade= CascadeType.ALL
+    )
     @JoinTable(
             name = "user_role",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
-    private List<Role> roles;
+    private Set<Role> roles = new HashSet<>();
 
     @OneToMany(
             mappedBy = "user",
@@ -49,7 +45,7 @@ public class User {
             orphanRemoval = true
     )
     @JsonManagedReference
-    private List<Order> orders;
+    private Set<Order> orders = new HashSet<>();
 
     public User(
             String name,
