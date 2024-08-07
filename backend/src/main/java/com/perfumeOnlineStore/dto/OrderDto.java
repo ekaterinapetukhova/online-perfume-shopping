@@ -4,8 +4,7 @@ import com.perfumeOnlineStore.entity.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @Data
 public class OrderDto {
@@ -14,5 +13,5 @@ public class OrderDto {
     private Order.Status status;
     private LocalDateTime date;
     private User user;
-    private List<OrderItem> orderItems;
+    private Set<OrderItem> orderItems;
 }

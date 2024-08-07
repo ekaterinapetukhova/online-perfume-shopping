@@ -1,13 +1,12 @@
 package com.perfumeOnlineStore.dto;
 
 import com.perfumeOnlineStore.entity.Order;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 
-import java.util.List;
+import java.util.Set;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class UserWithProductsDto extends UserDto {
-    private List<Order> orders;
+    private Set<Order> orders;
 }

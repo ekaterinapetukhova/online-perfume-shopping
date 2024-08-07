@@ -4,8 +4,7 @@ import com.perfumeOnlineStore.entity.Product;
 import lombok.Data;
 
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @Data
 public class DiscountDto {
@@ -15,5 +14,5 @@ public class DiscountDto {
     private LocalDateTime startedDate;
     private LocalDateTime endedDate;
     private String description;
-    private List<Product> products;
+    private Set<Product> products;
 }

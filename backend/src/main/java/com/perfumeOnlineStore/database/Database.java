@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 import java.time.LocalDateTime;
 import java.time.Month;
 import java.util.List;
+import java.util.Set;
 
 @Component
 @Slf4j
@@ -81,7 +82,7 @@ public class Database implements CommandLineRunner {
         );
 
         dolceGabbanaTheOne.setDiscounts(
-                List.of(discount)
+                Set.of(discount)
         );
 
         productRepository.saveAll(

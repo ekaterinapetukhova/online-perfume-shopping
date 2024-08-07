@@ -3,8 +3,7 @@ package com.perfumeOnlineStore.dto;
 import com.perfumeOnlineStore.entity.*;
 import lombok.*;
 
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @Data
 public class ProductDto {
@@ -19,6 +18,6 @@ public class ProductDto {
     private Product.Gender gender;
     private Integer volume;
     private Category category;
-    private List<Discount> discounts;
-    private List<OrderItem> orderItems;
+    private Set<Discount> discounts;
+    private Set<OrderItem> orderItems;
 }
