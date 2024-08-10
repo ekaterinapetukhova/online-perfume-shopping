@@ -4,6 +4,7 @@ import an.awesome.pipelinr.Command;
 import com.perfumeOnlineStore.dto.UserDto;
 import com.perfumeOnlineStore.entity.User;
 import com.perfumeOnlineStore.mapper.user.CreateUserCommandToUserMapper;
+import com.perfumeOnlineStore.service.JwtService;
 import com.perfumeOnlineStore.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -16,6 +17,7 @@ public class CreateUserCommandHandler implements Command.Handler<CreateUserComma
     private final UserService userService;
     private final CreateUserCommandValidator validator;
     private final PasswordEncoder passwordEncoder;
+    private final JwtService jwtService;
 
     public CreateUserCommandResponse handle(CreateUserCommand command) {
         CreateUserCommandResponse resp = new CreateUserCommandResponse();
@@ -25,6 +27,8 @@ public class CreateUserCommandHandler implements Command.Handler<CreateUserComma
         try {
             User user = CreateUserCommandToUserMapper.INSTANCE.toUser(command);
             user.setPassword(passwordEncoder.encode(command.getPassword()));
+
+            String jwtToken = jwtService.generateToken(user);
 
             userService.saveUser(user);
 
