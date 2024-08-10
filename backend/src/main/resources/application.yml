@@ -12,12 +12,15 @@ spring:
       ddl-auto: create-drop
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
         globally_quoted_identifiers: true
   jackson:
     serialization:
       fail-on-empty-beans: false
+
+security:
+  jwt:
+    secret-key: 17C40DA612041902D76F0B7C0ACA7572635C7472B02444F0D9EFFA608C9CE48908764AF2C4941C7E55316734B3B7E860F29127B75D56F11493B5548BAFFDBBC5EC947467F636D94F85FCCE1C798589009D8FDC4409A646B51F817BFB7BE8CAF03AB45341CC4A9C5A703749869AEC0E6C310622AF5F327F81F1ABAA09B1210231
 
 springdoc:
   api-docs:

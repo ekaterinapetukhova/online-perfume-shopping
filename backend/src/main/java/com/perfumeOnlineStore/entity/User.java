@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.*;
 import com.perfumeOnlineStore.utils.encryption.aes.AesEncrypt;
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.*;
 
@@ -12,7 +15,7 @@ import java.util.*;
 @Data
 @NoArgsConstructor
 @JsonIgnoreProperties(value = { "hibernateLazyInitializer" })
-public class User {
+public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
@@ -37,16 +40,23 @@ public class User {
     private String city;
     @Convert(converter = AesEncrypt.class)
     private String postcode;
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Role role;
 
-    @ManyToMany(
-            fetch = FetchType.EAGER,
-            cascade= CascadeType.ALL
-    )
-    @JoinTable(
-            name = "user_role",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id"))
-    private Set<Role> roles = new HashSet<>();
+    public enum Role {
+        USER, ADMIN
+    }
+
+//    @ManyToMany(
+//            fetch = FetchType.EAGER,
+//            cascade= CascadeType.ALL
+//    )
+//    @JoinTable(
+//            name = "user_role",
+//            joinColumns = @JoinColumn(name = "user_id"),
+//            inverseJoinColumns = @JoinColumn(name = "role_id"))
+//    private Set<Role> roles = new HashSet<>();
 
     @OneToMany(
             mappedBy = "user",
@@ -65,7 +75,8 @@ public class User {
             String address,
             String country,
             String city,
-            String postcode
+            String postcode,
+            Role role
     ) {
         this.name = name;
         this.surname = surname;
@@ -76,5 +87,38 @@ public class User {
         this.country = country;
         this.city = city;
         this.postcode = postcode;
+        this.role = role;
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        GrantedAuthority authority = new SimpleGrantedAuthority(role.name());
+
+        return List.of(authority);
+    }
+
+    @Override
+    public String getUsername() {
+        return email;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
     }
 }

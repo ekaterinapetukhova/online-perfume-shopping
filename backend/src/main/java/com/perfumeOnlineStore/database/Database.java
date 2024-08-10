@@ -5,6 +5,7 @@ import com.perfumeOnlineStore.repository.*;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 
@@ -23,6 +24,7 @@ public class Database implements CommandLineRunner {
     private final DiscountRepository discountRepository;
     private final OrderItemRepository orderItemRepository;
     private final OrderRepository orderRepository;
+    private final PasswordEncoder passwordEncoder;
 
     @Override
     public void run(String[] args) {
@@ -96,12 +98,13 @@ public class Database implements CommandLineRunner {
                 "Kate",
                 "Petukhova",
                 "katepthv12@gmail.com",
-                "12345678",
+                passwordEncoder.encode("12345678"),
                 "12345678",
                 "Street 1",
                 "Poland",
                 "Katowice",
-                "44-021"
+                "44-021",
+                User.Role.ADMIN
         );
 
         userRepository.save(user);

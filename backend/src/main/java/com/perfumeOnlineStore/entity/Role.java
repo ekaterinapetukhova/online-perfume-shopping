@@ -15,8 +15,8 @@ public class Role {
     private Long id;
     @Column(nullable = false)
     private String name;
-    @ManyToMany(mappedBy = "roles")
-    private List<User> users;
+//    @ManyToMany(mappedBy = "roles")
+//    private List<User> users;
 
     public Role(String name) {
         this.name = name;

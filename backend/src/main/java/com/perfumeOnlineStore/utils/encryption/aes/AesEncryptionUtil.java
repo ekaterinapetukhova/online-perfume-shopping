@@ -3,9 +3,7 @@ package com.perfumeOnlineStore.utils.encryption.aes;
 import com.perfumeOnlineStore.utils.encryption.EncryptionUtil;
 import org.springframework.stereotype.Component;
 
-import javax.crypto.Cipher;
-import javax.crypto.KeyGenerator;
-import javax.crypto.SecretKey;
+import javax.crypto.*;
 import java.util.Base64;
 
 @Component

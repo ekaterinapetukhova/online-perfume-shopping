@@ -7,6 +7,7 @@ import com.perfumeOnlineStore.mapper.user.CreateUserCommandToUserMapper;
 import com.perfumeOnlineStore.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Service;
 public class CreateUserCommandHandler implements Command.Handler<CreateUserCommand, CreateUserCommandResponse>{
     private final UserService userService;
     private final CreateUserCommandValidator validator;
+    private final PasswordEncoder passwordEncoder;
 
     public CreateUserCommandResponse handle(CreateUserCommand command) {
         CreateUserCommandResponse resp = new CreateUserCommandResponse();
@@ -22,6 +24,7 @@ public class CreateUserCommandHandler implements Command.Handler<CreateUserComma
 
         try {
             User user = CreateUserCommandToUserMapper.INSTANCE.toUser(command);
+            user.setPassword(passwordEncoder.encode(command.getPassword()));
 
             userService.saveUser(user);
 

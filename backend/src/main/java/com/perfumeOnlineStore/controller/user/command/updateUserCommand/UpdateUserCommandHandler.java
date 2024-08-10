@@ -6,6 +6,7 @@ import com.perfumeOnlineStore.mapper.user.UpdateUserCommandToUserMapper;
 import com.perfumeOnlineStore.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.util.Optional;
@@ -15,6 +16,7 @@ import java.util.Optional;
 public class UpdateUserCommandHandler implements Command.Handler<UpdateUserCommand, UpdateUserCommandResponse> {
     private final UserService userService;
     private final UpdateUserCommandValidator validator;
+    private final PasswordEncoder passwordEncoder;
 
     public UpdateUserCommandResponse handle(UpdateUserCommand command) {
         UpdateUserCommandResponse resp = new UpdateUserCommandResponse();
@@ -26,6 +28,7 @@ public class UpdateUserCommandHandler implements Command.Handler<UpdateUserComma
 
             if (existingUser.isPresent()) {
                 User user = UpdateUserCommandToUserMapper.INSTANCE.toUser(command);
+                user.setPassword(passwordEncoder.encode(command.getPassword()));
 
                 userService.saveUser(user);
 
