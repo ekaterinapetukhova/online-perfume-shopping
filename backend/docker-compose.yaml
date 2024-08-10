@@ -1,12 +1,48 @@
-version: '3.9'
-
 services:
   postgres:
-    container_name: postgres
     ports:
-      - "5432:5432"
+      - 5432:5432
     environment:
-      - POSTGRES_DB=perfume_online_shopping
-      - POSTGRES_PASSWORD=Pea12122000
-      - POSTGRES_USER=ekaterinapetukhova
+      POSTGRES_DB: perfume_online_shopping
+      POSTGRES_PASSWORD: Pea12122000
+      POSTGRES_USER: ekaterinapetukhova
     image: postgres:12.19-alpine
+    restart: always
+    volumes:
+      - postgres:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4:8.10
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ekaterinapetukhova@pgadmin.com
+      PGADMIN_DEFAULT_PASSWORD: Pea12122000
+      PGADMIN_LISTEN_PORT: 81
+    ports:
+      - 15432:81
+    volumes:
+      - pgadmin:/var/lib/pgadmin
+    depends_on:
+      - postgres
+
+  seq-input-gelf:
+    image: datalust/seq-input-gelf:latest
+    depends_on:
+      - seq
+    ports:
+      - 12201:12201/udp
+    environment:
+      SEQ_ADDRESS: http://seq:5341
+    restart: unless-stopped
+  seq:
+    image: datalust/seq:latest
+    ports:
+      - 5341:80
+    environment:
+      ACCEPT_EULA: Y
+    restart: unless-stopped
+    volumes:
+      - ./seq-data:/data
+
+volumes:
+  postgres:
+  pgadmin:
