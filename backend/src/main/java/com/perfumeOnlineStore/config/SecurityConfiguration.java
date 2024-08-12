@@ -40,7 +40,8 @@ public class SecurityConfiguration {
                                     "/api/v1/orders",
                                     "/api/v1/products",
                                     "/api/v1/users"
-                            ).permitAll()
+                            )
+                            .permitAll()
                             .anyRequest()
                             .authenticated();
                 })

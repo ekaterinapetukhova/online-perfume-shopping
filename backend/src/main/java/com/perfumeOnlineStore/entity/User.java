@@ -19,26 +19,26 @@ public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-    @Convert(converter = AesEncrypt.class)
+//    @Convert(converter = AesEncrypt.class)
     @Column(nullable = false)
     private String name;
     @Column(nullable = false)
-    @Convert(converter = AesEncrypt.class)
+//    @Convert(converter = AesEncrypt.class)
     private String surname;
     @Column(unique = true, nullable = false)
-    @Convert(converter = AesEncrypt.class)
+//    @Convert(converter = AesEncrypt.class)
     private String email;
     @Column(nullable = false)
     private String password;
-    @Convert(converter = AesEncrypt.class)
+//    @Convert(converter = AesEncrypt.class)
     private String phoneNumber;
-    @Convert(converter = AesEncrypt.class)
+//    @Convert(converter = AesEncrypt.class)
     private String address;
-    @Convert(converter = AesEncrypt.class)
+//    @Convert(converter = AesEncrypt.class)
     private String country;
-    @Convert(converter = AesEncrypt.class)
+//    @Convert(converter = AesEncrypt.class)
     private String city;
-    @Convert(converter = AesEncrypt.class)
+//    @Convert(converter = AesEncrypt.class)
     private String postcode;
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
