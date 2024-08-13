@@ -22,7 +22,7 @@ public class JwtService {
     @Value("${security.jwt.secret-key}")
     private String secretKey;
 
-    @Value("${security.jwt.expiration-ms}")
+    @Value("${security.jwt.jwt-expiration-ms}")
     private Long jwtExpiration;
 
     public String extractUsername(String token) {
