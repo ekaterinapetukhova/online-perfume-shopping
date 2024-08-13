@@ -26,7 +26,6 @@ public class RefreshTokenService {
         User user = userService.findUserByEmail(username);
 
         RefreshToken refreshToken = RefreshToken.builder()
-                .user(user)
                 .expiryDate(Instant.now().plusMillis(refreshExpirationMs))
                 .token(UUID.randomUUID().toString())
                 .build();

@@ -33,5 +33,5 @@ public class Session {
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private Set<Product> refreshTokens = new HashSet<>();
+    private Set<RefreshToken> refreshTokens = new HashSet<>();
 }
