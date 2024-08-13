@@ -14,6 +14,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class SessionService {
     private final SessionRepository sessionRepository;
+    private final UserService userService;
 
     @Value("${security.session.expiration-ms}")
     private Long expirationMs;
@@ -34,9 +35,10 @@ public class SessionService {
                 .user(user)
                 .startTime(Instant.now())
                 .isActive(true)
+                .isRemembered(isRemembered)
                 .build();
 
-        if (isRemembered) session.setExpiredTime(session.getStartTime().plusMillis(rememberedExpirationMs));
+        if (session.isRemembered()) session.setExpiredTime(session.getStartTime().plusMillis(rememberedExpirationMs));
         else session.setExpiredTime(session.getStartTime().plusMillis(expirationMs));
 
         session.addRefreshToken(token);

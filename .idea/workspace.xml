@@ -5,11 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a92c80ad-e7a8-4777-97ef-80d1f848311b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/controller/session/command/createSessionCommand/CreateSessionCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/controller/session/command/createSessionCommand/CreateSessionCommandHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/controller/session/command/createSessionCommand/CreateSessionCommandResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/controller/session/command/createSessionCommand/CreateSessionCommandValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/dto/JwtResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b9afec86-eb78-4631-a1ff-dc2c1d861ea2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b9afec86-eb78-4631-a1ff-dc2c1d861ea2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b9afec86-eb78-4631-a1ff-dc2c1d861ea2/storage_v2/_src_/database/perfume_online_shopping.2STfvg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b9afec86-eb78-4631-a1ff-dc2c1d861ea2/storage_v2/_src_/database/perfume_online_shopping.2STfvg/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/app.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/config/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/controller/session/SessionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/controller/session/SessionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/entity/RefreshToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/entity/RefreshToken.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/entity/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/entity/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/service/RefreshTokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/service/RefreshTokenService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/service/SessionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/service/SessionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/service/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/service/UserDetailsServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,33 +54,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.PerfumeOnlineStoreApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.backend/docker-compose.yaml: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.PerfumeOnlineStoreApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;backend&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.PerfumeOnlineStoreApplication.executor": "Run",
+    "Application.Unnamed.executor": "Run",
+    "Docker.backend/docker-compose.yaml: Compose Deployment.executor": "Run",
+    "HTTP Request.generated-requests | #50.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.PerfumeOnlineStoreApplication.executor": "Run",
+    "git-widget-placeholder": "backend",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
-  <component name="RunManager">
+}]]></component>
+  <component name="RunManager" selected="Application.PerfumeOnlineStoreApplication">
     <configuration name="PerfumeOnlineStoreApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="envFilePaths">
         <option value="$PROJECT_DIR$/backend/.env" />
@@ -88,6 +99,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="generated-requests | #50" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="50" requestIdentifier="#50" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.generated-requests | #50" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -109,7 +128,7 @@
       <workItem from="1723446693377" duration="1946000" />
       <workItem from="1723448985123" duration="2228000" />
       <workItem from="1723451245031" duration="9172000" />
-      <workItem from="1723529491669" duration="13689000" />
+      <workItem from="1723529491669" duration="18990000" />
     </task>
     <servers />
   </component>

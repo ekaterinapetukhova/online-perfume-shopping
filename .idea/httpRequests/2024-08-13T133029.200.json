@@ -1,0 +1,9 @@
+{
+  "success": true,
+  "status": "OK",
+  "statusCode": 200,
+  "payload": {
+    "refreshToken": "537a2772-9256-4062-b47f-27fa3692de12",
+    "accessToken": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrYXRlcHRodjEyQGdtYWlsLmNvbSIsImlhdCI6MTcyMzU0ODYyOSwiZXhwIjoxNzIzNTUyMjI5fQ.LlHIBa44sxcH0lzhVughKfagFn6uhelyNv32EkiU3YA"
+  }
+}

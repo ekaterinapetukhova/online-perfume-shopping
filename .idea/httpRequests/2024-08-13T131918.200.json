@@ -1,0 +1,6 @@
+{
+  "success": false,
+  "status": "INTERNAL_SERVER_ERROR",
+  "statusCode": 500,
+  "payload": null
+}

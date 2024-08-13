@@ -1,0 +1,332 @@
+POST http://localhost:8088/api/v1/auth/signin
+Content-Type: application/json
+Content-Length: 92
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "katepthv12@gmail.com",
+  "password": "12345678",
+  "isRemembered": "true"
+}
+
+<> 2024-08-13T133847.200.json
+
+###
+
+POST http://localhost:8088/api/v1/auth/signin
+Content-Type: application/json
+Content-Length: 92
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "katepthv12@gmail.com",
+  "password": "12345678",
+  "isRemembered": "true"
+}
+
+<> 2024-08-13T133601.200.json
+
+###
+
+POST http://localhost:8088/api/v1/auth/signin
+Content-Type: application/json
+Content-Length: 90
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "katepthv12@gmail.com",
+  "password": "12345678",
+  "isRemembered": true
+}
+
+<> 2024-08-13T133527.200.json
+
+###
+
+POST http://localhost:8088/api/v1/auth/signin
+Content-Type: application/json
+Content-Length: 90
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "katepthv12@gmail.com",
+  "password": "12345678",
+  "isRemembered": true
+}
+
+<> 2024-08-13T133347.200.json
+
+###
+
+POST http://localhost:8088/api/v1/auth/signin
+Content-Type: application/json
+Content-Length: 90
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "katepthv12@gmail.com",
+  "password": "12345678",
+  "isRemembered": true
+}
+
+<> 2024-08-13T133029.200.json
+
+###
+
+POST http://localhost:8088/api/v1/auth/signin
+Content-Type: application/json
+Content-Length: 90
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "katepthv12@gmail.com",
+  "password": "12345678",
+  "isRemembered": true
+}
+
+<> 2024-08-13T132355.200.json
+
+###
+
+POST http://localhost:8088/api/v1/auth/signin
+Content-Type: application/json
+Content-Length: 90
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "katepthv12@gmail.com",
+  "password": "12345678",
+  "isRemembered": true
+}
+
+<> 2024-08-13T132124.200.json
+
+###
+
+POST http://localhost:8088/api/v1/auth/signin
+Content-Type: application/json
+Content-Length: 90
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "katepthv12@gmail.com",
+  "password": "12345678",
+  "isRemembered": true
+}
+
+<> 2024-08-13T131918.200.json
+
+###
+
+POST http://localhost:8088/api/v1/auth/signin
+Content-Type: application/json
+Content-Length: 66
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "katepthv12@gmail.com",
+  "password": "12345678"
+}
+
+<> 2024-08-13T131905.200.json
+
+###
+
+POST http://localhost:8088/api/v1/auth/signin
+Content-Type: application/json
+Content-Length: 67
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "katepthv12@gmail.com",
+  "password": "12345678",
+}
+
+###
+
+POST http://localhost:8088/api/v1/auth/signin
+Content-Type: application/json
+Content-Length: 90
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "katepthv12@gmail.com",
+  "password": "12345678",
+  "isRemembered": true
+}
+
+<> 2024-08-13T131856.200.json
+
+###
+
+POST http://localhost:8088/api/v1/auth/signin
+Content-Type: application/json
+Content-Length: 90
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "katepthv12@gmail.com",
+  "password": "12345678",
+  "isRemembered": true
+}
+
+###
+
+POST http://localhost:8088/api/v1/auth/signin
+Content-Type: application/json
+Content-Length: 90
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "katepthv12@gmail.com",
+  "password": "12345678",
+  "isRemembered": true
+}
+
+###
+
+POST http://localhost:8088/api/v1/auth/signin
+Content-Type: application/json
+Content-Length: 90
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "katepthv12@gmail.com",
+  "password": "12345678",
+  "isRemembered": true
+}
+
+###
+
+POST http://localhost:8088/api/v1/auth/signin
+Content-Type: application/json
+Content-Length: 90
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "katepthv12@gmail.com",
+  "password": "12345678",
+  "isRemembered": true
+}
+
+###
+
+POST http://localhost:8088/api/v1/auth/signin
+Content-Type: application/json
+Content-Length: 90
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "katepthv12@gmail.com",
+  "password": "12345678",
+  "isRemembered": true
+}
+
+###
+
+POST http://localhost:8088/api/v1/auth/signin
+Content-Type: application/json
+Content-Length: 90
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "katepthv12@gmail.com",
+  "password": "12345678",
+  "isRemembered": true
+}
+
+###
+
+POST http://localhost:8088/api/v1/auth/signin
+Content-Type: application/json
+Content-Length: 90
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "katepthv12@gmail.com",
+  "password": "12345678",
+  "isRemembered": true
+}
+
+###
+
+POST http://localhost:8088/api/v1/auth/signin
+Content-Type: application/json
+Content-Length: 67
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "katepthv12@gmail.com",
+  "password": "12345678",
+}
+
+###
+
+POST http://localhost:8088/api/v1/auth/signin
+Content-Type: application/json
+Content-Length: 90
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "katepthv12@gmail.com",
+  "password": "12345678",
+  "isRemembered": true
+}
+
+###
+
+POST http://localhost:8088/api/v1/auth/signin
+Content-Type: application/json
+Content-Length: 90
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "katepthv12@gmail.com",
+  "password": "12345678",
+  "isRemembered": true
+}
+
+###
+

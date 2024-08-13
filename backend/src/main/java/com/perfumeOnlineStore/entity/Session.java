@@ -23,9 +23,11 @@ public class Session {
     private Instant expiredTime;
     @Column(nullable = false)
     private boolean isActive = false;
+    @Column(nullable = false)
+    private boolean isRemembered;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="user_id", nullable = false)
+    @JoinColumn(name="user_id")
     @JsonBackReference
     private User user;
 
@@ -37,6 +39,10 @@ public class Session {
     private Set<RefreshToken> refreshTokens = new HashSet<>();
 
     public void addRefreshToken(RefreshToken refreshToken) {
+        if (refreshTokens == null) {
+            refreshTokens = new HashSet<>();
+        }
+
         refreshTokens.add(refreshToken);
     }
 }
