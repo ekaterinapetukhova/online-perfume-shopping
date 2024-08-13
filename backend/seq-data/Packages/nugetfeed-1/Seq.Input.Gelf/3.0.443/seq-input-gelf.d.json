@@ -1,0 +1,41 @@
+{
+    "$schema": "https://getseq.net/schema/app-definition/v3",
+    "name": "GELF Input",
+    "description": "Ingest Graylog Extended Log Format (GELF) payloads over TCP or UDP. Requires Seq 5.1+.",
+    "capabilities": ["input"],
+    "platform": {
+      "win-x64": {
+        "executable": "win-x64\\sqelf.exe"
+      },
+      "linux-x64": {
+        "executable": "linux-x64/sqelf"
+      },
+      "linux-arm64": {
+        "executable": "linux-arm64/sqelf"
+      }
+    },
+    "settings": {
+      "gelfAddress": {
+        "displayName": "GELF address",
+        "helpText": "The url (protocol, IP address and port) on which the input will listen for GELF payloads. The default is `udp://0.0.0.0:12201`. Specifying the protocol as `tcp` will listen on TCP instead of UDP.",
+        "isOptional": true
+      },
+      "certificatePath": {
+        "displayName": "Certificate file path",
+        "helpText": "The absolute path to a `.pem` certificate file to use for secure transport. If the protocol is TCP this will force TLS on all connections. If the protocol is UDP this will fail.",
+        "isOptional": true
+      },
+      "certificatePrivateKeyPath": {
+        "displayName": "Certificate private key file path",
+        "helpText": "The absolute path to a `.pem` PKCS8 private key file. If this value is blank it will default to the certificate path.",
+        "isOptional": true
+      },
+      "enableDiagnostics": {
+        "inputType": "Checkbox",
+        "displayName": "Enable diagnostics",
+        "helpText": "Controls the verbosity of diagnostic logs produced by the server. When enabled metrics will be regularly sampled and written back to Seq.",
+        "isOptional": true
+      }
+    }
+  }
+  

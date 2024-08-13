@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Seq.Input.Gelf</id>
+    <version>3.0.443</version>
+    <authors>Datalust and Contributors</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">Apache-2.0</license>
+    <licenseUrl>https://licenses.nuget.org/Apache-2.0</licenseUrl>
+    <icon>seq-input-gelf.png</icon>
+    <projectUrl>https://github.com/datalust/sqelf</projectUrl>
+    <description>Ingest GELF event payloads over TCP or UDP.</description>
+    <language>en-US</language>
+    <tags>seq-app</tags>
+  </metadata>
+</package>

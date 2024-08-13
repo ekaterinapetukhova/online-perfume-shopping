@@ -15,7 +15,6 @@ import java.util.List;
 import java.util.Set;
 
 @Component
-@Slf4j
 @AllArgsConstructor
 public class Database implements CommandLineRunner {
     private final ProductRepository productRepository;
