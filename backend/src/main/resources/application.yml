@@ -24,6 +24,9 @@ security:
     secret-key: ${JWT_SECRET_KEY}
     refresh-expiration-ms: 86400000
     jwt-expiration-ms: 3600000
+  session:
+    expiration-ms: 28800000 # if user didn't agree to remember them
+    remembered-expiration-ms: 2592000000 # if user agree to remember them
 
 logging:
   file:

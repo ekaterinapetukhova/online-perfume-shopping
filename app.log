@@ -420,3 +420,66 @@ Caused by: org.hibernate.AnnotationException: Collection 'com.perfumeOnlineStore
 2024-08-13T10:02:50.689+02:00  WARN 16616 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
 2024-08-13T10:02:50.691+02:00  INFO 16616 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2024-08-13T10:02:50.730+02:00  INFO 16616 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-08-13T10:08:29.771+02:00  INFO 11060 --- [restartedMain] c.p.PerfumeOnlineStoreApplication        : Starting PerfumeOnlineStoreApplication using Java 22.0.2 with PID 11060 (C:\Users\eka\Desktop\online-perfume-shopping\backend\target\classes started by eka in C:\Users\eka\Desktop\online-perfume-shopping)
+2024-08-13T10:08:29.773+02:00  INFO 11060 --- [restartedMain] c.p.PerfumeOnlineStoreApplication        : No active profile set, falling back to 1 default profile: "default"
+2024-08-13T10:08:29.816+02:00  INFO 11060 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-13T10:08:29.816+02:00  INFO 11060 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-13T10:08:30.985+02:00  INFO 11060 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-13T10:08:31.099+02:00  INFO 11060 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 104 ms. Found 8 JPA repository interfaces.
+2024-08-13T10:08:31.828+02:00  INFO 11060 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8088 (http)
+2024-08-13T10:08:31.844+02:00  INFO 11060 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-13T10:08:31.844+02:00  INFO 11060 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-08-13T10:08:31.897+02:00  INFO 11060 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-13T10:08:31.897+02:00  INFO 11060 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2081 ms
+2024-08-13T10:08:32.083+02:00  INFO 11060 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-13T10:08:32.141+02:00  INFO 11060 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-13T10:08:32.175+02:00  INFO 11060 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-13T10:08:32.461+02:00  INFO 11060 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-13T10:08:32.485+02:00  INFO 11060 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-13T10:08:32.672+02:00  INFO 11060 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2e2dac62
+2024-08-13T10:08:32.674+02:00  INFO 11060 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-13T10:08:32.712+02:00  WARN 11060 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-13T10:08:33.824+02:00  INFO 11060 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-13T10:08:33.845+02:00  WARN 11060 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-13T10:08:33.845+02:00  WARN 11060 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relacja "order" nie istnieje, pominięto
+2024-08-13T10:08:33.846+02:00  WARN 11060 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-13T10:08:33.846+02:00  WARN 11060 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relacja "order_item" nie istnieje, pominięto
+2024-08-13T10:08:33.847+02:00  WARN 11060 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-13T10:08:33.847+02:00  WARN 11060 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relacja "order_item" nie istnieje, pominięto
+2024-08-13T10:08:33.848+02:00  WARN 11060 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-13T10:08:33.848+02:00  WARN 11060 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relacja "product" nie istnieje, pominięto
+2024-08-13T10:08:33.849+02:00  WARN 11060 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-13T10:08:33.849+02:00  WARN 11060 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relacja "refresh_token" nie istnieje, pominięto
+2024-08-13T10:08:33.850+02:00  WARN 11060 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-13T10:08:33.850+02:00  WARN 11060 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relacja "session" nie istnieje, pominięto
+2024-08-13T10:08:33.850+02:00  WARN 11060 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-13T10:08:33.851+02:00  WARN 11060 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relacja "product_discount" nie istnieje, pominięto
+2024-08-13T10:08:33.852+02:00  WARN 11060 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-13T10:08:33.852+02:00  WARN 11060 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relacja "product_discount" nie istnieje, pominięto
+2024-08-13T10:08:33.853+02:00  WARN 11060 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-13T10:08:33.853+02:00  WARN 11060 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : tabela "category" nie istnieje, pominięto
+2024-08-13T10:08:33.853+02:00  WARN 11060 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-13T10:08:33.854+02:00  WARN 11060 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : tabela "discount" nie istnieje, pominięto
+2024-08-13T10:08:33.854+02:00  WARN 11060 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-13T10:08:33.854+02:00  WARN 11060 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : tabela "order" nie istnieje, pominięto
+2024-08-13T10:08:33.855+02:00  WARN 11060 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-13T10:08:33.855+02:00  WARN 11060 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : tabela "order_item" nie istnieje, pominięto
+2024-08-13T10:08:33.855+02:00  WARN 11060 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-13T10:08:33.855+02:00  WARN 11060 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : tabela "product" nie istnieje, pominięto
+2024-08-13T10:08:33.856+02:00  WARN 11060 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-13T10:08:33.856+02:00  WARN 11060 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : tabela "refresh_token" nie istnieje, pominięto
+2024-08-13T10:08:33.856+02:00  WARN 11060 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-13T10:08:33.856+02:00  WARN 11060 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : tabela "role" nie istnieje, pominięto
+2024-08-13T10:08:33.857+02:00  WARN 11060 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-13T10:08:33.857+02:00  WARN 11060 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : tabela "session" nie istnieje, pominięto
+2024-08-13T10:08:33.858+02:00  WARN 11060 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-13T10:08:33.858+02:00  WARN 11060 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : tabela "user" nie istnieje, pominięto
+2024-08-13T10:08:33.858+02:00  WARN 11060 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-13T10:08:33.858+02:00  WARN 11060 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : tabela "product_discount" nie istnieje, pominięto
+2024-08-13T10:08:33.939+02:00  INFO 11060 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-13T10:08:35.138+02:00  WARN 11060 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-13T10:08:35.169+02:00  INFO 11060 --- [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-08-13T10:08:35.170+02:00  WARN 11060 --- [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-08-13T10:08:35.893+02:00  INFO 11060 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-13T10:08:35.927+02:00  INFO 11060 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8088 (http) with context path '/'
+2024-08-13T10:08:35.937+02:00  INFO 11060 --- [restartedMain] c.p.PerfumeOnlineStoreApplication        : Started PerfumeOnlineStoreApplication in 6.74 seconds (process running for 7.242)

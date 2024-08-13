@@ -9,6 +9,7 @@ import java.util.*;
 
 @Entity
 @Table
+@Builder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -21,7 +22,9 @@ public class Session {
     @Column(nullable = false)
     private Instant expiredTime;
     @Column(nullable = false)
-    private boolean isActive;
+    private boolean isActive = false;
+    @Column(nullable = false)
+    private boolean isRefreshed = false;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="user_id", nullable = false)
@@ -34,4 +37,8 @@ public class Session {
             orphanRemoval = true
     )
     private Set<RefreshToken> refreshTokens = new HashSet<>();
+
+    public void addRefreshToken(RefreshToken refreshToken) {
+        refreshTokens.add(refreshToken);
+    }
 }
