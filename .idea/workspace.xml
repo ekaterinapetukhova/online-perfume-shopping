@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a92c80ad-e7a8-4777-97ef-80d1f848311b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/service/SessionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/app.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/entity/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/entity/Session.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/service/SessionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/service/SessionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/service/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/service/UserDetailsServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +109,7 @@
       <workItem from="1723446693377" duration="1946000" />
       <workItem from="1723448985123" duration="2228000" />
       <workItem from="1723451245031" duration="9172000" />
-      <workItem from="1723529491669" duration="10156000" />
+      <workItem from="1723529491669" duration="13689000" />
     </task>
     <servers />
   </component>

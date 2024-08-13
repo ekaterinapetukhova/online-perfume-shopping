@@ -23,8 +23,6 @@ public class Session {
     private Instant expiredTime;
     @Column(nullable = false)
     private boolean isActive = false;
-    @Column(nullable = false)
-    private boolean isRefreshed = false;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="user_id", nullable = false)

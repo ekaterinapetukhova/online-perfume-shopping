@@ -1,14 +1,14 @@
 package com.perfumeOnlineStore.service;
 
-import com.perfumeOnlineStore.entity.RefreshToken;
-import com.perfumeOnlineStore.entity.Session;
-import com.perfumeOnlineStore.entity.User;
+import com.perfumeOnlineStore.entity.*;
 import com.perfumeOnlineStore.repository.SessionRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
+import java.util.Optional;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -20,6 +20,10 @@ public class SessionService {
 
     @Value("${security.session.remembered-expiration-ms}")
     private Long rememberedExpirationMs;
+
+    public Optional<Session> findSessionById(UUID id) {
+        return sessionRepository.findById(id);
+    }
 
     public Session createNewSession(
             User user,
@@ -33,10 +37,24 @@ public class SessionService {
                 .build();
 
         if (isRemembered) session.setExpiredTime(session.getStartTime().plusMillis(rememberedExpirationMs));
-        else session.setExpiredTime(Instant.now().plusMillis(expirationMs));
+        else session.setExpiredTime(session.getStartTime().plusMillis(expirationMs));
 
         session.addRefreshToken(token);
 
         return sessionRepository.save(session);
+    }
+
+    public void disableSession(Session session) {
+        session.setActive(false);
+        sessionRepository.save(session);
+    }
+
+    public Session verifySessionExpiration(Session session) {
+        if (session.getExpiredTime().compareTo(Instant.now()) < 0) {
+            disableSession(session);
+            throw new RuntimeException("Session with " + session.getId() + " was expired. Start new session.");
+        }
+
+        return session;
     }
 }

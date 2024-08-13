@@ -483,3 +483,4 @@ Caused by: org.hibernate.AnnotationException: Collection 'com.perfumeOnlineStore
 2024-08-13T10:08:35.893+02:00  INFO 11060 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
 2024-08-13T10:08:35.927+02:00  INFO 11060 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8088 (http) with context path '/'
 2024-08-13T10:08:35.937+02:00  INFO 11060 --- [restartedMain] c.p.PerfumeOnlineStoreApplication        : Started PerfumeOnlineStoreApplication in 6.74 seconds (process running for 7.242)
+2024-08-13T10:36:46.298+02:00  WARN 11060 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m13s19ms822µs800ns).
