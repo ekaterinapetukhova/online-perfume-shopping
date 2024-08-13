@@ -20,7 +20,10 @@ import java.util.function.Function;
 @RequiredArgsConstructor
 public class JwtService {
     @Value("${security.jwt.secret-key}")
-    private String SECRET_KEY;
+    private String secretKey;
+
+    @Value("${security.jwt.expiration-ms}")
+    private Long jwtExpiration;
 
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
@@ -40,14 +43,12 @@ public class JwtService {
             Map<String, Object> extraClaims,
             UserDetails userDetails
     ) {
-        final int jwtTokenValidityInMs = 1000 * 60 * 24;
-
         return Jwts
                 .builder()
                 .claims(extraClaims)
                 .subject(userDetails.getUsername())
                 .issuedAt(new Date(System.currentTimeMillis()))
-                .expiration(new Date(System.currentTimeMillis() + jwtTokenValidityInMs))
+                .expiration(new Date(System.currentTimeMillis() + jwtExpiration))
                 .signWith(getSigningKey(), Jwts.SIG.HS256)
                 .compact();
     }
@@ -79,7 +80,7 @@ public class JwtService {
     }
 
     private SecretKey getSigningKey() {
-        final byte[] keyBytes = Base64.getDecoder().decode(SECRET_KEY);
+        final byte[] keyBytes = Base64.getDecoder().decode(secretKey);
 
         return Keys.hmacShaKeyFor(keyBytes);
     }

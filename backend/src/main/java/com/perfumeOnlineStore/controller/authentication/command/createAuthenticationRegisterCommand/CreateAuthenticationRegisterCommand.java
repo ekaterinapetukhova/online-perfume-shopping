@@ -1,8 +1,0 @@
-package com.perfumeOnlineStore.controller.authentication.command;
-
-import an.awesome.pipelinr.Command;
-import com.perfumeOnlineStore.controller.authentication.command.createAuthenticationRegisterCommand.CreateAuthenticationRegisterResponse;
-import com.perfumeOnlineStore.controller.user.command.createUserCommand.CreateUserCommand;
-
-public class CreateAuthenticationRegisterCommand implements Command<CreateAuthenticationRegisterResponse> {
-}

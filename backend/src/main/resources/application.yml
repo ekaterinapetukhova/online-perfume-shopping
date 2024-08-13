@@ -18,21 +18,20 @@ spring:
   jackson:
     serialization:
       fail-on-empty-beans: false
-  config:
-    import: optional:file:.env[.yml]
 
 security:
   jwt:
     secret-key: ${JWT_SECRET_KEY}
+    refresh-expiration-ms: 86400000
+    jwt-expiration-ms: 3600000
 
 logging:
   file:
     name: app.log
-
 
 springdoc:
   api-docs:
     path: /api-docs
 
 server:
-  port: 8088
+  port: ${SERVICE_PORT}
