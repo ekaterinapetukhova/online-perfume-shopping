@@ -1,3 +1,6 @@
+networks:
+  loki:
+
 services:
   postgres:
     ports:
@@ -23,25 +26,42 @@ services:
       - pgadmin:/var/lib/pgadmin
     depends_on:
       - postgres
-
-  seq-input-gelf:
-    image: datalust/seq-input-gelf:latest
-    depends_on:
-      - seq
+  loki:
+    image: grafana/loki:2.9.0
     ports:
-      - 12201:12201/udp
+      - 3100:3100
+    command: -config.file=/etc/loki/local-config.yaml
+    networks:
+      - loki
+  grafana:
     environment:
-      SEQ_ADDRESS: http://seq:5341
-    restart: unless-stopped
-  seq:
-    image: datalust/seq:latest
+      - GF_PATHS_PROVISIONING=/etc/grafana/provisioning
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
+    entrypoint:
+      - sh
+      - -euc
+      - |
+        mkdir -p /etc/grafana/provisioning/datasources
+        cat <<EOF > /etc/grafana/provisioning/datasources/ds.yaml
+        apiVersion: 1
+        datasources:
+        - name: Loki
+          type: loki
+          access: proxy
+          orgId: 1
+          url: http://loki:3100
+          basicAuth: false
+          isDefault: true
+          version: 1
+          editable: false
+        EOF
+        /run.sh
+    image: grafana/grafana:latest
     ports:
-      - 5341:80
-    environment:
-      ACCEPT_EULA: Y
-    restart: unless-stopped
-    volumes:
-      - ./seq-data:/data
+      - 3000:3000
+    networks:
+      - loki
 
 volumes:
   postgres:
