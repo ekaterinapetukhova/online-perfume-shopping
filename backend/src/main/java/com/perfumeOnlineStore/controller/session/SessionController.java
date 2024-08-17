@@ -14,7 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 
-@Controller
+@RestController
 @RequestMapping(("api/v1/auth"))
 @RequiredArgsConstructor
 public class SessionController {
@@ -24,20 +24,5 @@ public class SessionController {
     @PostMapping("/signin")
     public CreateSessionCommandResponse signIn(@RequestBody CreateSessionCommand createCommand) {
         return createCommand.execute(pipeline);
-    }
-
-    @GetMapping("/registration")
-    public String showRegistration(Model model) {
-        model.addAttribute("user", new UserDto());
-
-        return "registration";
-    }
-
-    @PostMapping("/registration")
-    public String register(@ModelAttribute("user") CreateUserCommand command) {
-
-        userController.createUser(command);
-
-        return "redirect:/result";
     }
 }
