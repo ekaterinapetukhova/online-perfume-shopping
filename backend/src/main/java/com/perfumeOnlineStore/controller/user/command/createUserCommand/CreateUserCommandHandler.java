@@ -17,7 +17,6 @@ public class CreateUserCommandHandler implements Command.Handler<CreateUserComma
     private final UserService userService;
     private final CreateUserCommandValidator validator;
     private final PasswordEncoder passwordEncoder;
-    private final JwtService jwtService;
 
     public CreateUserCommandResponse handle(CreateUserCommand command) {
         CreateUserCommandResponse resp = new CreateUserCommandResponse();
