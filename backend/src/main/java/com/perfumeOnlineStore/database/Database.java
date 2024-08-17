@@ -19,6 +19,7 @@ import java.util.Set;
 public class Database implements CommandLineRunner {
     private final ProductRepository productRepository;
     private final UserRepository userRepository;
+    private final RoleRepository roleRepository;
     private final CategoryRepository categoryRepository;
     private final DiscountRepository discountRepository;
     private final OrderItemRepository orderItemRepository;
@@ -29,6 +30,13 @@ public class Database implements CommandLineRunner {
     public void run(String[] args) {
         Role roleAdmin = new Role("ADMIN");
         Role roleUser = new Role("USER");
+
+        roleRepository.saveAll(
+                List.of(
+                        roleAdmin,
+                        roleUser
+                )
+        );
 
         Category amber = new Category("Amber", "Amber fragrances with dominant amber are placed in a separate group thanks to their accentuated warmth and sensuality. Their opulent bouquet includes intoxicating and intensive substances such as musk, vanilla, exotic resins and wood, often accompanied with exotic flowers and spices.");
         Category aromatic = new Category("Aromatic", "Aromatic notes are usually combined of sage, rosemary, cumin, lavender and other plants which possess a very intensive grass-spicy scent. They are often combined with citrusy and spicy notes. Aromatic compositions are typical of fragrances for men.");

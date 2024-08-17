@@ -58,7 +58,7 @@ public class User implements UserDetails {
 
     @ManyToMany(
             fetch = FetchType.EAGER,
-            cascade = CascadeType.ALL
+            cascade = { CascadeType.MERGE, CascadeType.REMOVE, CascadeType.REFRESH, CascadeType.DETACH }
     )
     @JoinTable(
             name = "user_role",
