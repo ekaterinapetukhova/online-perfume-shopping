@@ -12,6 +12,8 @@ import java.util.*;
 @Entity
 @Table
 @Data
+@Builder
+@AllArgsConstructor
 @NoArgsConstructor
 public class Discount {
     @Id

@@ -9,7 +9,9 @@ import java.util.*;
 @Table
 @Entity
 @Data
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
 @JsonIgnoreProperties(value = { "hibernateLazyInitializer" })
 public class Category {
     @Id

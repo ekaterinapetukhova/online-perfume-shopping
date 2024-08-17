@@ -10,6 +10,8 @@ import java.util.UUID;
 @Entity
 @Table
 @Data
+@Builder
+@AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(value = { "hibernateLazyInitializer" })
 public class OrderItem {

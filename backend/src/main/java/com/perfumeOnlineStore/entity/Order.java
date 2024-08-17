@@ -13,6 +13,8 @@ import java.util.*;
 @Entity
 @Table
 @Data
+@Builder
+@AllArgsConstructor
 @NoArgsConstructor
 public class Order {
     @Id

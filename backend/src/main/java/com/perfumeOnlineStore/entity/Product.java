@@ -9,6 +9,8 @@ import java.util.*;
 @Table
 @Entity
 @Data
+@Builder
+@AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(value = { "hibernateLazyInitializer" })
 public class Product {

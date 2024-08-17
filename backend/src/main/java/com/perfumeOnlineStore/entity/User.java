@@ -13,6 +13,8 @@ import java.util.*;
 @Entity
 @Table
 @Data
+@Builder
+@AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(value = { "hibernateLazyInitializer" })
 public class User implements UserDetails {
