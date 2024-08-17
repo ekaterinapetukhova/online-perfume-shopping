@@ -19,44 +19,27 @@ public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-    @Convert(converter = AesEncrypt.class)
+//    @Convert(converter = AesEncrypt.class)
     @Column(nullable = false)
     private String name;
     @Column(nullable = false)
-    @Convert(converter = AesEncrypt.class)
+//    @Convert(converter = AesEncrypt.class)
     private String surname;
     @Column(unique = true, nullable = false)
-    @Convert(converter = AesEncrypt.class)
+//    @Convert(converter = AesEncrypt.class)
     private String email;
     @Column(nullable = false)
     private String password;
-    @Convert(converter = AesEncrypt.class)
+//    @Convert(converter = AesEncrypt.class)
     private String phoneNumber;
-    @Convert(converter = AesEncrypt.class)
+//    @Convert(converter = AesEncrypt.class)
     private String address;
-    @Convert(converter = AesEncrypt.class)
+//    @Convert(converter = AesEncrypt.class)
     private String country;
-    @Convert(converter = AesEncrypt.class)
+//    @Convert(converter = AesEncrypt.class)
     private String city;
-    @Convert(converter = AesEncrypt.class)
+//    @Convert(converter = AesEncrypt.class)
     private String postcode;
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
-    private Role role;
-
-    public enum Role {
-        USER, ADMIN
-    }
-
-//    @ManyToMany(
-//            fetch = FetchType.EAGER,
-//            cascade= CascadeType.ALL
-//    )
-//    @JoinTable(
-//            name = "user_role",
-//            joinColumns = @JoinColumn(name = "user_id"),
-//            inverseJoinColumns = @JoinColumn(name = "role_id"))
-//    private Set<Role> roles = new HashSet<>();
 
     @OneToMany(
             mappedBy = "user",
@@ -73,6 +56,17 @@ public class User implements UserDetails {
     )
     private Set<Session> sessions = new HashSet<>();
 
+    @ManyToMany(
+            fetch = FetchType.EAGER,
+            cascade = CascadeType.ALL
+    )
+    @JoinTable(
+            name = "user_role",
+            joinColumns = { @JoinColumn(name="user_id", referencedColumnName = "id") },
+            inverseJoinColumns = { @JoinColumn(name="role_id", referencedColumnName = "id") }
+    )
+    private Set<Role> roles = new HashSet<>();
+
     public User(
             String name,
             String surname,
@@ -82,8 +76,7 @@ public class User implements UserDetails {
             String address,
             String country,
             String city,
-            String postcode,
-            Role role
+            String postcode
     ) {
         this.name = name;
         this.surname = surname;
@@ -94,14 +87,11 @@ public class User implements UserDetails {
         this.country = country;
         this.city = city;
         this.postcode = postcode;
-        this.role = role;
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        GrantedAuthority authority = new SimpleGrantedAuthority(role.name());
-
-        return List.of(authority);
+        return null;
     }
 
     @Override

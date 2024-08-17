@@ -1,6 +1,7 @@
 package com.perfumeOnlineStore.controller.product.command.createProductCommand;
 
 import an.awesome.pipelinr.Command;
+import com.perfumeOnlineStore.entity.Category;
 import com.perfumeOnlineStore.entity.Product;
 import jakarta.validation.constraints.*;
 import lombok.*;

@@ -36,7 +36,7 @@ public class Product {
     private Integer volume;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id", nullable = false)
+    @JoinColumn(name = "category_id")
     @JsonBackReference
     private Category category;
 

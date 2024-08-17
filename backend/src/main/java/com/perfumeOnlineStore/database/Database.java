@@ -27,6 +27,9 @@ public class Database implements CommandLineRunner {
 
     @Override
     public void run(String[] args) {
+        Role roleAdmin = new Role("ADMIN");
+        Role roleUser = new Role("USER");
+
         Category amber = new Category("Amber", "Amber fragrances with dominant amber are placed in a separate group thanks to their accentuated warmth and sensuality. Their opulent bouquet includes intoxicating and intensive substances such as musk, vanilla, exotic resins and wood, often accompanied with exotic flowers and spices.");
         Category aromatic = new Category("Aromatic", "Aromatic notes are usually combined of sage, rosemary, cumin, lavender and other plants which possess a very intensive grass-spicy scent. They are often combined with citrusy and spicy notes. Aromatic compositions are typical of fragrances for men.");
         Category chypre = new Category("Chypre", "This olfactive group was named after perfume Coty Chypre created in 1917. Chypre means Cyprus in French. This sharp scent is based on harmony of oak moss, labdanum, patchouli and bergamot.");
@@ -102,8 +105,11 @@ public class Database implements CommandLineRunner {
                 "Street 1",
                 "Poland",
                 "Katowice",
-                "44-021",
-                User.Role.ADMIN
+                "44-021"
+        );
+
+        user.setRoles(
+                Set.of(roleAdmin)
         );
 
         userRepository.save(user);

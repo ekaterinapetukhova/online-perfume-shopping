@@ -28,8 +28,6 @@ public class CreateUserCommandHandler implements Command.Handler<CreateUserComma
             User user = CreateUserCommandToUserMapper.INSTANCE.toUser(command);
             user.setPassword(passwordEncoder.encode(command.getPassword()));
 
-            String jwtToken = jwtService.generateToken(user);
-
             userService.saveUser(user);
 
             resp.setSuccess(true);

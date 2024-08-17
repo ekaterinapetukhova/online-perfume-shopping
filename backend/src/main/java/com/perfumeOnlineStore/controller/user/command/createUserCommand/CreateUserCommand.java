@@ -2,6 +2,7 @@ package com.perfumeOnlineStore.controller.user.command.createUserCommand;
 
 import an.awesome.pipelinr.Command;
 import com.perfumeOnlineStore.customValidators.uniqueEmail.UniqueEmail;
+import com.perfumeOnlineStore.entity.User;
 import jakarta.validation.constraints.*;
 import lombok.*;
 

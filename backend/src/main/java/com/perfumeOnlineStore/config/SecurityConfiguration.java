@@ -33,19 +33,25 @@ public class SecurityConfiguration {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests(authorizeRequests -> {
-                    authorizeRequests
-                            .requestMatchers(
-                                    "/api/v1/categories",
-                                    "/api/v1/orders",
-                                    "/api/v1/products",
-                                    "/api/v1/users",
-                                    "/api/v1/auth/**"
-                            )
-                            .permitAll()
-                            .anyRequest()
-                            .authenticated();
-                })
+//                .authorizeHttpRequests(authorizeRequests -> {
+//                    authorizeRequests
+//                            .requestMatchers(
+//                                    "/api/v1/categories",
+//                                    "/api/v1/orders",
+//                                    "/api/v1/products",
+//                                    "/api/v1/users",
+//                                    "/api/v1/auth/**",
+//                                    "/api-docs",
+//                                    "/api/v1/auth/registration",
+//                                    "registration",
+//                                    "/registration",
+//                                    "result.html",
+//                                    "/result.html"
+//                            )
+//                            .permitAll()
+//                            .anyRequest()
+//                            .authenticated();
+//                })
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider())
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);

@@ -1,6 +1,7 @@
 package com.perfumeOnlineStore.controller.user.command.updateUserCommand;
 
 import an.awesome.pipelinr.Command;
+import com.perfumeOnlineStore.entity.User;
 import jakarta.validation.constraints.*;
 import lombok.*;
 

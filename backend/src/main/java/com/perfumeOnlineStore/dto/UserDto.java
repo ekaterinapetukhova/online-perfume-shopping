@@ -1,5 +1,6 @@
 package com.perfumeOnlineStore.dto;
 
+import com.perfumeOnlineStore.entity.User;
 import lombok.*;
 
 import java.util.*;
