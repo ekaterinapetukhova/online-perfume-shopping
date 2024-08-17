@@ -43,15 +43,14 @@ public class CreateSessionCommandHandler implements Command.Handler<CreateSessio
 
             User user = userService.findUserByEmail(createSessionCommand.getUsername());
 
-            RefreshToken refreshToken = refreshTokenService.createRefreshToken();
-
-            String jwt = jwtService.generateToken(user);
-
             Session session = sessionService.createNewSession(
                     user,
-                    refreshToken,
                     createSessionCommand.isRemembered()
             );
+
+            RefreshToken refreshToken = refreshTokenService.createRefreshToken(session);
+
+            String jwt = jwtService.generateToken(user);
 
             JwtResponseDto jwtResponseDto = JwtResponseDto.builder()
                     .accessToken(jwt)

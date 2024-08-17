@@ -37,12 +37,4 @@ public class Session {
             orphanRemoval = true
     )
     private Set<RefreshToken> refreshTokens = new HashSet<>();
-
-    public void addRefreshToken(RefreshToken refreshToken) {
-        if (refreshTokens == null) {
-            refreshTokens = new HashSet<>();
-        }
-
-        refreshTokens.add(refreshToken);
-    }
 }

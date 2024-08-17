@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.Instant;
 import java.util.Optional;
+import java.util.Set;
 import java.util.UUID;
 
 @Service
@@ -28,7 +29,6 @@ public class SessionService {
 
     public Session createNewSession(
             User user,
-            RefreshToken token,
             boolean isRemembered
     ) {
         Session session = Session.builder()
@@ -40,8 +40,6 @@ public class SessionService {
 
         if (session.isRemembered()) session.setExpiredTime(session.getStartTime().plusMillis(rememberedExpirationMs));
         else session.setExpiredTime(session.getStartTime().plusMillis(expirationMs));
-
-        session.addRefreshToken(token);
 
         return sessionRepository.save(session);
     }

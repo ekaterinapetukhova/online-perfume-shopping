@@ -22,10 +22,11 @@ public class RefreshTokenService {
         return refreshTokenRepository.findByToken(token);
     }
 
-    public RefreshToken createRefreshToken() {
+    public RefreshToken createRefreshToken(Session session) {
         RefreshToken refreshToken = RefreshToken.builder()
                 .expiryDate(Instant.now().plusMillis(refreshExpirationMs))
                 .token(UUID.randomUUID().toString())
+                .session(session)
                 .build();
 
         return refreshTokenRepository.save(refreshToken);

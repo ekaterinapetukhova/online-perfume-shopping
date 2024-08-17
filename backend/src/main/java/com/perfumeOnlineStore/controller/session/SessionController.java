@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class SessionController {
     private final Pipeline pipeline;
-    private final UserController userController;
 
     @PostMapping("/signin")
     public CreateSessionCommandResponse signIn(@RequestBody CreateSessionCommand createCommand) {
