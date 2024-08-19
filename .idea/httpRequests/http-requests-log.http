@@ -1,3 +1,49 @@
+POST http://localhost:8088/api/v1/users
+Content-Type: application/json
+Content-Length: 190
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "a",
+  "surname": "a",
+  "email": "kt@mail.ru",
+  "password": "Pea12122000!",
+  "phoneNumber": "123456789",
+  "address": "a",
+  "country": "a",
+  "city": "a",
+  "postcode": "a"
+}
+
+<> 2024-08-19T131441.200.json
+
+###
+
+POST http://localhost:8088/api/v1/users
+Content-Type: application/json
+Content-Length: 190
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "a",
+  "surname": "a",
+  "email": "kt@mail.ru",
+  "password": "Pea12122000!",
+  "phoneNumber": "123456789",
+  "address": "a",
+  "country": "a",
+  "city": "a",
+  "postcode": "a"
+}
+
+<> 2024-08-19T131119.200.json
+
+###
+
 POST http://localhost:8088/api/v1/auth/signin
 Content-Type: application/json
 Content-Length: 84
@@ -853,36 +899,6 @@ Accept: */*
 }
 
 <> 2024-08-13T131856.200.json
-
-###
-
-POST http://localhost:8088/api/v1/auth/signin
-Content-Type: application/json
-Content-Length: 90
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "username": "katepthv12@gmail.com",
-  "password": "12345678",
-  "isRemembered": true
-}
-
-###
-
-POST http://localhost:8088/api/v1/auth/signin
-Content-Type: application/json
-Content-Length: 90
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "username": "katepthv12@gmail.com",
-  "password": "12345678",
-  "isRemembered": true
-}
 
 ###
 

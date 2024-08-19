@@ -5,21 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ec6adeb-0aa6-4536-9602-5ac9ce04f7a1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b9afec86-eb78-4631-a1ff-dc2c1d861ea2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b9afec86-eb78-4631-a1ff-dc2c1d861ea2/storage_v2/_src_/database/perfume_online_shopping.2STfvg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b9afec86-eb78-4631-a1ff-dc2c1d861ea2/storage_v2/_src_/database/perfume_online_shopping.2STfvg/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/service/MailService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/seq-data/Logs/seq-20240817.log" beforeDir="false" afterPath="$PROJECT_DIR$/backend/seq-data/Logs/seq-20240817.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/controller/session/SessionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/controller/session/SessionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/controller/session/command/createSessionCommand/CreateSessionCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/controller/session/command/createSessionCommand/CreateSessionCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/entity/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/entity/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/entity/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/entity/OrderItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/service/SessionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/service/SessionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/utils/encryption/aes/AesEncrypt.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/utils/encryption/aes/StringAesEncrypt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/controller/user/command/createUserCommand/CreateUserCommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/controller/user/command/createUserCommand/CreateUserCommandHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/service/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/service/JwtService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,78 +55,78 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;HTTP Request.generated-requests | #1.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #10.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #11.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #12.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #13.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #14.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #15.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #16.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #17.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #18.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #19.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #2.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #20.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #21.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #22.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #23.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #24.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #25.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #27.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #28.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #29.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #3.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #30.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #31.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #32.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #33.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #34.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #35.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #36.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #37.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #38.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #39.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #4.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #41.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #42.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #43.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #46.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #5.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #6.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #7.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #8.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #9.executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.PerfumeOnlineStoreApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;backend&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/sadko/Downloads/JetBrains-Discord-Integration-2.1.2.242.zip&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "HTTP Request.generated-requests | #1.executor": "Run",
+    "HTTP Request.generated-requests | #10.executor": "Run",
+    "HTTP Request.generated-requests | #11.executor": "Run",
+    "HTTP Request.generated-requests | #12.executor": "Run",
+    "HTTP Request.generated-requests | #13.executor": "Run",
+    "HTTP Request.generated-requests | #14.executor": "Run",
+    "HTTP Request.generated-requests | #15.executor": "Run",
+    "HTTP Request.generated-requests | #16.executor": "Run",
+    "HTTP Request.generated-requests | #17.executor": "Run",
+    "HTTP Request.generated-requests | #18.executor": "Run",
+    "HTTP Request.generated-requests | #19.executor": "Run",
+    "HTTP Request.generated-requests | #2.executor": "Run",
+    "HTTP Request.generated-requests | #20.executor": "Run",
+    "HTTP Request.generated-requests | #21.executor": "Run",
+    "HTTP Request.generated-requests | #22.executor": "Run",
+    "HTTP Request.generated-requests | #23.executor": "Run",
+    "HTTP Request.generated-requests | #24.executor": "Run",
+    "HTTP Request.generated-requests | #25.executor": "Run",
+    "HTTP Request.generated-requests | #27.executor": "Run",
+    "HTTP Request.generated-requests | #28.executor": "Run",
+    "HTTP Request.generated-requests | #29.executor": "Run",
+    "HTTP Request.generated-requests | #3.executor": "Run",
+    "HTTP Request.generated-requests | #30.executor": "Run",
+    "HTTP Request.generated-requests | #31.executor": "Run",
+    "HTTP Request.generated-requests | #32.executor": "Run",
+    "HTTP Request.generated-requests | #33.executor": "Run",
+    "HTTP Request.generated-requests | #34.executor": "Run",
+    "HTTP Request.generated-requests | #35.executor": "Run",
+    "HTTP Request.generated-requests | #36.executor": "Run",
+    "HTTP Request.generated-requests | #37.executor": "Run",
+    "HTTP Request.generated-requests | #38.executor": "Run",
+    "HTTP Request.generated-requests | #39.executor": "Run",
+    "HTTP Request.generated-requests | #4.executor": "Run",
+    "HTTP Request.generated-requests | #41.executor": "Run",
+    "HTTP Request.generated-requests | #42.executor": "Run",
+    "HTTP Request.generated-requests | #43.executor": "Run",
+    "HTTP Request.generated-requests | #46.executor": "Run",
+    "HTTP Request.generated-requests | #5.executor": "Run",
+    "HTTP Request.generated-requests | #6.executor": "Run",
+    "HTTP Request.generated-requests | #7.executor": "Run",
+    "HTTP Request.generated-requests | #8.executor": "Run",
+    "HTTP Request.generated-requests | #9.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.PerfumeOnlineStoreApplication.executor": "Run",
+    "git-widget-placeholder": "backend",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/sadko/Downloads/JetBrains-Discord-Integration-2.1.2.242.zip",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\sadko\OneDrive\Desktop\online-perfume-shopping\backend" />
@@ -169,9 +161,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.generated-requests | #39" />
         <item itemvalue="HTTP Request.generated-requests | #43" />
         <item itemvalue="HTTP Request.generated-requests | #38" />
-        <item itemvalue="HTTP Request.generated-requests | #39" />
         <item itemvalue="HTTP Request.generated-requests | #46" />
         <item itemvalue="HTTP Request.generated-requests | #42" />
       </list>
@@ -230,7 +222,7 @@
       <workItem from="1723728924541" duration="2371000" />
       <workItem from="1723740471118" duration="1999000" />
       <workItem from="1723898911729" duration="7345000" />
-      <workItem from="1724051806372" duration="2564000" />
+      <workItem from="1724051806372" duration="6575000" />
     </task>
     <servers />
   </component>
