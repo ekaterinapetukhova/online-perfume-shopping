@@ -1,5 +1,680 @@
 POST http://localhost:8088/api/v1/auth/signin
 Content-Type: application/json
+Content-Length: 84
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "kt@mail.ru",
+  "password": "Pea12122000!",
+  "isRemembered": true
+}
+
+<> 2024-08-17T162857.200.json
+
+###
+
+GET http://localhost:8088/api/v1/users
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-08-17T162845.200.json
+
+###
+
+POST http://localhost:8088/api/v1/users
+Content-Type: application/json
+Content-Length: 190
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "a",
+  "surname": "a",
+  "email": "kt@mail.ru",
+  "password": "Pea12122000!",
+  "phoneNumber": "123456789",
+  "address": "a",
+  "country": "a",
+  "city": "a",
+  "postcode": "a"
+}
+
+<> 2024-08-17T162835.200.json
+
+###
+
+POST http://localhost:8088/api/v1/users
+Content-Type: application/json
+Content-Length: 190
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "a",
+  "surname": "a",
+  "email": "kt@mail.ru",
+  "password": "Pea12122000!",
+  "phoneNumber": "123456789",
+  "address": "a",
+  "country": "a",
+  "city": "a",
+  "postcode": "a"
+}
+
+<> 2024-08-17T162714.200.json
+
+###
+
+POST http://localhost:8088/api/v1/auth/signin
+Content-Type: application/json
+Content-Length: 84
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "kt@mail.ru",
+  "password": "Pea12122000!",
+  "isRemembered": true
+}
+
+<> 2024-08-17T155623.200.json
+
+###
+
+POST http://localhost:8088/api/v1/users
+Content-Type: application/json
+Content-Length: 190
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "a",
+  "surname": "a",
+  "email": "kt@mail.ru",
+  "password": "Pea12122000!",
+  "phoneNumber": "123456789",
+  "address": "a",
+  "country": "a",
+  "city": "a",
+  "postcode": "a"
+}
+
+<> 2024-08-17T155619.200.json
+
+###
+
+POST http://localhost:8088/api/v1/auth/signin
+Content-Type: application/json
+Content-Length: 84
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "kt@mail.ru",
+  "password": "Pea12122000!",
+  "isRemembered": true
+}
+
+<> 2024-08-17T155057.200.json
+
+###
+
+POST http://localhost:8088/api/v1/auth/signin
+Content-Type: application/json
+Content-Length: 86
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "aaaa@mail.ru",
+  "password": "Pea12122000!",
+  "isRemembered": true
+}
+
+<> 2024-08-17T155039.200.json
+
+###
+
+POST http://localhost:8088/api/v1/users
+Content-Type: application/json
+Content-Length: 190
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "a",
+  "surname": "a",
+  "email": "kt@mail.ru",
+  "password": "Pea12122000!",
+  "phoneNumber": "123456789",
+  "address": "a",
+  "country": "a",
+  "city": "a",
+  "postcode": "a"
+}
+
+<> 2024-08-17T155036.200.json
+
+###
+
+POST http://localhost:8088/api/v1/auth/signin
+Content-Type: application/json
+Content-Length: 86
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "aaaa@mail.ru",
+  "password": "Pea12122000!",
+  "isRemembered": true
+}
+
+<> 2024-08-17T154435.200.json
+
+###
+
+POST http://localhost:8088/api/v1/auth/signin
+Content-Type: application/json
+Content-Length: 84
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "kt@mail.ru",
+  "password": "Pea12122000!",
+  "isRemembered": true
+}
+
+<> 2024-08-17T154349.200.json
+
+###
+
+POST http://localhost:8088/api/v1/users
+Content-Type: application/json
+Content-Length: 190
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "a",
+  "surname": "a",
+  "email": "kt@mail.ru",
+  "password": "Pea12122000!",
+  "phoneNumber": "123456789",
+  "address": "a",
+  "country": "a",
+  "city": "a",
+  "postcode": "a"
+}
+
+<> 2024-08-17T154345.200.json
+
+###
+
+POST http://localhost:8088/api/v1/auth/signin
+Content-Type: application/json
+Content-Length: 84
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "kt@mail.ru",
+  "password": "Pea12122000!",
+  "isRemembered": true
+}
+
+<> 2024-08-17T154256.500.json
+
+###
+
+POST http://localhost:8088/api/v1/users
+Content-Type: application/json
+Content-Length: 190
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "a",
+  "surname": "a",
+  "email": "kt@mail.ru",
+  "password": "Pea12122000!",
+  "phoneNumber": "123456789",
+  "address": "a",
+  "country": "a",
+  "city": "a",
+  "postcode": "a"
+}
+
+<> 2024-08-17T154212.200.json
+
+###
+
+POST http://localhost:8088/api/v1/users
+Content-Type: application/json
+Content-Length: 190
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "a",
+  "surname": "a",
+  "email": "kt@mail.ru",
+  "password": "Pea12122000!",
+  "phoneNumber": "123456789",
+  "address": "a",
+  "country": "a",
+  "city": "a",
+  "postcode": "a"
+}
+
+<> 2024-08-17T153418.200.json
+
+###
+
+POST http://localhost:8088/api/v1/users
+Content-Type: application/json
+Content-Length: 208
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "a",
+  "surname": "a",
+  "email": "kt@mail.ru",
+  "password": "Pea12122000!",
+  "phoneNumber": "123456789",
+  "address": "a",
+  "country": "a",
+  "city": "a",
+  "postcode": "a",
+  "role": "USER"
+}
+
+<> 2024-08-17T145549.500.json
+
+###
+
+POST http://localhost:8088/api/v1/users
+Content-Type: application/json
+Content-Length: 208
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "a",
+  "surname": "a",
+  "email": "kt@mail.ru",
+  "password": "Pea12122000!",
+  "phoneNumber": "123456789",
+  "address": "a",
+  "country": "a",
+  "city": "a",
+  "postcode": "a",
+  "role": "USER"
+}
+
+<> 2024-08-17T145354.500.json
+
+###
+
+POST http://localhost:8088/api/v1/users
+Content-Type: application/json
+Content-Length: 208
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "a",
+  "surname": "a",
+  "email": "kt@mail.ru",
+  "password": "Pea12122000!",
+  "phoneNumber": "123456789",
+  "address": "a",
+  "country": "a",
+  "city": "a",
+  "postcode": "a",
+  "role": "USER"
+}
+
+<> 2024-08-17T145150.500.json
+
+###
+
+POST http://localhost:8088/api/v1/users
+Content-Type: application/json
+Content-Length: 208
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "a",
+  "surname": "a",
+  "email": "kt@mail.ru",
+  "password": "Pea12122000!",
+  "phoneNumber": "123456789",
+  "address": "a",
+  "country": "a",
+  "city": "a",
+  "postcode": "a",
+  "role": "USER"
+}
+
+<> 2024-08-15T190824.500.json
+
+###
+
+POST http://localhost:8088/api/v1/users
+Content-Type: application/json
+Content-Length: 208
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "a",
+  "surname": "a",
+  "email": "kt@mail.ru",
+  "password": "Pea12122000!",
+  "phoneNumber": "123456789",
+  "address": "a",
+  "country": "a",
+  "city": "a",
+  "postcode": "a",
+  "role": "USER"
+}
+
+<> 2024-08-15T190018.500.json
+
+###
+
+POST http://localhost:8088/api/v1/users
+Content-Type: application/json
+Content-Length: 209
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "a",
+  "surname": "a",
+  "email": "kt@mail.ru",
+  "password": "Pea12122000!",
+  "phoneNumber": "123456789",
+  "address": "a",
+  "country": "a",
+  "city": "a",
+  "postcode": "a",
+  "role": "USER"
+
+}
+
+<> 2024-08-15T185815.200.json
+
+###
+
+POST http://localhost:8088/api/v1/products
+Content-Type: application/json
+Content-Length: 169
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "a",
+  "description": "a",
+  "brand": "a",
+  "price": 150,
+  "components": "a",
+  "scentGroups": "a",
+  "quantity": 150,
+  "gender": "MALE",
+  "volume": 10
+}
+
+<> 2024-08-15T185804.200.json
+
+###
+
+POST http://localhost:8088/api/v1/products
+Content-Type: application/json
+Content-Length: 172
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "a",
+  "description": "a",
+  "brand": "a",
+  "price": 150,
+  "components": "a",
+  "scentGroups": "a",
+  "quantity": 150,
+  "gender": "MALE",
+  "volume": 10
+
+}
+
+<> 2024-08-15T185552.500.json
+
+###
+
+GET http://localhost:8088/api/v1/products
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-08-15T185519.200.json
+
+###
+
+POST http://localhost:8088/api/v1/users
+Content-Type: application/json
+Content-Length: 209
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "a",
+  "surname": "a",
+  "email": "kt@mail.ru",
+  "password": "Pea12122000!",
+  "phoneNumber": "123456789",
+  "address": "a",
+  "country": "a",
+  "city": "a",
+  "postcode": "a",
+  "role": "USER"
+
+}
+
+<> 2024-08-15T185103.200.json
+
+###
+
+POST http://localhost:8088/api/v1/users
+Content-Type: application/json
+Content-Length: 209
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "a",
+  "surname": "a",
+  "email": "kt@mail.ru",
+  "password": "Pea12122000!",
+  "phoneNumber": "123456789",
+  "address": "a",
+  "country": "a",
+  "city": "a",
+  "postcode": "a",
+  "role": "USER"
+
+}
+
+<> 2024-08-15T185011.200.json
+
+###
+
+POST http://localhost:8088/api/v1/users
+Content-Type: application/json
+Content-Length: 209
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "a",
+  "surname": "a",
+  "email": "kt@mail.ru",
+  "password": "Pea12122000!",
+  "phoneNumber": "123456789",
+  "address": "a",
+  "country": "a",
+  "city": "a",
+  "postcode": "a",
+  "role": "USER"
+
+}
+
+<> 2024-08-15T185007.200.json
+
+###
+
+POST http://localhost:8088/api/v1/users
+Content-Type: application/json
+Content-Length: 209
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "a",
+  "surname": "a",
+  "email": "kt@mail.ru",
+  "password": "Pea12122000!",
+  "phoneNumber": "123456789",
+  "address": "a",
+  "country": "a",
+  "city": "a",
+  "postcode": "a",
+  "role": "USER"
+
+}
+
+<> 2024-08-15T161437.200.json
+
+###
+
+POST http://localhost:8088/api/v1/users
+Content-Type: application/json
+Content-Length: 209
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "a",
+  "surname": "a",
+  "email": "kt@mail.ru",
+  "password": "Pea12122000!",
+  "phoneNumber": "123456789",
+  "address": "a",
+  "country": "a",
+  "city": "a",
+  "postcode": "a",
+  "role": "USER"
+
+}
+
+<> 2024-08-15T161328.200.json
+
+###
+
+POST http://localhost:8088/api/v1/users
+Content-Type: application/json
+Content-Length: 191
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "a",
+  "surname": "a",
+  "email": "kt@mail.ru",
+  "password": "Pea12122000!",
+  "phoneNumber": "123456789",
+  "address": "a",
+  "country": "a",
+  "city": "a",
+  "postcode": "a"
+
+}
+
+<> 2024-08-15T161138.200.json
+
+###
+
+POST http://localhost:8088/api/v1/users
+Content-Type: application/json
+Content-Length: 193
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "a",
+  "surname": "a",
+  "email": "kt@mail.ru",
+  "password": "Pea12122000!",
+  "phoneNumber": "123456789",
+  "address": "a",
+  "country": "a",
+  "city": "a",
+  "postcode": "a"
+
+}
+
+<> 2024-08-15T160810.200.json
+
+###
+
+GET http://localhost:8088/api/v1/users
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-08-14T175033.200.json
+
+###
+
+POST http://localhost:8088/api/v1/auth/signin
+Content-Type: application/json
 Content-Length: 92
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
 Accept-Encoding: br, deflate, gzip, x-gzip
@@ -252,50 +927,6 @@ Accept: */*
   "username": "katepthv12@gmail.com",
   "password": "12345678",
   "isRemembered": true
-}
-
-###
-
-POST http://localhost:8088/api/v1/auth/signin
-Content-Type: application/json
-Content-Length: 90
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "username": "katepthv12@gmail.com",
-  "password": "12345678",
-  "isRemembered": true
-}
-
-###
-
-POST http://localhost:8088/api/v1/auth/signin
-Content-Type: application/json
-Content-Length: 90
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "username": "katepthv12@gmail.com",
-  "password": "12345678",
-  "isRemembered": true
-}
-
-###
-
-POST http://localhost:8088/api/v1/auth/signin
-Content-Type: application/json
-Content-Length: 67
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "username": "katepthv12@gmail.com",
-  "password": "12345678",
 }
 
 ###

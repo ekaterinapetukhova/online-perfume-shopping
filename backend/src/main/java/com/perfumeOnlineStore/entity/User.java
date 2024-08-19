@@ -1,7 +1,7 @@
 package com.perfumeOnlineStore.entity;
 
 import com.fasterxml.jackson.annotation.*;
-import com.perfumeOnlineStore.utils.encryption.aes.AesEncrypt;
+import com.perfumeOnlineStore.utils.encryption.aes.StringAesEncrypt;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
@@ -21,26 +21,26 @@ public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-    @Convert(converter = AesEncrypt.class)
+    @Convert(converter = StringAesEncrypt.class)
     @Column(nullable = false)
     private String name;
     @Column(nullable = false)
-    @Convert(converter = AesEncrypt.class)
+    @Convert(converter = StringAesEncrypt.class)
     private String surname;
     @Column(unique = true, nullable = false)
-    @Convert(converter = AesEncrypt.class)
+    @Convert(converter = StringAesEncrypt.class)
     private String email;
     @Column(nullable = false)
     private String password;
-    @Convert(converter = AesEncrypt.class)
+    @Convert(converter = StringAesEncrypt.class)
     private String phoneNumber;
-    @Convert(converter = AesEncrypt.class)
+    @Convert(converter = StringAesEncrypt.class)
     private String address;
-    @Convert(converter = AesEncrypt.class)
+    @Convert(converter = StringAesEncrypt.class)
     private String country;
-    @Convert(converter = AesEncrypt.class)
+    @Convert(converter = StringAesEncrypt.class)
     private String city;
-    @Convert(converter = AesEncrypt.class)
+    @Convert(converter = StringAesEncrypt.class)
     private String postcode;
 
     @OneToMany(

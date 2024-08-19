@@ -2,10 +2,8 @@ package com.perfumeOnlineStore.controller.session.command.createSessionCommand;
 
 import an.awesome.pipelinr.Command;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.validation.constraints.*;
+import lombok.*;
 
 @Getter
 @Setter

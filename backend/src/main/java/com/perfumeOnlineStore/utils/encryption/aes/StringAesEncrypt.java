@@ -4,7 +4,7 @@ import jakarta.persistence.AttributeConverter;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-public class AesEncrypt implements AttributeConverter<String, String> {
+public class StringAesEncrypt implements AttributeConverter<String, String> {
     private final AesEncryptionUtil aesEncryptionUtil;
 
     @Override

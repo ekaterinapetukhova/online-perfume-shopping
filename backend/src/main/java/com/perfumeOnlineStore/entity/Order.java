@@ -3,7 +3,6 @@ package com.perfumeOnlineStore.entity;
 import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
-import com.perfumeOnlineStore.utils.encryption.aes.AesEncrypt;
 import jakarta.persistence.*;
 import lombok.*;
 

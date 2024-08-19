@@ -1,7 +1,6 @@
 package com.perfumeOnlineStore.entity;
 
 import com.fasterxml.jackson.annotation.*;
-import com.perfumeOnlineStore.utils.encryption.aes.AesEncrypt;
 import jakarta.persistence.*;
 import lombok.*;
 

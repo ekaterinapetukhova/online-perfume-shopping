@@ -44,6 +44,20 @@ public class SessionService {
         return sessionRepository.save(session);
     }
 
+    public Session updateSession(
+            Session session,
+            boolean isRemembered
+    ) {
+        session.setActive(true);
+        session.setStartTime(Instant.now());
+        session.setRemembered(isRemembered);
+
+        if (session.isRemembered()) session.setExpiredTime(session.getStartTime().plusMillis(rememberedExpirationMs));
+        else session.setExpiredTime(session.getStartTime().plusMillis(expirationMs));
+
+        return sessionRepository.save(session);
+    }
+
     public void disableSession(Session session) {
         session.setActive(false);
         sessionRepository.save(session);

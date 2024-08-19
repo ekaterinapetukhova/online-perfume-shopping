@@ -1,16 +1,8 @@
 package com.perfumeOnlineStore.controller.session;
 
 import an.awesome.pipelinr.Pipeline;
-import com.perfumeOnlineStore.controller.session.command.createSessionCommand.CreateSessionCommand;
-import com.perfumeOnlineStore.controller.session.command.createSessionCommand.CreateSessionCommandResponse;
-import com.perfumeOnlineStore.controller.user.UserController;
-import com.perfumeOnlineStore.controller.user.command.createUserCommand.CreateUserCommand;
-import com.perfumeOnlineStore.dto.UserDto;
-import com.perfumeOnlineStore.entity.User;
-import com.perfumeOnlineStore.service.UserService;
+import com.perfumeOnlineStore.controller.session.command.createSessionCommand.*;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 
