@@ -28,10 +28,10 @@ spring:
         smtp:
           auth: true
           starttls:
-            enable: true
-            required: true
+            enable: false
           ssl:
             enable: true
+        debug: true
 
 security:
   jwt:
