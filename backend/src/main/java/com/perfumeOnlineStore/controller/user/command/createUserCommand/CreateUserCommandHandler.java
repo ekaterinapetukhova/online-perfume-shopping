@@ -36,7 +36,7 @@ public class CreateUserCommandHandler implements Command.Handler<CreateUserComma
             resp.setStatus(HttpStatus.CREATED.name());
             resp.setPayload(user);
 
-            mailService.sendMail("ohorat228@gmail.com", "Hello", "You re sign up!");
+            mailService.sendMail("ekpetukh0va@yandex.ru", "Hello", "You re sign up!");
 
             return resp;
         } catch (Exception e) {

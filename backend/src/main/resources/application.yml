@@ -19,8 +19,8 @@ spring:
     serialization:
       fail-on-empty-beans: false
   mail:
-    host: smtp.gmail.com
-    port: 587
+    host: smtp.yandex.ru
+    port: 465
     username: ${MAIL_USERNAME}
     password: ${MAIL_PASSWORD}
     properties:
@@ -28,6 +28,9 @@ spring:
         smtp:
           auth: true
           starttls:
+            enable: true
+            required: true
+          ssl:
             enable: true
 
 security:
