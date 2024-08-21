@@ -35,20 +35,6 @@ public class ProductController {
         return query.execute(pipeline);
     }
 
-    @GetMapping("/add-to-cart/{productId}")
-    public ResponseEntity<?> addToCart(@PathVariable("productId") UUID productId,
-                                       HttpServletResponse response) {
-        Cookie browserSessionCookie = new Cookie(productId.toString(), Long.toString(1L));
-        response.addCookie(browserSessionCookie);
-        return ResponseEntity.ok().build();
-    }
-
-    @GetMapping("/cart")
-    public ResponseEntity<?> getCart(HttpServletRequest request) {
-        Cookie[] cookies = request.getCookies();
-        return ResponseEntity.ok().body(cookies);
-    }
-
     @PostMapping(
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE

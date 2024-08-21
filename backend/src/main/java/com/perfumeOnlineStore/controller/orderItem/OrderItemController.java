@@ -2,13 +2,18 @@ package com.perfumeOnlineStore.controller.orderItem;
 
 import an.awesome.pipelinr.Pipeline;
 
+import com.perfumeOnlineStore.controller.orderItem.command.addToCartCommand.AddToCartCommand;
 import com.perfumeOnlineStore.controller.orderItem.command.createOrderItemCommand.*;
 import com.perfumeOnlineStore.controller.orderItem.command.deleteOrderItemCommand.*;
 import com.perfumeOnlineStore.controller.orderItem.command.updateOrderItemCommand.*;
 import com.perfumeOnlineStore.controller.orderItem.query.getAllOrderItemsQuery.*;
 import com.perfumeOnlineStore.controller.orderItem.query.getOrderItemByIdQuery.*;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
@@ -31,6 +36,21 @@ public class OrderItemController {
         GetOrderItemByIdQuery query = new GetOrderItemByIdQuery(id);
 
         return query.execute(pipeline);
+    }
+
+    @GetMapping("/add-to-cart/{orderItemId}")
+    public ResponseEntity<?> addToCart(@PathVariable("orderItemId") UUID orderItemId,
+                                       HttpServletResponse response,
+                                       @RequestBody AddToCartCommand command) {
+        Cookie browserSessionCookie = new Cookie(orderItemId.toString(), Long.toString(1L));
+        response.addCookie(browserSessionCookie);
+        return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/cart")
+    public ResponseEntity<?> getCart(HttpServletRequest request) {
+        Cookie[] cookies = request.getCookies();
+        return ResponseEntity.ok().body(cookies);
     }
 
     @PostMapping(
