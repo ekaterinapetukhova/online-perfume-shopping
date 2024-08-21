@@ -6,6 +6,9 @@ import com.perfumeOnlineStore.controller.product.command.deleteProductCommand.*;
 import com.perfumeOnlineStore.controller.product.command.updateProductCommand.*;
 import com.perfumeOnlineStore.controller.product.query.getAllProductsQuery.*;
 import com.perfumeOnlineStore.controller.product.query.getProductByIdQuery.*;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
@@ -30,6 +33,20 @@ public class ProductController {
         GetProductByIdQuery query = new GetProductByIdQuery(id);
 
         return query.execute(pipeline);
+    }
+
+    @GetMapping("/add-to-cart/{productId}")
+    public ResponseEntity<?> addToCart(@PathVariable("productId") UUID productId,
+                                       HttpServletResponse response) {
+        Cookie browserSessionCookie = new Cookie(productId.toString(), Long.toString(1L));
+        response.addCookie(browserSessionCookie);
+        return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/cart")
+    public ResponseEntity<?> getCart(HttpServletRequest request) {
+        Cookie[] cookies = request.getCookies();
+        return ResponseEntity.ok().body(cookies);
     }
 
     @PostMapping(
