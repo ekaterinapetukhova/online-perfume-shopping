@@ -78,6 +78,22 @@ public class Database implements CommandLineRunner {
                         woody
                 ));
 
+        Product calvinKleinEuphoria = Product.builder()
+                .name("Euphoria Calvin Klein")
+                .description("Euphoria by Calvin Klein is a Oriental Floral fragrance for women. Euphoria was launched in 2005. Euphoria was created by Dominique Ropion, Carlos Benaim and Loc Dong. Top notes are Pomegranate, Persimmon and Green Accord; middle notes are Black Orchid, Lotus and Champaca; base notes are Mahogany, Amber, Black Violet and Whipped Cream. This perfume is the winner of award FiFi Award Fragrance Of The Year Women`s Luxe 2006.")
+                .brand("Calvin Klein")
+                .price(300.00)
+                .components("ALCOHOL DENAT., FRAGRANCE, WATER, ACRYLATES/OCTYLACRYLAMIDE COPOLYMER, ALPHA-ISOMETHYL IONONE, BENZYL ALCOHOL, BENZYL BENZOATE, BENZYL SALICYLATE, BUTYL METHOXYDIBENZOYLMETHANE, CITRAL, CITRONELLOL, COUMARIN, ETHYLHEXYL METHOXYCINNAMATE, ETHYLHEXYL SALICYLATE, GERANIOL, HEXYL CINNAMAL, HYDROLYZED JOJOBA ESTERS, HYDROXYCITRONELLAL, ISOEUGENOL, LIMONENE, LINALOOL, PROPYLENE GLYCOL, TETRASODIUM EDTA, EXT. VIOLET 2 (CI 60730), GREEN 5 (CI 61570), RED 33 (CI 17200), YELLOW 5 (CI 19140)")
+                .scentGroups("Owoc granatu, lotos, orchidea, fiołek, bursztyn, mahoń, piżmo, orientalne, kwiatowe")
+                .volume(160)
+                .quantity(20)
+                .gender(Product.Gender.FEMALE)
+                .build();
+
+        calvinKleinEuphoria.setCategory(amber);
+
+        productRepository.save(calvinKleinEuphoria);
+
         User admin = User.builder()
                 .name("Ekaterina")
                 .surname("Petukhova")
