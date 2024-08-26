@@ -24,5 +24,5 @@ public class Mail {
     @Column(nullable = false)
     private String action;
     @Column(nullable = false)
-    private boolean isSentSuccessfully;
+    private boolean isSentSuccessfully = false;
 }

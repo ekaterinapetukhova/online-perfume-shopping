@@ -3,23 +3,18 @@ package com.perfumeOnlineStore.controller.user.command.createUserCommand;
 import an.awesome.pipelinr.Command;
 import com.perfumeOnlineStore.entity.User;
 import com.perfumeOnlineStore.mapper.user.CreateUserCommandToUserMapper;
-import com.perfumeOnlineStore.service.MailService;
 import com.perfumeOnlineStore.service.UserService;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
-import org.springframework.mail.MailSender;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-@Slf4j
 public class CreateUserCommandHandler implements Command.Handler<CreateUserCommand, CreateUserCommandResponse>{
     private final UserService userService;
     private final CreateUserCommandValidator validator;
     private final PasswordEncoder passwordEncoder;
-    private final MailService mailService;
 
     public CreateUserCommandResponse handle(CreateUserCommand command) {
         CreateUserCommandResponse resp = new CreateUserCommandResponse();
@@ -36,8 +31,6 @@ public class CreateUserCommandHandler implements Command.Handler<CreateUserComma
             resp.setStatusCode(HttpStatus.CREATED.value());
             resp.setStatus(HttpStatus.CREATED.name());
             resp.setPayload(user);
-
-            mailService.sendMail("ohorat228@gmail.com", "Hello", "New User");
 
             return resp;
         } catch (Exception e) {
