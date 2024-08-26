@@ -1,9 +1,17 @@
 package com.perfumeOnlineStore.utils.encryption.aes;
 
 import com.perfumeOnlineStore.utils.encryption.EncryptionUtil;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import javax.crypto.*;
+import javax.crypto.spec.IvParameterSpec;
+import javax.crypto.spec.PBEKeySpec;
+import javax.crypto.spec.SecretKeySpec;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
+import java.security.spec.InvalidKeySpecException;
+import java.security.spec.KeySpec;
 import java.util.Base64;
 
 @Component
@@ -23,6 +31,7 @@ public class AesEncryptionUtil implements EncryptionUtil {
             e.printStackTrace();
         }
     }
+
 
     @Override
     public String encrypt(String data) {
@@ -45,7 +54,7 @@ public class AesEncryptionUtil implements EncryptionUtil {
         try {
             byte[] encryptedBytes = Base64.getDecoder().decode(encryptedData);
 
-            Cipher cipher = Cipher.getInstance(ALGO_NAME);
+            Cipher cipher = Cipher.getInstance(CIPHER_NAME);
             cipher.init(Cipher.DECRYPT_MODE, secretKey);
 
             byte[] decryptedBytes = cipher.doFinal(encryptedBytes);
