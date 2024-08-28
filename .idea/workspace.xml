@@ -4,14 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ec6adeb-0aa6-4536-9602-5ac9ce04f7a1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/service/MailService.java" afterDir="false" />
+    <list default="true" id="4ce78ba3-27ca-409f-815b-23cf0fdd38d7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/controller/mail/command/sendMailCommand/SendMailCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/controller/mail/command/sendMailCommand/SendMailCommandHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/controller/mail/command/sendMailCommand/SendMailCommandResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/controller/user/command/createUserCommand/CreateUserCommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/controller/user/command/createUserCommand/CreateUserCommandHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/service/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/service/JwtService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/seq-data/Logs/seq-20240826.log" beforeDir="false" afterPath="$PROJECT_DIR$/backend/seq-data/Logs/seq-20240826.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/controller/mail/MailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/perfumeOnlineStore/controller/mail/MailController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,9 +23,6 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="AnnotationType" />
-        <option value="spring-beans.schema" />
-        <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -36,208 +35,82 @@
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 7
 }</component>
-  <component name="ProjectId" id="2jMZu8sjFuaQgKQeCY42Z9XLam7" />
+  <component name="ProjectId" id="2l3bGmeS6YY3JwtELALBv1lYMOn" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "HTTP Request.generated-requests | #1.executor": "Run",
-    "HTTP Request.generated-requests | #10.executor": "Run",
-    "HTTP Request.generated-requests | #11.executor": "Run",
-    "HTTP Request.generated-requests | #12.executor": "Run",
-    "HTTP Request.generated-requests | #13.executor": "Run",
-    "HTTP Request.generated-requests | #14.executor": "Run",
-    "HTTP Request.generated-requests | #15.executor": "Run",
-    "HTTP Request.generated-requests | #16.executor": "Run",
-    "HTTP Request.generated-requests | #17.executor": "Run",
-    "HTTP Request.generated-requests | #18.executor": "Run",
-    "HTTP Request.generated-requests | #19.executor": "Run",
-    "HTTP Request.generated-requests | #2.executor": "Run",
-    "HTTP Request.generated-requests | #20.executor": "Run",
-    "HTTP Request.generated-requests | #21.executor": "Run",
-    "HTTP Request.generated-requests | #22.executor": "Run",
-    "HTTP Request.generated-requests | #23.executor": "Run",
-    "HTTP Request.generated-requests | #24.executor": "Run",
-    "HTTP Request.generated-requests | #25.executor": "Run",
-    "HTTP Request.generated-requests | #27.executor": "Run",
-    "HTTP Request.generated-requests | #28.executor": "Run",
-    "HTTP Request.generated-requests | #29.executor": "Run",
-    "HTTP Request.generated-requests | #3.executor": "Run",
-    "HTTP Request.generated-requests | #30.executor": "Run",
-    "HTTP Request.generated-requests | #31.executor": "Run",
-    "HTTP Request.generated-requests | #32.executor": "Run",
-    "HTTP Request.generated-requests | #33.executor": "Run",
-    "HTTP Request.generated-requests | #34.executor": "Run",
-    "HTTP Request.generated-requests | #35.executor": "Run",
-    "HTTP Request.generated-requests | #36.executor": "Run",
-    "HTTP Request.generated-requests | #37.executor": "Run",
-    "HTTP Request.generated-requests | #38.executor": "Run",
-    "HTTP Request.generated-requests | #39.executor": "Run",
-    "HTTP Request.generated-requests | #4.executor": "Run",
-    "HTTP Request.generated-requests | #41.executor": "Run",
-    "HTTP Request.generated-requests | #42.executor": "Run",
-    "HTTP Request.generated-requests | #43.executor": "Run",
-    "HTTP Request.generated-requests | #46.executor": "Run",
-    "HTTP Request.generated-requests | #5.executor": "Run",
-    "HTTP Request.generated-requests | #6.executor": "Run",
-    "HTTP Request.generated-requests | #7.executor": "Run",
-    "HTTP Request.generated-requests | #8.executor": "Run",
-    "HTTP Request.generated-requests | #9.executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.PerfumeOnlineStoreApplication.executor": "Run",
-    "git-widget-placeholder": "backend",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/sadko/Downloads/JetBrains-Discord-Integration-2.1.2.242.zip",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
-  },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
-    ]
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #52.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.PerfumeOnlineStoreApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;backend&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\sadko\OneDrive\Desktop\online-perfume-shopping\backend" />
-      <recent name="C:\Users\sadko\OneDrive\Desktop\online-perfume-shopping\backend\src" />
-      <recent name="C:\Users\sadko\OneDrive\Desktop\online-perfume-shopping\backend\src\main" />
-      <recent name="C:\Users\sadko\OneDrive\Desktop\online-perfume-shopping\backend\src\main\java\com\perfumeOnlineStore\controller\category\query" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Spring Boot.PerfumeOnlineStoreApplication">
-    <configuration name="generated-requests | #38" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="38" requestIdentifier="#38" runType="Run single request">
+}</component>
+  <component name="RunManager" selected="Application.Unnamed">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="envFilePaths">
+        <option value="$PROJECT_DIR$/backend/.env" />
+      </option>
+      <option name="MAIN_CLASS_NAME" value="com.perfumeOnlineStore.PerfumeOnlineStoreApplication" />
+      <module name="perfumeOnlineStore" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="generated-requests | #52" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="52" requestIdentifier="#52" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="generated-requests | #39" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="39" requestIdentifier="#39" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="generated-requests | #42" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="42" requestIdentifier="#42" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="generated-requests | #43" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="43" requestIdentifier="#43" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="generated-requests | #46" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="46" requestIdentifier="#46" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="HTTP Request.generated-requests | #43" />
-      <item itemvalue="HTTP Request.generated-requests | #46" />
-      <item itemvalue="HTTP Request.generated-requests | #42" />
-      <item itemvalue="HTTP Request.generated-requests | #39" />
-      <item itemvalue="HTTP Request.generated-requests | #38" />
-      <item itemvalue="Spring Boot.PerfumeOnlineStoreApplication" />
-    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.generated-requests | #39" />
-        <item itemvalue="HTTP Request.generated-requests | #43" />
-        <item itemvalue="HTTP Request.generated-requests | #38" />
-        <item itemvalue="HTTP Request.generated-requests | #46" />
-        <item itemvalue="HTTP Request.generated-requests | #42" />
+        <item itemvalue="HTTP Request.generated-requests | #52" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
-        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
       </set>
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8ec6adeb-0aa6-4536-9602-5ac9ce04f7a1" name="Changes" comment="" />
-      <created>1721199127119</created>
+      <changelist id="4ce78ba3-27ca-409f-815b-23cf0fdd38d7" name="Changes" comment="" />
+      <created>1724411616125</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1721199127119</updated>
-      <workItem from="1721199129321" duration="23126000" />
-      <workItem from="1721371840548" duration="13205000" />
-      <workItem from="1721395559842" duration="6228000" />
-      <workItem from="1721475010608" duration="8673000" />
-      <workItem from="1721891734958" duration="28000" />
-      <workItem from="1721891774429" duration="14807000" />
-      <workItem from="1721978868725" duration="9332000" />
-      <workItem from="1722492027346" duration="2356000" />
-      <workItem from="1722494806179" duration="13099000" />
-      <workItem from="1722515033706" duration="2877000" />
-      <workItem from="1722517931668" duration="1381000" />
-      <workItem from="1722520415223" duration="3781000" />
-      <workItem from="1722578361008" duration="2485000" />
-      <workItem from="1722591458971" duration="11542000" />
-      <workItem from="1722604290733" duration="291000" />
-      <workItem from="1722604602061" duration="390000" />
-      <workItem from="1722605009472" duration="6442000" />
-      <workItem from="1722617902935" duration="2732000" />
-      <workItem from="1722664560672" duration="732000" />
-      <workItem from="1722676123443" duration="946000" />
-      <workItem from="1722677153607" duration="1020000" />
-      <workItem from="1722778647686" duration="1634000" />
-      <workItem from="1723038614282" duration="1000000" />
-      <workItem from="1723045239273" duration="1528000" />
-      <workItem from="1723100371546" duration="14559000" />
-      <workItem from="1723120955808" duration="1629000" />
-      <workItem from="1723197930319" duration="5229000" />
-      <workItem from="1723219143479" duration="2407000" />
-      <workItem from="1723275140520" duration="13621000" />
-      <workItem from="1723298496594" duration="395000" />
-      <workItem from="1723298938302" duration="4353000" />
-      <workItem from="1723359843892" duration="2120000" />
-      <workItem from="1723639299504" duration="3023000" />
-      <workItem from="1723642365766" duration="6117000" />
-      <workItem from="1723728924541" duration="2371000" />
-      <workItem from="1723740471118" duration="1999000" />
-      <workItem from="1723898911729" duration="7345000" />
-      <workItem from="1724051806372" duration="6575000" />
+      <updated>1724411616125</updated>
+      <workItem from="1724411617534" duration="2545000" />
+      <workItem from="1724660563657" duration="4266000" />
+      <workItem from="1724830798855" duration="1053000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
 </project>
